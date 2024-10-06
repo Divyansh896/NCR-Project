@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("submit-btn").addEventListener("click", (e) => {
             const check = document.getElementById('confirm-checkbox')
             if (check.checked) {
+                sendMail()
                 alert("Form submitted")
             } else {
                 check.focus()
