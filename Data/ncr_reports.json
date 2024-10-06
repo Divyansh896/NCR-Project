@@ -1,0 +1,572 @@
+[
+    {
+        "ncr_no": "NCR-2024-001",
+        "qa": {
+            "supplier_name": "Supplier A",
+            "po_no": "PO-1001",
+            "sales_order_no": "SO-2001",
+            "item_description": "Widget Model X",
+            "quantity_received": 100,
+            "quantity_defective": 5,
+            "description_of_defect": "Dimensions exceed specifications.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "John Doe",
+            "date": "2024-09-01",
+            "resolved": false,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Rework",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": true,
+                "scrap": false
+            },
+            "customer_notification_required": true,
+            "disposition_details": "Repair by adjusting dimensions.",
+            "drawing_update_required": true,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-002",
+            "engineer_name": "Alice Smith",
+            "revision_date": "2024-09-05",
+            "engineering_review_date": "2024-09-05",
+            "resolved": false
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Return to Supplier for rework",
+            "options": {
+                "rework_in_house": false,
+                "scrap_in_house": false,
+                "defer_to_engineering": true
+            },
+            "car_raised": true,
+            "car_number": "CAR-12345",
+            "follow_up_required": false,
+            "operations_manager_name": "Bob Johnson",
+            "operations_manager_date": "2024-09-10",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-001",
+            "inspector_name": "Eve Davis",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    },
+    {
+        "ncr_no": "NCR-2024-002",
+        "qa": {
+            "supplier_name": "Supplier B",
+            "po_no": "PO-1002",
+            "sales_order_no": "SO-2002",
+            "item_description": "Gadget Model Y",
+            "quantity_received": 50,
+            "quantity_defective": 2,
+            "description_of_defect": "Paint quality is subpar.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Sarah Connor",
+            "date": "2024-09-02",
+            "resolved": true,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Repair",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": true,
+                "rework": false,
+                "scrap": false
+            },
+            "customer_notification_required": false,
+            "disposition_details": "Repaint defective items.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-001",
+            "engineer_name": "David Brown",
+            "revision_date": "2024-09-06",
+            "engineering_review_date": "2024-09-06",
+            "resolved": true
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Scrap in House",
+            "options": {
+                "rework_in_house": false,
+                "scrap_in_house": true,
+                "defer_to_engineering": false
+            },
+            "car_raised": false,
+            "car_number": null,
+            "follow_up_required": true,
+            "operations_manager_name": "Catherine Zeta",
+            "operations_manager_date": "2024-09-12",
+            "re_inspected_acceptable": true,
+            "new_ncr_number": "NCR-002",
+            "inspector_name": "Frank Wright",
+            "ncr_closed": true,
+            "resolved": true
+        },
+        "status": "completed"
+    },
+    {
+        "ncr_no": "NCR-2024-003",
+        "qa": {
+            "supplier_name": "Supplier C",
+            "po_no": "PO-1003",
+            "sales_order_no": "SO-2003",
+            "item_description": "Device Model Z",
+            "quantity_received": 200,
+            "quantity_defective": 10,
+            "description_of_defect": "Electrical malfunction.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Tom Hardy",
+            "date": "2024-09-03",
+            "resolved": false,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Scrap",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": false,
+                "scrap": true
+            },
+            "customer_notification_required": true,
+            "disposition_details": "Units to be scrapped due to safety issues.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-001",
+            "engineer_name": "Lucy Liu",
+            "revision_date": "2024-09-07",
+            "engineering_review_date": "2024-09-07",
+            "resolved": false
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Return to Supplier",
+            "options": {
+                "rework_in_house": false,
+                "scrap_in_house": false,
+                "defer_to_engineering": true
+            },
+            "car_raised": true,
+            "car_number": "CAR-12346",
+            "follow_up_required": true,
+            "operations_manager_name": "Michael Johnson",
+            "operations_manager_date": "2024-09-11",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-003",
+            "inspector_name": "Anita Hill",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    },
+    {
+        "ncr_no": "NCR-2024-004",
+        "qa": {
+            "supplier_name": "Supplier D",
+            "po_no": "PO-1004",
+            "sales_order_no": "SO-2004",
+            "item_description": "Gizmo Model W",
+            "quantity_received": 75,
+            "quantity_defective": 3,
+            "description_of_defect": "Missing parts.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Emily Clark",
+            "date": "2024-09-04",
+            "resolved": true,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Rework",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": true,
+                "scrap": false
+            },
+            "customer_notification_required": false,
+            "disposition_details": "Send replacement parts.",
+            "drawing_update_required": true,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-002",
+            "engineer_name": "Robert Black",
+            "revision_date": "2024-09-08",
+            "engineering_review_date": "2024-09-08",
+            "resolved": true
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Replace Parts",
+            "options": {
+                "rework_in_house": true,
+                "scrap_in_house": false,
+                "defer_to_engineering": false
+            },
+            "car_raised": false,
+            "car_number": null,
+            "follow_up_required": false,
+            "operations_manager_name": "James Green",
+            "operations_manager_date": "2024-09-12",
+            "re_inspected_acceptable": true,
+            "new_ncr_number": "NCR-004",
+            "inspector_name": "Lisa White",
+            "ncr_closed": true,
+            "resolved": true
+        },
+        "status": "completed"
+    },
+    {
+        "ncr_no": "NCR-2024-005",
+        "qa": {
+            "supplier_name": "Supplier E",
+            "po_no": "PO-1005",
+            "sales_order_no": "SO-2005",
+            "item_description": "Widget Model A",
+            "quantity_received": 150,
+            "quantity_defective": 7,
+            "description_of_defect": "Incorrect specifications.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Steve Jobs",
+            "date": "2024-09-05",
+            "resolved": false,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Rework",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": true,
+                "scrap": false
+            },
+            "customer_notification_required": false,
+            "disposition_details": "Rework to match specifications.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-003",
+            "engineer_name": "Mark Twain",
+            "revision_date": "2024-09-09",
+            "engineering_review_date": "2024-09-09",
+            "resolved": false
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Rework in House",
+            "options": {
+                "rework_in_house": true,
+                "scrap_in_house": false,
+                "defer_to_engineering": false
+            },
+            "car_raised": true,
+            "car_number": "CAR-12347",
+            "follow_up_required": true,
+            "operations_manager_name": "Oprah Winfrey",
+            "operations_manager_date": "2024-09-13",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-005",
+            "inspector_name": "Jack Daniels",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    },
+    {
+        "ncr_no": "NCR-2024-006",
+        "qa": {
+            "supplier_name": "Supplier F",
+            "po_no": "PO-1006",
+            "sales_order_no": "SO-2006",
+            "item_description": "Gadget Model B",
+            "quantity_received": 80,
+            "quantity_defective": 4,
+            "description_of_defect": "Defective parts.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Ella Fitzgerald",
+            "date": "2024-09-06",
+            "resolved": true,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Scrap",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": false,
+                "scrap": true
+            },
+            "customer_notification_required": false,
+            "disposition_details": "Units to be scrapped due to defects.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-001",
+            "engineer_name": "George Washington",
+            "revision_date": "2024-09-10",
+            "engineering_review_date": "2024-09-10",
+            "resolved": true
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Return to Supplier",
+            "options": {
+                "rework_in_house": false,
+                "scrap_in_house": true,
+                "defer_to_engineering": true
+            },
+            "car_raised": false,
+            "car_number": null,
+            "follow_up_required": true,
+            "operations_manager_name": "Abraham Lincoln",
+            "operations_manager_date": "2024-09-15",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-006",
+            "inspector_name": "Marilyn Monroe",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    },
+    {
+        "ncr_no": "NCR-2024-007",
+        "qa": {
+            "supplier_name": "Supplier G",
+            "po_no": "PO-1007",
+            "sales_order_no": "SO-2007",
+            "item_description": "Device Model C",
+            "quantity_received": 90,
+            "quantity_defective": 6,
+            "description_of_defect": "Assembly issue.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Lily James",
+            "date": "2024-09-07",
+            "resolved": false,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Rework",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": true,
+                "scrap": false
+            },
+            "customer_notification_required": true,
+            "disposition_details": "Fix assembly issues.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-002",
+            "engineer_name": "James Bond",
+            "revision_date": "2024-09-11",
+            "engineering_review_date": "2024-09-11",
+            "resolved": false
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Repair in House",
+            "options": {
+                "rework_in_house": true,
+                "scrap_in_house": false,
+                "defer_to_engineering": false
+            },
+            "car_raised": false,
+            "car_number": null,
+            "follow_up_required": true,
+            "operations_manager_name": "Bill Gates",
+            "operations_manager_date": "2024-09-16",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-007",
+            "inspector_name": "Anna Kendrick",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    },
+    {
+        "ncr_no": "NCR-2024-008",
+        "qa": {
+            "supplier_name": "Supplier H",
+            "po_no": "PO-1008",
+            "sales_order_no": "SO-2008",
+            "item_description": "Gizmo Model Q",
+            "quantity_received": 60,
+            "quantity_defective": 1,
+            "description_of_defect": "Minor scratches.",
+            "item_marked_nonconforming": false,
+            "quality_representative_name": "Denzel Washington",
+            "date": "2024-09-08",
+            "resolved": true,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Use as is",
+            "disposition_options": {
+                "use_as_is": true,
+                "repair": false,
+                "rework": false,
+                "scrap": false
+            },
+            "customer_notification_required": false,
+            "disposition_details": "Minor scratches do not affect functionality.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-001",
+            "engineer_name": "Tom Cruise",
+            "revision_date": "2024-09-12",
+            "engineering_review_date": "2024-09-12",
+            "resolved": true
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "No action required",
+            "options": {
+                "rework_in_house": false,
+                "scrap_in_house": false,
+                "defer_to_engineering": false
+            },
+            "car_raised": false,
+            "car_number": null,
+            "follow_up_required": false,
+            "operations_manager_name": "Hillary Clinton",
+            "operations_manager_date": "2024-09-18",
+            "re_inspected_acceptable": true,
+            "new_ncr_number": "NCR-008",
+            "inspector_name": "Emma Stone",
+            "ncr_closed": true,
+            "resolved": true
+        },
+        "status": "completed"
+    },
+    {
+        "ncr_no": "NCR-2024-009",
+        "qa": {
+            "supplier_name": "Supplier I",
+            "po_no": "PO-1009",
+            "sales_order_no": "SO-2009",
+            "item_description": "Widget Model B",
+            "quantity_received": 120,
+            "quantity_defective": 8,
+            "description_of_defect": "Wrong color.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Taylor Swift",
+            "date": "2024-09-09",
+            "resolved": false,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Rework",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": false,
+                "rework": true,
+                "scrap": false
+            },
+            "customer_notification_required": false,
+            "disposition_details": "Repaint defective items.",
+            "drawing_update_required": false,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-001",
+            "engineer_name": "Leonardo DiCaprio",
+            "revision_date": "2024-09-13",
+            "engineering_review_date": "2024-09-13",
+            "resolved": false
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Rework in House",
+            "options": {
+                "rework_in_house": true,
+                "scrap_in_house": false,
+                "defer_to_engineering": false
+            },
+            "car_raised": true,
+            "car_number": "CAR-12348",
+            "follow_up_required": true,
+            "operations_manager_name": "Jessica Alba",
+            "operations_manager_date": "2024-09-20",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-009",
+            "inspector_name": "Robert Downey Jr.",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    },
+    {
+        "ncr_no": "NCR-2024-010",
+        "qa": {
+            "supplier_name": "Supplier J",
+            "po_no": "PO-1010",
+            "sales_order_no": "SO-2010",
+            "item_description": "Gadget Model A",
+            "quantity_received": 150,
+            "quantity_defective": 15,
+            "description_of_defect": "Manufacturing defect.",
+            "item_marked_nonconforming": true,
+            "quality_representative_name": "Chris Hemsworth",
+            "date": "2024-09-10",
+            "resolved": false,
+            "process": {
+                "supplier_or_rec_insp": false,
+                "wip_production_order": false
+            }
+        },
+        "engineering": {
+            "disposition": "Repair",
+            "disposition_options": {
+                "use_as_is": false,
+                "repair": true,
+                "rework": false,
+                "scrap": false
+            },
+            "customer_notification_required": true,
+            "disposition_details": "Repair manufacturing defects.",
+            "drawing_update_required": true,
+            "original_rev_number": "Rev-001",
+            "updated_rev_number": "Rev-002",
+            "engineer_name": "Natalie Portman",
+            "revision_date": "2024-09-14",
+            "engineering_review_date": "2024-09-14",
+            "resolved": false
+        },
+        "purchasing_decision": {
+            "preliminary_decision": "Rework in House",
+            "options": {
+                "rework_in_house": true,
+                "scrap_in_house": false,
+                "defer_to_engineering": false
+            },
+            "car_raised": false,
+            "car_number": null,
+            "follow_up_required": true,
+            "operations_manager_name": "Emma Watson",
+            "operations_manager_date": "2024-09-22",
+            "re_inspected_acceptable": false,
+            "new_ncr_number": "NCR-010",
+            "inspector_name": "Chris Evans",
+            "ncr_closed": false,
+            "resolved": false
+        },
+        "status": "incomplete"
+    }
+]

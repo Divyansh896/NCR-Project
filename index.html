@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login page for Crossfire. Access your account to manage, generate, view NCRs.">
+    <meta name="keywords" content="login, create NCRs, view NCRs, Crossfire">
+    <meta name="author" content="Mark">
+    <title>Login - Crossfire</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body id="login">
+
+    <main>
+        <div class="login-container" role="form" aria-labelledby="login-header">
+            <div class="logo-container">
+                <img src="images/logo.webp" alt="Crossfire Company Logo" width="125" height="30">
+                <h1 id="login-header" aria-level="1">Login</h1> <!-- Changed heading level to 1 for better semantics -->
+            </div>
+            
+            <div aria-live="polite">
+                <label for="username">Username:</label>
+                <div class="tooltip">
+                    <input type="text" id="username" name="username" required aria-required="true" tabindex="1"> <!-- Set tabindex to a sequential order -->
+                    <span class="tooltip-text" role="tooltip">Enter your username.</span>
+                </div>
+
+                <label for="password">Password:</label>
+                <div class="tooltip">
+                    <input type="password" id="password" name="password" required aria-required="true" tabindex="2"> <!-- Set tabindex to a sequential order -->
+                    <span class="tooltip-text" role="tooltip">Enter your password.</span>
+                </div>
+
+                <button id="btn-login" tabindex="3">Login</button> <!-- Set tabindex to a sequential order -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crossfire. All rights reserved.</p>
+        <p><a href="/privacy-policy" style="color: #28a745;">Privacy Policy</a> | <a href="/contact" style="color: #28a745;">Contact Us</a></p>
+    </footer>
+    <script src="script/login-ncr.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Crossfire</title>
+    <meta name="description" content="Edit your profile information including name, email, and phone number.">
+    <meta name="keywords" content="NCR Profile, Crossfire Profile, Profile">
+    <meta name="author" content="Mark">
+    <!-- Style-sheet link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="breadcrumb.css">
+    <!-- Header with Logo and Navigation -->
+</head>
+
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="Crossfire Company Logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="home.html" class="linksNav" tabindex="1">Home</a></li> 
+                <li><a href="contact_us.html" class="linksNav" tabindex="2">Contact Us</a></li> 
+                <li>
+                    <a href="#" class="linksNav" tabindex="3">NCRs</a>
+                    <ul class="dropdown">
+                        <li><a href="create_ncr.html" class="linksNav" tabindex="4">Create</a></li> 
+                        <li><a href="view_ncr.html" class="linksNav" tabindex="5">View</a></li> 
+                    </ul>
+                </li>
+                <li><a href="account.html" class="linksNav" tabindex="6">Account</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div>
+            <h1 tabindex="4">Edit Profile</h1>
+            <form action="/action_page.php" method="get" id="profileForm">
+                <img src="images/female-image.png" alt="User Avatar" loading="lazy" width="250" height="250">
+                
+                <div>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" required tabindex="7">
+                </div>
+
+                <div>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" required tabindex="8">
+                </div>
+
+                <div>
+                    <label for="Uname">User Name</label>
+                    <input type="text" id="Uname" name="Uname" required tabindex="9">
+                </div>
+
+                <div>
+                    <label for="UserId">User ID</label>
+                    <input type="text" id="UserId" name="UserID" required tabindex="10">
+                </div>
+
+                <div>
+                    <label for="emailId">Email Id</label>
+                    <input type="email" id="emailId" name="emailId" required tabindex="11">
+                </div>
+
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required tabindex="12">
+                </div>
+
+                <div>
+                    <label for="bday">Date of birth</label>
+                    <input type="date" id="bday" name="bday" required tabindex="13">
+                </div>
+
+                <div>
+                    <label for="gender">Select Gender</label>
+                    <select id="gender" name="gender" required tabindex="14">
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" form="profileForm" value="Submit" tabindex="15">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Crossfire. All rights reserved.</p>
+        <p>
+            <a href="/privacy-policy" style="color: #28a745;" aria-label="Go to Privacy Policy" tabindex="16">Privacy Policy</a> |
+            <a href="/contact" style="color: #28a745;" aria-label="Go to Contact Us" tabindex="17">Contact Us</a>
+        </p>
+    </footer>
+</body>
+
+</html>

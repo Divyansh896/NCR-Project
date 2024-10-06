@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-container {
+    width: 90%;
+    margin: 20px auto;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.dropdown .dropdown-header {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown .arrow {
+    transition: transform 0.3s ease;
+}
+
+/* .dropdown .arrow.up {
+    transform: rotate(180deg);
+} */
+
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button.save {
+    background-color: green;
+    color: white;
+}
+
+button.edit {
+    background-color: blue;
+    color: white;
+}

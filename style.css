@@ -1,0 +1,304 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input[type="text"], input[type="password"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #f4f4f4;
+    color: #163650;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(244, 244, 244, 0.7);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Header */
+header {
+    padding: 10px 25px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #163650;
+}
+
+header img {
+    max-width: 300px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+/* Navigation */
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block; /* Keeps items inline but allows dropdown positioning */
+    margin-left: 20px;
+    position: relative; /* Enables dropdown positioning relative to this li */
+    padding: 10px 0; /* Ensures consistent spacing in the nav bar */
+}
+
+ul li ul.dropdown {
+    position: absolute; /* Absolutely position relative to parent */
+    top: 100%; /* Places dropdown just below the NCR item */
+    left: 0; /* Aligns dropdown exactly with the parent li */
+    background: beige;
+    display: none; /* Hides the dropdown by default */
+    padding: 0; /* Remove padding that may cause white space */
+    min-width: 100%; /* Ensure dropdown width matches the parent */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
+ul li ul.dropdown li {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap; /* Prevents text wrapping in the dropdown */
+}
+
+ul li:hover ul.dropdown {
+    display: block; /* Show the dropdown on hover */
+}
+
+.linksNav, .linksFooter {
+    font-weight: 600;
+}
+
+.linksNav {
+    color: #1a3153;
+}
+
+.linksNav:hover, .linksFooter:hover {
+    color: #1d3456;
+}
+
+.linksFooter {
+    color: #dbc7c0;
+}
+
+/* Login Page */
+#login {
+    background-image: url('images/login.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #163650;
+    padding: 7px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #dbc7c0;
+}
+
+/* Home Page - Three-column Layout */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    flex: 0 1 30%;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.featuresCreateNCR:hover, .featuresViewNCR:hover, .featuresManageAcc:hover {
+    transform: scale(1.05);
+}
+
+.featuresCreateNCR {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/CreateNCR.webp");
+}
+
+.featuresViewNCR {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ViewNCR.webp");
+}
+
+.featuresManageAcc {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ManagaeAccount.webp");
+}
+
+.featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
+    font-size: 2rem;
+}
+
+.featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
+    font-size: 1.5rem;
+    margin: 25px 0 20px;
+}
+
+/* Create NCR */
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    margin: 30px 40px;
+    border-radius: 5px;
+    border-color: #163650;
+}
+
+.form-section.active label {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+.form-section.active button {
+    background-color: #1a3153;
+    color: #f4f4f4;
+    margin: 70px 20px 20px 20px;
+}
+
+.qa-date, .qa-name {
+    font-size: 1rem;
+    border-color: #163650;
+}
+
+.qa-date {
+    height: 40px;
+    width: 300px;
+}
+
+.qa-name {
+    height: 30px;
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+legend {
+    font-weight: 600;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Status Bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 20px;
+    position: relative;
+}
+
+.status-bar div {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.status-bar div.active {
+    color: #1a3153;
+    font-weight: 600;
+}
+
+.status-bar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #1a3153;
+    transition: left 0.4s ease, width 0.4s ease;
+    width: var(--underline-width, 30%);
+    left: var(--underline-left, 0%);
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Create a new NCR report using a step-by-step form with sections for QA information, product info, and defect description.">
+    <meta name="keywords" content="NCR, Crossfire, manage NCR, create NCR, view NCR, Non-Conformance Reports">
+    <meta name="author" content="Mark">
+    <title>Create NCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ncReport.css">
+    <link rel="stylesheet" href="details.css">
+</head>
+
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="Crossfire Company Logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="home.html" class="linksNav" tabindex="1">Home</a></li>
+                <li><a href="contact_us.html" class="linksNav" tabindex="2">Contact Us</a></li>
+                <li>
+                    <a href="#" class="linksNav" tabindex="3">NCRs</a>
+                    <ul class="dropdown">
+                        <li><a href="create_ncr.html" class="linksNav" tabindex="4">Create</a></li>
+                        <li><a href="view_ncr.html" class="linksNav" tabindex="5">View</a></li>
+                    </ul>
+                </li>
+                <li><a href="account.html" class="linksNav" tabindex="6">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Status Bar for Tracking Progress -->
+        <div class="status-bar">
+            <div id="step1" class="active" aria-current="step">Product Info</div>
+            <div id="step2">Product Description</div>
+            <div id="step3">Confirmation</div>
+        </div>
+
+        <!-- QA Rep Dropdown -->
+        <details id="qa-section">
+            <summary class="custom-summary">QA Rep</summary>
+            <div class="two-cols">
+                <!-- First Column -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>QA Name</label>
+                        <span id="qa-name-d">[QA Name]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>NCR No.</label>
+                        <span id="ncr-no-d">[NCR No]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Sales Order No.</label>
+                        <span id="sales-order-no-d">[Sales Order No]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity Received</label>
+                        <span id="quantity-received-d">[Quantity Received]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity Defective</label>
+                        <span id="quantity-defective-d">[Quantity Defective]</span>
+                    </div>
+                </div>
+                <!-- Second Column -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>QA Date</label>
+                        <span id="qa-date-d">[QA Date]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Supplier Name</label>
+                        <span id="supplier-name-d">[Supplier Name]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Product No.</label>
+                        <span id="product-no-d">[Product No]</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Identify Process Applicable</label>
+                        <span id="process-d">[Process]</span>
+                    </div>
+                </div>
+                <!-- Textarea Section -->
+                <div class="form-group">
+                    <label>Description of Item (Including SAP No.)</label>
+                    <span id="description-item-d">[Description of Item]</span>
+                </div>
+                <div class="form-group">
+                    <label>Description of Defect</label>
+                    <span id="description-defect-d">[Description of Defect]</span>
+                </div>
+                <!-- Radio Buttons for Non-Conforming -->
+                <div class="form-group">
+                    <p>Item Marked Non-Conforming?</p>
+                    <span id="item-marked-nonconforming-d">[Yes/No]</span>
+                </div>
+            </div>
+        </details>
+
+        <details id="eng-section">
+            <summary class="custom-summary">Engineering</summary>
+            <!-- Engineering fields can be added here in the future -->
+            <div>Engineering fields can be added here in the future</div>
+        </details>
+
+        <details id="purch-section">
+            <summary class="custom-summary">Purchasing</summary>
+            <!-- Purchasing fields can be added here in the future -->
+            <div>Purchasing fields can be added here in the future</div>
+        </details>
+
+        <div id="underdev">
+
+        </div>
+        <!-- Multi-Step Form -->
+        <form id="ncr-form" method="post" action="https://webdevbasics.net/scripts/demo.php">
+            <!-- Product Info Section -->
+            <fieldset class="form-section active" aria-labelledby="product-info">
+                <legend id="product-info">Product Information</legend>
+                <div>
+                    <label>NCR No:</label>
+                    <input type="text" id="ncr-no-generated" name="ncr_no" placeholder="Auto-generated NCR No" readonly tabindex="7">
+
+                    <label for="sales-order-no">Sales Order No:</label>
+                    <input type="text" id="sales-order-no" name="sales_order_no" placeholder="Enter Sales Order No" tabindex="8">
+                    <span class="error" id="sales-order-no-error"></span>
+
+                    <label for="quantity-received">Quantity Received:</label>
+                    <input type="number" id="quantity-received" min="0" value="0" name="quantity_received" placeholder="Enter Quantity Received" tabindex="9">
+                    <span class="error" id="quantity-received-error"></span>
+
+                    <label for="quantity-defective">Quantity Defective:</label>
+                    <input type="number" id="quantity-defective" min="0" value="0" name="quantity_defective" placeholder="Enter Quantity Defective" tabindex="10">
+                    <span class="error" id="quantity-defective-error"></span>
+                </div>
+
+                <div>
+                    <label for="supplier-name">Supplier Name:</label>
+                    <input type="text" id="supplier-name" name="supplier_name" placeholder="Enter Supplier Name" required aria-required="true" tabindex="11">
+                    <span class="error" id="supplier-name-error"></span>
+
+                    <label for="product-no">Product No:</label>
+                    <input type="text" id="product-no" name="product_no" placeholder="Enter Product No" tabindex="12">
+                    <span class="error" id="product-no-error"></span>
+
+                    <fieldset>
+                        <legend>Identify Process Applicable</legend>
+                        <label>
+                            <input type="checkbox" name="process" value="supplier" tabindex="13">
+                            Supplier or Rec-Insp
+                        </label>
+                        <span class="error" id="process-error"></span>
+                        <label>
+                            <input type="checkbox" name="process" value="wip" tabindex="14">
+                            WIP
+                        </label>
+                        <span class="error" id="process-error"></span>
+                    </fieldset>
+                </div>
+
+                <div>
+                    <button type="button" id="clear-btn1" tabindex="15">Clear</button>
+                    <button type="button" id="next-btn1" tabindex="16">Next</button>
+                </div>
+            </fieldset>
+
+            <!-- Product Defect Description Section -->
+            <fieldset class="form-section" aria-labelledby="product-desc">
+                <legend id="product-desc">Product Description</legend>
+                <label for="description-item">Description of Item (including SAP Number):</label>
+                <textarea id="description-item" name="description_item" placeholder="Enter item description, including SAP Number" tabindex="17"></textarea>
+                <span class="error" id="description-item-error"></span>
+
+                <label for="description-defect">Description of Defect:</label>
+                <textarea id="description-defect" name="description_defect" placeholder="Describe the defect" tabindex="18"></textarea>
+                <span class="error" id="description-defect-error"></span>
+
+                <label>Item Marked Non-Conforming?</label>
+                <div>
+                    <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="19">
+                    <label for="item-marked-yes">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="20">
+                    <label for="item-marked-no">No</label>
+                </div>
+                <span class="error" id="item-marked-nonconforming-error"></span>
+
+                <div>
+                    <button type="button" id="back-btn1" tabindex="21">Back</button>
+                    <button type="button" id="clear-btn2" tabindex="22">Clear</button>
+                    <button type="button" id="next-btn2" tabindex="22">Next</button>
+                    <button type="button" id="add-photo-btn" tabindex="23">Add Photos</button>
+                    <button type="button" id="add-video-btn" tabindex="24">Add Videos</button>
+                    <input type="file" id="photo-input" accept="image/*" multiple style="display:none;">
+                    <input type="file" id="video-input" accept="video/*" multiple style="display:none;">
+
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- Confirmation section -->
+        <div class="form-section">
+            <h3>Confirmation</h3>
+            <p>QA Name: <span id="confirm-qa-name"></span></p>
+            <p>Date: <span id="confirm-date"></span></p>
+            <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
+            <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
+            <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
+            <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+            <p>Product No: <span id="confirm-product-no"></span></p>
+            <p>Description Item: <span id="confirm-description-item"></span></p>
+            <p>Description Defect: <span id="confirm-description-defect"></span></p>
+            <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
+            <div>
+                <label for="confirm-checkbox">I affirm that all the details submitted are correct and fully validated. I take full responsibility for the accuracy of this report:</label>
+                <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox" required>
+            </div>
+            <div>
+                <button type="button" id="back-btn2" tabindex="21">Back</button>
+                <button type="submit" id="submit-btn" tabindex="25">Submit</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crossfire. All rights reserved.</p>
+        <p>
+            <a href="/privacy-policy" class="linksFooter" aria-label="Go to Privacy Policy" tabindex="27">Privacy Policy</a> |
+            <a href="/contact" class="linksFooter" aria-label="Go to Contact Us" tabindex="28">Contact Us</a>
+        </p>
+    </footer>
+
+    <script src="script/create-ncr.js"></script>
+    <script src="script/ncReport.js"></script>
+
+
+</body>
+
+</html>
