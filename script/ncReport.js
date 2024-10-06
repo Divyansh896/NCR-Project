@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get all input fields and textareas
     const inputFields = document.querySelectorAll('input, textarea, select')
 
-    if(!user.role =='QA'){
+    if(user.role =='QA' || user.role === 'engineer' || user.role === 'purch'){
 
         // Disable all input fields on page load
         window.onload = function () {
