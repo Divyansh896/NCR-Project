@@ -302,3 +302,136 @@ legend {
     width: var(--underline-width, 30%);
     left: var(--underline-left, 0%);
 }
+
+/*View NCR*/
+
+/*search fields*/
+.filter-section{
+    margin: 0px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.serach-bar{
+    width: 300px;
+    color: #1a3153;
+}
+
+.date-filter{
+    width: 300px;
+    color: #1a3153;
+}
+
+.status-filter[type="radio"]{
+    color: #1a3153;
+}
+
+.fieldset-viewncr {
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio" i]{
+    color: #1a3153;
+}
+
+.radio-btn{
+    margin-left: 30px;
+}
+
+#status-filter, #record-count{
+    font-weight: bold;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#record-count{
+    margin-left: 20px;
+}
+
+/*table*/
+
+.ncr-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.ncr-table thead th {
+    background-color: #4c6488;
+    color: #f4f4f4;
+    padding: 22px;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+}
+
+.ncr-table tbody td {
+    padding: 22px;
+    border-bottom: 1px solid #e0e0e0;
+}
+  
+
+.ncr-table tbody tr:nth-child(even) {
+    background-color: #d7e4f9;
+}
+  
+.ncr-table tbody tr:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+  
+.ncr-table tbody tr:hover {
+    background-color: #b8c4d5;
+}
+
+
+/* Contact Us */
+
+.fieldset-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-style: none;
+}
+
+.fieldset-contact legend{
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.fieldset-contact input{
+    width: 300px;
+}
+
+.fieldset-contact label{
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+textarea{
+    width: 600px;
+    height: 350px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.btn-contact{
+    margin-top: 30px;
+    background-color: #1a3153;
+    color: #f4f4f4;
+    width: 200px;
+
+}
+
+.btn-contact:hover{
+    background-color: #0a1a31;
+}
+
+
+/* Acccount */
