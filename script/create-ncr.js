@@ -325,5 +325,17 @@ document.addEventListener("DOMContentLoaded", () => {
             element.setAttribute('disabled', 'true'); // Disable the element
         });
     }
+
+    function sendMail(){
+        const recipient = 'divyansh9030@gmail.com'; // Change to valid recipient's email
+            const subject = encodeURIComponent('Request for Engineering Department Details for NCR'); // Subject of the email
+            const body = encodeURIComponent(`Dear [Recipient's Name],\n\nI hope this message finds you well.\n\nI am writing to inform you that we have initiated the Non-Conformance Report (NCR) No. ${ncrNumber}. At this stage, we kindly request you to provide the necessary details from the Engineering Department to ensure a comprehensive assessment of the issue.\n\nYour prompt attention to this matter is essential for us to move forward efficiently. Please include any relevant information that could aid in our evaluation and resolution process.\n\nThank you for your cooperation. Should you have any questions or require further clarification, please do not hesitate to reach out.\n\nBest regards,\n\n[Your Name]\n[Your Position]\n[Your Company]\n[Your Contact Information]`);
+
+            // Construct the Gmail compose link
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+
+            // Open the Gmail compose window
+            window.open(gmailLink, '_blank'); // Opens in a new tab
+    }
     
 })
