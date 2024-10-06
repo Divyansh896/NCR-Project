@@ -297,18 +297,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     function loadData(params) {
-        // Set the text content of each element based on the parameters
-        document.getElementById('qa-name-d').textContent = params.get('quality_representative_name') || '[QA Name]'
-        document.getElementById('ncr-no-d').textContent = params.get('ncr_no') || '[NCR No]'
-        document.getElementById('sales-order-no-d').textContent = params.get('sales_order_no') || '[Sales Order No]'
-        document.getElementById('quantity-received-d').textContent = params.get('quantity_received') || '[Quantity Received]'
-        document.getElementById('quantity-defective-d').textContent = params.get('quantity_defective') || '[Quantity Defective]'
-        document.getElementById('qa-date-d').textContent = params.get('date') || '[QA Date]'
-        document.getElementById('supplier-name-d').textContent = params.get('supplier_name') || '[Supplier Name]'
-        document.getElementById('product-no-d').textContent = params.get('product_no') || '[Product No]'
-        document.getElementById('process-d').textContent = params.get('identify_process_applicable') || '[Process]' // Ensure this key matches what you send in URL
-        document.getElementById('description-item-d').textContent = params.get('description_item') || '[Description of Item]'
-        document.getElementById('description-defect-d').textContent = params.get('description_of_defect') || '[Description of Defect]'
-        document.getElementById('item-marked-nonconforming-d').textContent = params.get('item_marked_nonconforming') || '[Yes/No]'
+        const elements = [
+            'qa-name-d', 'ncr-no-d', 'sales-order-no-d', 'quantity-received-d', 
+            'quantity-defective-d', 'qa-date-d', 'supplier-name-d', 
+            'product-no-d', 'process-d', 'description-item-d', 
+            'description-defect-d', 'item-marked-nonconforming-d'
+        ];
+    
+        const values = [
+            params.get('quality_representative_name') || '[QA Name]',
+            params.get('ncr_no') || '[NCR No]',
+            params.get('sales_order_no') || '[Sales Order No]',
+            params.get('quantity_received') || '[Quantity Received]',
+            params.get('quantity_defective') || '[Quantity Defective]',
+            params.get('date') || '[QA Date]',
+            params.get('supplier_name') || '[Supplier Name]',
+            params.get('product_no') || '[Product No]',
+            params.get('identify_process_applicable') || '[Process]',
+            params.get('description_item') || '[Description of Item]',
+            params.get('description_of_defect') || '[Description of Defect]',
+            params.get('item_marked_nonconforming') || '[Yes/No]'
+        ];
+    
+        elements.forEach((id, index) => {
+            const element = document.getElementById(id);
+            element.textContent = values[index];
+            element.setAttribute('disabled', 'true'); // Disable the element
+        });
     }
+    
 })
