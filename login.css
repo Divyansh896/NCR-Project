@@ -38,8 +38,8 @@ main {
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    width: 300px; /* Adjust the width as needed */
-    height: 350px;
+    width: 400px; /* Adjust the width as needed */
+    height: 450px;
     text-align: left; /* Align text to the left */
 }
 
@@ -48,7 +48,7 @@ main {
     display: flex;
     align-items: center; /* Align logo and text vertically */
     justify-content: center;
-    margin-bottom: 1.5rem; /* Space below logo-container */
+    margin-bottom: 3rem; /* Space below logo-container */
 }
 
 /* Header styles */
@@ -66,11 +66,12 @@ label {
 /* Input styles */
 input[type="text"],
 input[type="password"] {
-    width: 100%;
+    width: 100%; /* Ensure full width */
     padding: 10px;
     margin: 5px 0; /* Space above and below the input */
     border: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underlined effect */
+    border-width: 100%;
     background: transparent; /* No background */
     color: white; /* Input text color */
     outline: none; /* Remove default outline */
@@ -97,7 +98,6 @@ input[type="password"] {
 /* Tooltip styles */
 .tooltip {
     position: relative;
-    display: inline-block;
 }
 
 .tooltip-text {
@@ -110,7 +110,7 @@ input[type="password"] {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%; /* Position above the input */
+    bottom: 100%; /* Position above the input */
     left: 50%;
     margin-left: -60px;
     opacity: 0;
