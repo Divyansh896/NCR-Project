@@ -11,30 +11,31 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ncReport.css">
     <link rel="stylesheet" href="details.css">
-    
-    
-    
 </head>
 
 <body>
 
     <!-- Header with Logo and Navigation -->
     <header>
-        <div class="logo-container">
+        <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
         <nav aria-label="Primary Navigation">
             <ul>
-                <li><a href="home.html" class="linksNav" tabindex="1">Home</a></li>
-                <li><a href="contact_us.html" class="linksNav" tabindex="2">Contact Us</a></li>
+                <li><a href="home.html" class="linksNav" tabindex="1" aria-label="Go to home page">Home</a></li>
+                <li><a href="contact_us.html" class="linksNav" tabindex="2" aria-label="Contact us">Contact Us</a></li>
                 <li>
-                    <a href="#" class="linksNav" tabindex="3">NCRs</a>
-                    <ul class="dropdown">
-                        <li><a href="create_ncr.html" class="linksNav" tabindex="4">Create</a></li>
-                        <li><a href="view_ncr.html" class="linksNav" tabindex="5">View</a></li>
+                    <a href="#" class="linksNav" tabindex="3" aria-haspopup="true" aria-expanded="false"
+                        aria-label="NCR options">NCRs</a>
+                    <ul class="dropdown" aria-label="NCR Dropdown Menu">
+                        <li><a href="create_ncr.html" class="linksNav" tabindex="4"
+                                aria-label="Create a new Non-Conformance Report">Create</a></li>
+                        <li><a href="view_ncr.html" class="linksNav" tabindex="5"
+                                aria-label="View existing Non-Conformance Reports">View</a></li>
                     </ul>
                 </li>
-                <li><a href="account.html" class="linksNav" tabindex="6">Account</a></li>
+                <li><a href="account.html" class="linksNav" tabindex="6"
+                        aria-label="Manage your account settings">Account</a></li>
             </ul>
         </nav>
     </header>
@@ -43,49 +44,56 @@
         <!-- Main Content -->
         <h1>Non-Conformance Report</h1>
         <details>
-            <summary class="custom-summary">QA Rep</summary>
+            <summary class="custom-summary" aria-label="Quality assurance department details">QA Rep</summary>
             <div class="two-cols">
                 <p class="indicator">* indicate required fields.</p>
                 <!-- First Column -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="qa-name">QA Name</label>
-                        <input type="text" id="qa-name" name="qa_name" required tabindex="5">
+                        <input type="text" class="qa-editable" id="qa-name" name="qa_name" placeholder="Enter QA representative name"
+                            required tabindex="7">
                     </div>
                     <div class="form-group">
                         <label for="ncr-no">NCR No.</label>
-                        <input type="text" id="ncr-no" name="ncr_no" required tabindex="6">
+                        <input type="text" class="qa-editable" id="ncr-no" name="ncr_no" placeholder="Enter NCR number" required
+                            tabindex="8">
                     </div>
                     <div class="form-group">
                         <label for="sales-order-no">Sales Order No.</label>
-                        <input type="text" id="sales-order-no" name="sales_order_no" required tabindex="7">
+                        <input type="text" class="qa-editable" id="sales-order-no" name="sales_order_no"
+                            placeholder="Enter sales order number" required tabindex="9">
                     </div>
                     <div class="form-group">
                         <label for="quantity-received">Quantity Received</label>
-                        <input type="number" id="quantity-received" name="quantity_received" required tabindex="8">
+                        <input type="number" class="qa-editable" id="quantity-received" name="quantity_received"
+                            placeholder="Enter quantity received" required tabindex="10">
                     </div>
                     <div class="form-group">
                         <label for="quantity-defective">Quantity Defective</label>
-                        <input type="number" id="quantity-defective" name="quantity_defective" required tabindex="9">
+                        <input type="number" class="qa-editable" id="quantity-defective" name="quantity_defective"
+                            placeholder="Enter quantity defective" required tabindex="11">
                     </div>
                 </div>
                 <!-- Second Column -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="qa-date">QA Date</label>
-                        <input type="date" id="qa-date" name="qa_date" required tabindex="10">
+                        <input type="date" class="qa-editable" id="qa-date" name="qa_date" required tabindex="12">
                     </div>
                     <div class="form-group">
                         <label for="supplier-name">Supplier Name</label>
-                        <input type="text" id="supplier-name" name="supplier_name" required tabindex="11">
+                        <input type="text" class="qa-editable" id="supplier-name" name="supplier_name" placeholder="Enter supplier name"
+                            required tabindex="13">
                     </div>
                     <div class="form-group">
                         <label for="product-no">Product No.</label>
-                        <input type="text" id="product-no" name="product_no" required tabindex="12">
+                        <input type="text" class="qa-editable" id="product-no" name="product_no" placeholder="Enter product number" required
+                            tabindex="14">
                     </div>
                     <div class="form-group">
                         <label for="process">Identify Process Applicable</label>
-                        <select id="process" name="process" required tabindex="13">
+                        <select class="qa-editable" id="process" name="process" required tabindex="15">
                             <option value="">Select a Process</option>
                             <option value="supplier">Supplier</option>
                             <option value="wip">WIP</option>
@@ -95,36 +103,196 @@
                 <!-- Textarea Section -->
                 <div class="form-group">
                     <label for="description-item">Description of Item (Including SAP No.)</label>
-                    <textarea id="description-item" name="description_item" required tabindex="14"></textarea>
+                    <textarea class="qa-editable" id="description-item" name="description_item" placeholder="Enter description of item"
+                        required tabindex="16"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="description-defect">Description of Defect</label>
-                    <textarea id="description-defect" name="description_defect" required tabindex="15"></textarea>
+                    <textarea class="qa-editable" id="description-defect" name="description_defect"
+                        placeholder="Enter description of defect" required tabindex="17"></textarea>
                 </div>
                 <!-- Radio Buttons for Non-Conforming -->
                 <div class="form-group">
                     <p>Item Marked Non-Conforming?</p>
-                    <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="16">
+                    <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="18">
                     <label for="item-marked-yes">Yes</label>
-                    <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="17">
+                    <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="19">
                     <label for="item-marked-no">No</label>
                 </div>
                 <!-- Buttons -->
-                <button class="edit" type="button" tabindex="18">Edit</button>
-                <button class="save" type="submit" tabindex="19">Save</button>
+                <button class="edit" id="qa-edit" type="button" tabindex="20">Edit</button>
+                <button class="save" id="qa-save" type="submit" tabindex="21">Save</button>
             </div>
+            
         </details>
 
         <details>
-            <summary class="custom-summary">Engineering</summary>
-            <!-- Engineering fields can be added here in the future -->
-            <div>Engineering fields can be added here in the future</div>
+            <summary class="custom-summary" aria-label="Engineering department details">Engineering</summary>
+            <p class="indicator">* indicate required fields.</p>
+
+            <div>
+                <label for="disposition">Disposition:</label>
+                <select class="eng-editable" id="disposition" name="disposition" aria-label="Disposition" tabindex="22">
+                    <option value="" disabled selected>Select a disposition</option>
+                    <option value="rework">Rework</option>
+                    <option value="use_as_is">Use As Is</option>
+                    <option value="repair">Repair</option>
+                    <option value="scrap">Scrap</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="customer-notification">Customer Notification Required:</label>
+                <input type="checkbox" class="eng-editable" id="customer-notification" name="customer_notification"
+                    aria-label="Customer Notification Required" tabindex="23">
+            </div>
+            
+            <div>
+                <label for="disposition-details">Disposition Details:</label>
+                <textarea class="eng-editable" id="disposition-details" name="disposition_details" aria-label="Disposition Details" rows="4"
+                    tabindex="24" placeholder="Enter details about the disposition..."></textarea>
+            </div>
+            
+            <div>
+                <label for="drawing-update-required">Drawing Update Required:</label>
+                <input type="checkbox" class="eng-editable" id="drawing-update-required" name="drawing_update_required"
+                    aria-label="Drawing Update Required" tabindex="25">
+            </div>
+            
+            <div>
+                <label for="original-rev-number">Original Revision Number:</label>
+                <input type="text" class="eng-editable" id="original-rev-number" name="original_rev_number"
+                    aria-label="Original Revision Number" tabindex="26" placeholder="e.g., Rev-001">
+            </div>
+            
+            <div>
+                <label for="updated-rev-number">Updated Revision Number:</label>
+                <input type="text" class="eng-editable" id="updated-rev-number" name="updated_rev_number"
+                    aria-label="Updated Revision Number" tabindex="27" placeholder="e.g., Rev-002">
+            </div>
+            
+            <div>
+                <label for="engineer-name">Engineer Name:</label>
+                <input type="text" class="eng-editable" id="engineer-name" name="engineer_name" aria-label="Engineer Name" tabindex="28"
+                    placeholder="Enter engineer's name...">
+            </div>
+            
+            <div>
+                <label for="revision-date">Revision Date:</label>
+                <input type="date" class="eng-editable" id="revision-date" name="revision_date" aria-label="Revision Date" tabindex="29"
+                    placeholder="Select a date">
+            </div>
+            
+            <div>
+                <label for="engineering-review-date">Engineering Review Date:</label>
+                <input type="date" class="eng-editable" id="engineering-review-date" name="engineering_review_date"
+                    aria-label="Engineering Review Date" tabindex="30" placeholder="Select a date">
+            </div>
+            
+            <div>
+                <label for="resolved">Resolved:</label>
+                <input type="checkbox" class="eng-editable" id="resolved" name="resolved" aria-label="Resolved" tabindex="31">
+            </div>
+            
+            <!-- Buttons -->
+            <button class="edit" id="eng-edit" type="button" tabindex="32">Edit</button>
+            <button class="save" id="eng-save" type="submit" tabindex="33">Save</button>
         </details>
 
+
+
         <details>
-            <summary class="custom-summary">Purchasing</summary>
-            <!-- Purchasing fields can be added here in the future -->
-            <div>Purchasing fields can be added here in the future</div>
+            <summary class="custom-summary" aria-label="Purchasing department details">Purchasing Decision</summary>
+
+            <div>
+                <label for="preliminary-decision">Preliminary Decision:</label>
+                <input class="purch-editable" type="text" id="preliminary-decision" name="preliminary_decision"
+                    aria-label="Preliminary Decision" tabindex="34" placeholder="Enter preliminary decision...">
+            </div>
+            
+            <div>
+                <label for="options-rework-in-house">Rework In-House:</label>
+                <input class="purch-editable" type="checkbox" id="options-rework-in-house" name="rework_in_house" 
+                    aria-label="Rework In-House" tabindex="35">
+            </div>
+            
+            <div>
+                <label for="options-scrap-in-house">Scrap In-House:</label>
+                <input class="purch-editable" type="checkbox" id="options-scrap-in-house" name="scrap_in_house" 
+                    aria-label="Scrap In-House" tabindex="36">
+            </div>
+            
+            <div>
+                <label for="options-defer-to-engineering">Defer to Engineering:</label>
+                <input class="purch-editable" type="checkbox" id="options-defer-to-engineering" name="defer_to_engineering"
+                    aria-label="Defer to Engineering" tabindex="37" checked>
+            </div>
+            
+            <div>
+                <label for="car-raised">CAR Raised:</label>
+                <input class="purch-editable" type="checkbox" id="car-raised" name="car_raised" 
+                    aria-label="CAR Raised" tabindex="38" checked>
+            </div>
+            
+            <div>
+                <label for="car-number">CAR Number:</label>
+                <input class="purch-editable" type="text" id="car-number" name="car_number" aria-label="CAR Number" 
+                    tabindex="39" placeholder="e.g., CAR-12345">
+            </div>
+            
+            <div>
+                <label for="follow-up-required">Follow-Up Required:</label>
+                <input class="purch-editable" type="checkbox" id="follow-up-required" name="follow_up_required" 
+                    aria-label="Follow-Up Required" tabindex="40">
+            </div>
+            
+            <div>
+                <label for="operations-manager-name">Operations Manager Name:</label>
+                <input class="purch-editable" type="text" id="operations-manager-name" name="operations_manager_name"
+                    aria-label="Operations Manager Name" tabindex="41" placeholder="Enter operations manager's name...">
+            </div>
+            
+            <div>
+                <label for="operations-manager-date">Operations Manager Date:</label>
+                <input class="purch-editable" type="date" id="operations-manager-date" name="operations_manager_date"
+                    aria-label="Operations Manager Date" tabindex="42">
+            </div>
+            
+            <div>
+                <label for="re-inspected-acceptable">Re-Inspected Acceptable:</label>
+                <input class="purch-editable" type="checkbox" id="re-inspected-acceptable" name="re_inspected_acceptable"
+                    aria-label="Re-Inspected Acceptable" tabindex="43">
+            </div>
+            
+            <div>
+                <label for="new-ncr-number">New NCR Number:</label>
+                <input class="purch-editable" type="text" id="new-ncr-number" name="new_ncr_number" 
+                    aria-label="New NCR Number" tabindex="44" placeholder="e.g., NCR-001">
+            </div>
+            
+            <div>
+                <label for="inspector-name">Inspector Name:</label>
+                <input class="purch-editable" type="text" id="inspector-name" name="inspector_name" 
+                    aria-label="Inspector Name" tabindex="45" placeholder="Enter inspector's name...">
+            </div>
+            
+            <div>
+                <label for="ncr-closed">NCR Closed:</label>
+                <input class="purch-editable" type="checkbox" id="ncr-closed" name="ncr_closed" 
+                    aria-label="NCR Closed" tabindex="46">
+            </div>
+            
+            <div>
+                <label for="resolved">Resolved:</label>
+                <input class="purch-editable" type="checkbox" id="resolved" name="resolved" 
+                    aria-label="Resolved" tabindex="47">
+            </div>
+            
+
+            <!-- Buttons -->
+            <button class="edit" id="purch-edit" type="button" tabindex="48">Edit</button>
+            <button class="save" id="purch-save" type="submit" tabindex="49">Save</button>
+
         </details>
     </main>
 
@@ -132,8 +300,9 @@
     <footer>
         <p>&copy; 2024 Crossfire. All rights reserved.</p>
         <p>
-            <a href="privacy_policy.html"  aria-label="Go to Privacy Policy" tabindex="21">Privacy Policy</a> |
-            <a href="contact_us.html"  aria-label="Go to Contact Us" tabindex="22">Contact Us</a>
+            <a href="privacy_policy.html" class="linksFooter" aria-label="Go to Privacy Policy" tabindex="50">Privacy
+                Policy</a> |
+            <a href="contact_us.html" class="linksFooter" aria-label="Go to Contact Us" tabindex="51">Contact Us</a>
         </p>
     </footer>
 

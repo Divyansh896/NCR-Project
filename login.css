@@ -1,19 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/* Set full height for the body and html */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
 /* Set body background with wallpaper */
 body#login {
-    background-image: url('images/login.webp'); /* Replace with your wallpaper path */
+    background-image: url('images/login.webp'); 
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    height: 100vh;
+    color: white; /* Default text color */
+    flex: 1; /* Take up remaining space */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main content container */
+main {
+    flex: 1; /* Allow main content to grow and push footer to bottom */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* Default text color */
 }
 
 /* Glassmorphism effect for the login container */
@@ -23,19 +38,18 @@ body#login {
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    width: 300px; /* Adjust the width as needed */
+    width: 400px; /* Adjust the width as needed */
+    height: 450px;
     text-align: left; /* Align text to the left */
 }
 
 /* Logo and header alignment */
 .logo-container {
     display: flex;
-     align-items:center; /*Align logo and text vertically */
-    justify-content: center; /* Align logo and text to the left */
-    margin-bottom: 1.5rem; /* Space below logo-container */
+    align-items: center; /* Align logo and text vertically */
+    justify-content: center;
+    margin-bottom: 3rem; /* Space below logo-container */
 }
-
-
 
 /* Header styles */
 #login-header {
@@ -46,16 +60,18 @@ body#login {
 label {
     display: block; /* Makes labels take up the full width */
     margin-top: 1rem; /* Space above each label */
+    font-size: 1.1rem;
 }
 
 /* Input styles */
 input[type="text"],
 input[type="password"] {
-    width: 100%;
+    width: 100%; /* Ensure full width */
     padding: 10px;
     margin: 5px 0; /* Space above and below the input */
     border: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underlined effect */
+    border-width: 100%;
     background: transparent; /* No background */
     color: white; /* Input text color */
     outline: none; /* Remove default outline */
@@ -82,7 +98,6 @@ input[type="password"] {
 /* Tooltip styles */
 .tooltip {
     position: relative;
-    display: inline-block;
 }
 
 .tooltip-text {
@@ -95,7 +110,7 @@ input[type="password"] {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%; /* Position above the input */
+    bottom: 100%; /* Position above the input */
     left: 50%;
     margin-left: -60px;
     opacity: 0;
@@ -111,10 +126,8 @@ input[type="password"] {
 footer {
     text-align: center;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark background for footer */
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark background for footer */
 }
 
 footer p {
@@ -122,7 +135,7 @@ footer p {
 }
 
 footer a {
-    color: #28a745; /* Link color */
+    color: #ffffff; /* Link color */
     text-decoration: none;
 }
 

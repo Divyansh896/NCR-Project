@@ -10,6 +10,7 @@ details {
     display: block; /* Make the summary a block element to span full width */
     position: relative; /* Position relative for the underline */
     text-decoration: none; /* Remove default underline */
+    font-weight: 600;
 }
 
 /* Underline effect only for the summary */
@@ -34,6 +35,5 @@ details {
 }
 
 details[open] .custom-summary::before {
-    /* content: '∨'; Change arrow when open */
     transform: translateY(-50%) rotate(-90deg); /* Rotate to point down */
 }
