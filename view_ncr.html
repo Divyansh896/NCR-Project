@@ -42,33 +42,39 @@
 
         <!-- Search Filter Section -->
         <div class="filter-section">
-            <label for="search">Search by supplier:</label>
-            <input type="text" id="search" name="search" placeholder="Search by supplier." tabindex="7" aria-label="Search by supplier">
+            <div>
+                <label for="search">Search by supplier:</label>
+                <input type="text" class="serach-bar" id="search" name="search" placeholder="Search by supplier." tabindex="7" aria-label="Search by supplier">
+            </div>
 
             <!-- Date Picker -->
-            <label for="date-filter">Date Filter:</label>
-            <input type="date" id="date-filter" name="date" tabindex="8" aria-label="Date filter">
+            <div>
+                <label for="date-filter">Date Filter:</label>
+                <input type="date" class="date-filter" id="date-filter" name="date" tabindex="8" aria-label="Date filter">
+            </div>
 
             <!-- Status Filter Section -->
-            <fieldset aria-labelledby="status-filter">
+             <div>
+            <fieldset aria-labelledby="status-filter" class="fieldset-viewncr">
                 <legend id="status-filter">Status Filter:</legend>
                 <label for="status-all">
                     <input type="radio" name="status" id="status-all" value="all" tabindex="9"> All
                 </label>
                 <label for="status-yes">
-                    <input type="radio" name="status" id="status-yes" value="completed" tabindex="10"> Completed
+                    <input type="radio" class="radio-btn" name="status" id="status-yes" value="completed" tabindex="10"> Completed
                 </label>
                 <label for="status-no">
-                    <input type="radio" name="status" id="status-no" value="incomplete" tabindex="11"> Incomplete
+                    <input type="radio" class="radio-btn" name="status" id="status-no" value="incomplete" tabindex="11"> Incomplete
                 </label>
             </fieldset>
+        </div>
         </div>
 
         <!-- Records Found -->
         <p id="record-count" aria-live="polite">Records found:</p> <!-- Added aria-live for dynamic updates -->
 
         <!-- NCRs Table -->
-        <table id="ncr-table" aria-label="List of NCRs">
+        <table class="ncr-table" id="ncr-table" aria-label="List of NCRs">
             <thead>
                 <tr>
                     <th>Supplier</th>
@@ -89,8 +95,8 @@
     <footer>
         <p>&copy; 2024 Crossfire. All rights reserved.</p>
         <p>
-            <a href="privacy_policy.html" style="color: #28a745;" aria-label="Go to Privacy Policy" tabindex="12">Privacy Policy</a> |
-            <a href="contact_us.html" style="color: #28a745;" aria-label="Go to Contact Us" tabindex="13">Contact Us</a>
+            <a href="privacy_policy.html" class="linksFooter" aria-label="Go to Privacy Policy" tabindex="12">Privacy Policy</a> |
+            <a href="contact_us.html" class="linksFooter" aria-label="Go to Contact Us" tabindex="13">Contact Us</a>
         </p>
     </footer>
 

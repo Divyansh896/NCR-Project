@@ -86,6 +86,8 @@ function createQueryString(ncrData) {
         quality_representative_name: qa.quality_representative_name,
         date: qa.date,
         resolved: qa.resolved,
+        supplier_or_rec_insp: qa.process.supplier_or_rec_insp, // Add process data
+        wip_production_order: qa.process.wip_production_order, // Add process data
         disposition: engineering.disposition,
         customer_notification_required: engineering.customer_notification_required,
         disposition_details: engineering.disposition_details,

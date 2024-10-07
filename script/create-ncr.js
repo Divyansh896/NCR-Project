@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(sessionStorage.getItem("currentUser"))
     const queryParams = new URLSearchParams(window.location.search)
+    let ncrData = []
 
-    document.addEventListener('keydown', function(event) {
+
+    document.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
-          const activeElement = document.activeElement;
-          if (activeElement.type === 'radio') {
-            activeElement.click(); // Programmatically click the radio button
-          }
-          if(activeElement.type === 'checkbox'){
-            activeElement.click()
-          }
+            const activeElement = document.activeElement;
+            if (activeElement.type === 'radio') {
+                activeElement.click(); // Programmatically click the radio button
+            }
+            if (activeElement.type === 'checkbox') {
+                activeElement.click()
+            }
         }
-      });
-      
+    });
+
 
 
     // Initialize NCR number based on user role
@@ -86,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
 
-        
+
 
         document.getElementById("back-btn1").addEventListener("click", () => {
             sections[currentStep].classList.remove("active")
@@ -106,8 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("submit-btn").addEventListener("click", (e) => {
             const check = document.getElementById('confirm-checkbox')
             if (check.checked) {
+                submitForm(user.role)
                 sendMail()
                 alert("Form submitted")
+                window.location.href="home.html"
             } else {
                 check.focus()
                 check.scrollIntoView({ behavior: "smooth", block: "center" }) // Optional: scroll the checkbox into view
@@ -129,17 +133,17 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         // Open file dialog for images when the button is clicked
-        document.getElementById('add-photo-btn').addEventListener('click', function() {
+        document.getElementById('add-photo-btn').addEventListener('click', function () {
             document.getElementById('photo-input').click()
         })
 
         // Open file dialog for videos when the button is clicked
-        document.getElementById('add-video-btn').addEventListener('click', function() {
+        document.getElementById('add-video-btn').addEventListener('click', function () {
             document.getElementById('video-input').click()
         })
 
         // Handle file selection for images
-        document.getElementById('photo-input').addEventListener('change', function(event) {
+        document.getElementById('photo-input').addEventListener('change', function (event) {
             const files = event.target.files
             if (files.length > 0) {
                 console.log('Selected photos:', Array.from(files).map(file => file.name))
@@ -147,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         // Handle file selection for videos
-        document.getElementById('video-input').addEventListener('change', function(event) {
+        document.getElementById('video-input').addEventListener('change', function (event) {
             const files = event.target.files
             if (files.length > 0) {
                 console.log('Selected videos:', Array.from(files).map(file => file.name))
@@ -299,12 +303,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function loadData(params) {
         const elements = [
-            'qa-name-d', 'ncr-no-d', 'sales-order-no-d', 'quantity-received-d', 
-            'quantity-defective-d', 'qa-date-d', 'supplier-name-d', 
-            'product-no-d', 'process-d', 'description-item-d', 
+            'qa-name-d', 'ncr-no-d', 'sales-order-no-d', 'quantity-received-d',
+            'quantity-defective-d', 'qa-date-d', 'supplier-name-d',
+            'product-no-d', 'process-d', 'description-item-d',
             'description-defect-d', 'item-marked-nonconforming-d'
         ];
-    
+
+        // Define process values with labels showing 'Yes' or 'No'
+        const processSupplierInsp = `Supplier Inspection: ${params.get('supplier_or_rec_insp') === 'true' ? 'Yes' : 'No'}`;
+        const processWipProdOrder = `WIP Production Order: ${params.get('wip_production_order') === 'true' ? 'Yes' : 'No'}`;
+        const processValue = `${processSupplierInsp}\n${processWipProdOrder}`;
+
+        // Prepare values, including formatted process and description of defect
         const values = [
             params.get('quality_representative_name') || '[QA Name]',
             params.get('ncr_no') || '[NCR No]',
@@ -313,13 +323,13 @@ document.addEventListener("DOMContentLoaded", () => {
             params.get('quantity_defective') || '[Quantity Defective]',
             params.get('date') || '[QA Date]',
             params.get('supplier_name') || '[Supplier Name]',
-            params.get('product_no') || '[Product No]',
-            params.get('identify_process_applicable') || '[Process]',
-            params.get('description_item') || '[Description of Item]',
+            params.get('po_no') || '[Product No]',
+            processValue,
+            params.get('item_description') || '[Description of Item]',
             params.get('description_of_defect') || '[Description of Defect]',
-            params.get('item_marked_nonconforming') || '[Yes/No]'
+            params.get('item_marked_nonconforming') === 'true' ? 'Yes' : 'No'
         ];
-    
+
         elements.forEach((id, index) => {
             const element = document.getElementById(id);
             element.textContent = values[index];
@@ -327,16 +337,68 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function sendMail(){
+
+    function sendMail() {
         const recipient = 'divyansh9030@gmail.com'; // Change to valid recipient's email
-            const subject = encodeURIComponent('Request for Engineering Department Details for NCR'); // Subject of the email
-            const body = encodeURIComponent(`Dear [Recipient's Name],\n\nI hope this message finds you well.\n\nI am writing to inform you that we have initiated the Non-Conformance Report (NCR) No. ${ncrNumber}. At this stage, we kindly request you to provide the necessary details from the Engineering Department to ensure a comprehensive assessment of the issue.\n\nYour prompt attention to this matter is essential for us to move forward efficiently. Please include any relevant information that could aid in our evaluation and resolution process.\n\nThank you for your cooperation. Should you have any questions or require further clarification, please do not hesitate to reach out.\n\nBest regards,\n\n[Your Name]\n[Your Position]\n[Your Company]\n[Your Contact Information]`);
+        const subject = encodeURIComponent('Request for Engineering Department Details for NCR'); // Subject of the email
+        const body = encodeURIComponent(`Dear [Engineer Name],\n\nI hope this message finds you well.\n\nI am writing to inform you that we have initiated the Non-Conformance Report (NCR) No. ${ncrNumber}. At this stage, we kindly request you to provide the necessary details from the Engineering Department to ensure a comprehensive assessment of the issue.\n\nYour prompt attention to this matter is essential for us to move forward efficiently. Please include any relevant information that could aid in our evaluation and resolution process.\n\nThank you for your cooperation. Should you have any questions or require further clarification, please do not hesitate to reach out.\n\nBest regards,\n\n${user.name}\nQuality Assurance\nCrossfire NCR`);
 
-            // Construct the Gmail compose link
-            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+        // Construct the Gmail compose link
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
 
-            // Open the Gmail compose window
-            window.open(gmailLink, '_blank'); // Opens in a new tab
+        // Open the Gmail compose window
+        window.open(gmailLink, '_blank'); // Opens in a new tab
     }
-    
+
+    function submitForm(role) {
+        const today = new Date().toISOString().slice(0, 10);  // Get current date
+        let newEntry = {
+            "ncr_no": ncrNumber,  // Use a unique identifier or generate as needed
+            "status": "incomplete",
+            "qa": {},
+            "engineering": {},
+            "purchasing_decision": {}
+        }
+
+        if (role === "QA") {
+            const supplierName = document.getElementById('supplier-name').value
+            const salesOrderNo = document.getElementById('sales-order-no').value
+            const quantityReceived = document.getElementById('quantity-received').value
+            const quantityDefective = document.getElementById('quantity-defective').value
+            const productNo = document.getElementById('product-no').value
+
+            // Get values from Section 2
+            const descriptionItem = document.getElementById('description-item').value
+            const descriptionDefect = document.getElementById('description-defect').value
+
+            // Get the non-conforming item marked status
+            const nonconformingStatusElement = document.querySelector('input[name=item_marked_nonconforming]:checked').value
+
+
+            newEntry.qa = {
+                "supplier_name": supplierName,
+                "po_no": productNo,
+                "sales_order_no": salesOrderNo,
+                "item_description": descriptionItem,
+                "quantity_received": Number(quantityReceived),
+                "quantity_defective": Number(quantityDefective),
+                "description_of_defect": descriptionDefect,
+                "item_marked_nonconforming": nonconformingStatusElement,
+                "quality_representative_name": "John Doe",
+                "date": today,
+                "resolved": false,
+                "process": {
+                    "supplier_or_rec_insp": false,
+                    "wip_production_order": false
+                }
+            };
+
+            newEntry.status = "QA Complete";
+            alert('QA data submitted!');
+            ncrData.push(newEntry);  // Append new entry to the array
+            console.log(ncrData)
+            
+        }
+    }
+
 })

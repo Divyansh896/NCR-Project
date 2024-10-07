@@ -16,10 +16,11 @@ a {
     text-decoration: none;
 }
 
-button, input[type="text"], input[type="password"] {
-    padding: 10px;
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
+    padding: 0px 10px;
+    height: 40px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #163650;
     font-size: 1rem;
 }
 
@@ -35,12 +36,20 @@ button:hover {
     background-color: rgba(244, 244, 244, 0.7);
 }
 
+h1{
+    margin: 20px 0px;
+    text-align: center;
+    color: #1a3153;
+}
+
 .error {
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
-
+.indicator{
+    color: red;
+}
 /* Header */
 header {
     padding: 10px 25px;
@@ -101,12 +110,16 @@ ul li:hover ul.dropdown {
     color: #1a3153;
 }
 
-.linksNav:hover, .linksFooter:hover {
+.linksNav:hover{
     color: #1d3456;
 }
 
 .linksFooter {
     color: #dbc7c0;
+}
+
+.linksFooter:hover {
+    color: #9e7c70
 }
 
 /* Login Page */
@@ -265,12 +278,6 @@ footer {
     margin-bottom: 50px;
 }
 
-legend {
-    font-weight: 600;
-    text-align: center;
-    font-size: 2rem;
-}
-
 /* Status Bar */
 .status-bar {
     display: flex;
@@ -403,6 +410,7 @@ input[type="radio" i]{
     font-weight: 600;
     font-size: 2rem;
     margin-top: 20px;
+    color: #1a3153;
 }
 
 .fieldset-contact input{
