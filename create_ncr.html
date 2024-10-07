@@ -188,25 +188,31 @@
                 <label for="description-defect">Description of Defect:</label>
                 <textarea id="description-defect" name="description_defect" placeholder="Describe the defect" aria-label="Describe the defect of the product" tabindex="18"></textarea>
                 <span class="error" id="description-defect-error"></span>
+                <div>
+                    <button type="button" id="add-photo-btn" tabindex="23">Add Photos</button>
+                    <button type="button" id="add-video-btn" tabindex="24">Add Videos</button>
+                    <input type="file" id="photo-input" accept="image/*" multiple style="display:none;">
+                    <input type="file" id="video-input" accept="video/*" multiple style="display:none;">
+                </div>
                 
-                <div>
-                    <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="19">
-                    <label for="item-marked-yes">Yes</label>
+                <label for="item-marked-nonconforming">Item Marked Non-Conforming?</label>
+                <div class="item-conforming">
+
+                        <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="19">
+                        <label for="item-marked-yes">Yes</label>
+
+
+                        <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="20">
+                        <label for="item-marked-no">No</label>
+
                 </div>
-                <div>
-                    <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="20">
-                    <label for="item-marked-no">No</label>
-                </div>
-                <span class="error" id="item-marked-nonconforming-error"></span>
+                    <span class="error" id="item-marked-nonconforming-error"></span>
 
                 <div>
                     <button type="button" id="back-btn1" tabindex="21">Back</button>
                     <button type="button" id="clear-btn2" tabindex="22">Clear</button>
                     <button type="button" id="next-btn2" tabindex="22">Next</button>
-                    <button type="button" id="add-photo-btn" tabindex="23">Add Photos</button>
-                    <button type="button" id="add-video-btn" tabindex="24">Add Videos</button>
-                    <input type="file" id="photo-input" accept="image/*" multiple style="display:none;">
-                    <input type="file" id="video-input" accept="video/*" multiple style="display:none;">
+                    
 
                 </div>
             </fieldset>
