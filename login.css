@@ -30,7 +30,7 @@ body#login {
 /* Logo and header alignment */
 .logo-container {
     display: flex;
-     align-items:center; /*Align logo and text vertically */
+    align-items:center; /*Align logo and text vertically */
     justify-content: center; /* Align logo and text to the left */
     margin-bottom: 1.5rem; /* Space below logo-container */
 }

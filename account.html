@@ -45,42 +45,43 @@
                 <p class="indicator">* indicate required fields.</p>
                 
                 <div>
-                    <label for="fname">First Name</label>
+                    <label for="fname">First Name <span class="required">*</span></label>
                     <input type="text" id="fname" name="fname" required tabindex="7">
                 </div>
-
+            
                 <div>
-                    <label for="lname">Last Name</label>
+                    <label for="lname">Last Name <span class="required">*</span></label>
                     <input type="text" id="lname" name="lname" required tabindex="8">
                 </div>
-
+            
                 <div>
-                    <label for="Uname">User Name</label>
+                    <label for="Uname">User Name <span class="required">*</span></label>
                     <input type="text" id="Uname" name="Uname" required tabindex="9">
                 </div>
-
+            
                 <div>
-                    <label for="UserId">User ID</label>
+                    <label for="UserId">User ID <span class="required">*</span></label>
                     <input type="text" id="UserId" name="UserID" required tabindex="10">
                 </div>
-
+            
                 <div>
-                    <label for="emailId">Email Id</label>
+                    <label for="emailId">Email Id <span class="required">*</span></label>
                     <input type="email" id="emailId" name="emailId" required tabindex="11">
                 </div>
-
+            
                 <div>
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required tabindex="12">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required pattern="\d{10}" title="Please enter a valid 10-digit phone number" tabindex="12">
                 </div>
-
+                
+            
                 <div>
-                    <label for="bday">Date of birth</label>
+                    <label for="bday">Date of birth <span class="required">*</span></label>
                     <input type="date" id="bday" name="bday" required tabindex="13">
                 </div>
-
+            
                 <div>
-                    <label for="gender">Select Gender</label>
+                    <label for="gender">Select Gender <span class="required">*</span></label>
                     <select id="gender" name="gender" required tabindex="14">
                         <option value="" disabled selected>Select your gender</option>
                         <option value="male">Male</option>
@@ -88,9 +89,10 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-
-                <button type="submit" form="profileForm" value="Submit" tabindex="15">Submit</button>
+            
+                <button type="submit" id="submit-btn" form="profileForm" value="Submit" tabindex="15">Submit</button>
             </form>
+            
         </div>
     </main>
 
@@ -102,6 +104,7 @@
             <a href="contact_us.html"  aria-label="Go to Contact Us" tabindex="17">Contact Us</a>
         </p>
     </footer>
+    <script src="script/account.js"></script>
 </body>
 
 </html>
