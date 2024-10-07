@@ -35,6 +35,5 @@ details {
 }
 
 details[open] .custom-summary::before {
-    /* content: '∨'; Change arrow when open */
     transform: translateY(-50%) rotate(-90deg); /* Rotate to point down */
 }
