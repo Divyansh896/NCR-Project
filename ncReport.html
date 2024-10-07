@@ -11,30 +11,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ncReport.css">
     <link rel="stylesheet" href="details.css">
-    
-    
-    
 </head>
 
 <body>
 
     <!-- Header with Logo and Navigation -->
     <header>
-        <div class="logo-container">
+        <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
         <nav aria-label="Primary Navigation">
             <ul>
-                <li><a href="home.html" class="linksNav" tabindex="1">Home</a></li>
-                <li><a href="contact_us.html" class="linksNav" tabindex="2">Contact Us</a></li>
+                <li><a href="home.html" class="linksNav" tabindex="1" aria-label="Go to home page">Home</a></li>
+                <li><a href="contact_us.html" class="linksNav" tabindex="2" aria-label="Contact us">Contact Us</a></li>
                 <li>
-                    <a href="#" class="linksNav" tabindex="3">NCRs</a>
-                    <ul class="dropdown">
-                        <li><a href="create_ncr.html" class="linksNav" tabindex="4">Create</a></li>
-                        <li><a href="view_ncr.html" class="linksNav" tabindex="5">View</a></li>
+                    <a href="#" class="linksNav" tabindex="3" aria-haspopup="true" aria-expanded="false" aria-label="NCR options">NCRs</a>
+                    <ul class="dropdown" aria-label="NCR Dropdown Menu">
+                        <li><a href="create_ncr.html" class="linksNav" tabindex="4" aria-label="Create a new Non-Conformance Report">Create</a></li>
+                        <li><a href="view_ncr.html" class="linksNav" tabindex="5" aria-label="View existing Non-Conformance Reports">View</a></li>
                     </ul>
                 </li>
-                <li><a href="account.html" class="linksNav" tabindex="6">Account</a></li>
+                <li><a href="account.html" class="linksNav" tabindex="6" aria-label="Manage your account settings">Account</a></li>
             </ul>
         </nav>
     </header>
@@ -43,30 +40,30 @@
         <!-- Main Content -->
         <h1>Non-Conformance Report</h1>
         <details>
-            <summary class="custom-summary">QA Rep</summary>
+            <summary class="custom-summary" aria-label="Quality assurance department details">QA Rep</summary>
             <div class="two-cols">
                 <p class="indicator">* indicate required fields.</p>
                 <!-- First Column -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="qa-name">QA Name</label>
-                        <input type="text" id="qa-name" name="qa_name" required tabindex="5">
+                        <input type="text" id="qa-name" name="qa_name" placeholder="Enter QA representative name" required tabindex="5">
                     </div>
                     <div class="form-group">
                         <label for="ncr-no">NCR No.</label>
-                        <input type="text" id="ncr-no" name="ncr_no" required tabindex="6">
+                        <input type="text" id="ncr-no" name="ncr_no" placeholder="Enter NCR number" required tabindex="6">
                     </div>
                     <div class="form-group">
                         <label for="sales-order-no">Sales Order No.</label>
-                        <input type="text" id="sales-order-no" name="sales_order_no" required tabindex="7">
+                        <input type="text" id="sales-order-no" name="sales_order_no" placeholder="Enter sales order number" required tabindex="7">
                     </div>
                     <div class="form-group">
                         <label for="quantity-received">Quantity Received</label>
-                        <input type="number" id="quantity-received" name="quantity_received" required tabindex="8">
+                        <input type="number" id="quantity-received" name="quantity_received" placeholder="Enter quantity received" required tabindex="8">
                     </div>
                     <div class="form-group">
                         <label for="quantity-defective">Quantity Defective</label>
-                        <input type="number" id="quantity-defective" name="quantity_defective" required tabindex="9">
+                        <input type="number" id="quantity-defective" name="quantity_defective" placeholder="Enter quantity defective" required tabindex="9">
                     </div>
                 </div>
                 <!-- Second Column -->
@@ -77,11 +74,11 @@
                     </div>
                     <div class="form-group">
                         <label for="supplier-name">Supplier Name</label>
-                        <input type="text" id="supplier-name" name="supplier_name" required tabindex="11">
+                        <input type="text" id="supplier-name" name="supplier_name" placeholder="Enter supplier name" required tabindex="11">
                     </div>
                     <div class="form-group">
                         <label for="product-no">Product No.</label>
-                        <input type="text" id="product-no" name="product_no" required tabindex="12">
+                        <input type="text" id="product-no" name="product_no" placeholder="Enter product number" required tabindex="12">
                     </div>
                     <div class="form-group">
                         <label for="process">Identify Process Applicable</label>
@@ -95,11 +92,11 @@
                 <!-- Textarea Section -->
                 <div class="form-group">
                     <label for="description-item">Description of Item (Including SAP No.)</label>
-                    <textarea id="description-item" name="description_item" required tabindex="14"></textarea>
+                    <textarea id="description-item" name="description_item" placeholder="Enter description of item" required tabindex="14"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="description-defect">Description of Defect</label>
-                    <textarea id="description-defect" name="description_defect" required tabindex="15"></textarea>
+                    <textarea id="description-defect" name="description_defect" placeholder="Enter description of defect" required tabindex="15"></textarea>
                 </div>
                 <!-- Radio Buttons for Non-Conforming -->
                 <div class="form-group">
@@ -132,8 +129,8 @@
     <footer>
         <p>&copy; 2024 Crossfire. All rights reserved.</p>
         <p>
-            <a href="privacy_policy.html"  aria-label="Go to Privacy Policy" tabindex="21">Privacy Policy</a> |
-            <a href="contact_us.html"  aria-label="Go to Contact Us" tabindex="22">Contact Us</a>
+            <a href="privacy_policy.html" aria-label="Go to Privacy Policy" tabindex="21">Privacy Policy</a> |
+            <a href="contact_us.html" aria-label="Go to Contact Us" tabindex="22">Contact Us</a>
         </p>
     </footer>
 

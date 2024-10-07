@@ -11,73 +11,70 @@
     <!-- Style-sheet link -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="breadcrumb.css">
-    <!-- Header with Logo and Navigation -->
 </head>
 
 <body>
     <!-- Header with Logo and Navigation -->
     <header>
-        <div class="logo-container">
+        <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
         <nav aria-label="Primary Navigation">
             <ul>
-                <li><a href="home.html" class="linksNav" tabindex="1">Home</a></li> 
-                <li><a href="contact_us.html" class="linksNav" tabindex="2">Contact Us</a></li> 
+                <li><a href="home.html" class="linksNav" tabindex="1" aria-label="Go to home page">Home</a></li>
+                <li><a href="contact_us.html" class="linksNav" tabindex="2" aria-label="Contact us">Contact Us</a></li>
                 <li>
-                    <a href="#" class="linksNav" tabindex="3">NCRs</a>
-                    <ul class="dropdown">
-                        <li><a href="create_ncr.html" class="linksNav" tabindex="4">Create</a></li> 
-                        <li><a href="view_ncr.html" class="linksNav" tabindex="5">View</a></li> 
+                    <a href="#" class="linksNav" tabindex="3" aria-haspopup="true" aria-expanded="false" aria-label="NCR options">NCRs</a>
+                    <ul class="dropdown" aria-label="NCR Dropdown Menu">
+                        <li><a href="create_ncr.html" class="linksNav" tabindex="4" aria-label="Create a new Non-Conformance Report">Create</a></li>
+                        <li><a href="view_ncr.html" class="linksNav" tabindex="5" aria-label="View existing Non-Conformance Reports">View</a></li>
                     </ul>
                 </li>
-                <li><a href="account.html" class="linksNav" tabindex="6">Account</a></li> 
+                <li><a href="account.html" class="linksNav" tabindex="6" aria-label="Manage your account settings">Account</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main>
         <div>
             <h1 tabindex="4">Edit Profile</h1>
-            <form action="/action_page.php" method="get" id="profileForm">
+            <form action="https://webdevbasics.net/scripts/demo.php" method="post" id="profileForm">
                 <img src="images/female-image.png" alt="User Avatar" loading="lazy" width="250" height="250">
                 <p class="indicator">* indicate required fields.</p>
                 
                 <div>
                     <label for="fname">First Name <span class="required">*</span></label>
-                    <input type="text" id="fname" name="fname" required tabindex="7">
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required tabindex="7">
                 </div>
             
                 <div>
                     <label for="lname">Last Name <span class="required">*</span></label>
-                    <input type="text" id="lname" name="lname" required tabindex="8">
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required tabindex="8">
                 </div>
             
                 <div>
                     <label for="Uname">User Name <span class="required">*</span></label>
-                    <input type="text" id="Uname" name="Uname" required tabindex="9">
+                    <input type="text" id="Uname" name="Uname" placeholder="Choose a user name" required tabindex="9">
                 </div>
             
                 <div>
                     <label for="UserId">User ID <span class="required">*</span></label>
-                    <input type="text" id="UserId" name="UserID" required tabindex="10">
+                    <input type="text" id="UserId" name="UserID" placeholder="Enter your user ID" required tabindex="10">
                 </div>
             
                 <div>
                     <label for="emailId">Email Id <span class="required">*</span></label>
-                    <input type="email" id="emailId" name="emailId" required tabindex="11">
+                    <input type="email" id="emailId" name="emailId" placeholder="Enter your email" required tabindex="11">
                 </div>
             
                 <div>
                     <label for="phone">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required pattern="\d{10}" title="Please enter a valid 10-digit phone number" tabindex="12">
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="\d{10}" title="Please enter a valid 10-digit phone number" tabindex="12">
                 </div>
                 
-            
                 <div>
                     <label for="bday">Date of birth <span class="required">*</span></label>
-                    <input type="date" id="bday" name="bday" required tabindex="13">
+                    <input type="date" id="bday" name="bday" placeholder="MM/DD/YYYY" required tabindex="13">
                 </div>
             
                 <div>
@@ -101,7 +98,7 @@
         <p>&copy; 2024 Crossfire. All rights reserved.</p>
         <p>
             <a href="privacy_policy.html" aria-label="Go to Privacy Policy" tabindex="16">Privacy Policy</a> |
-            <a href="contact_us.html"  aria-label="Go to Contact Us" tabindex="17">Contact Us</a>
+            <a href="contact_us.html" aria-label="Go to Contact Us" tabindex="17">Contact Us</a>
         </p>
     </footer>
     <script src="script/account.js"></script>
