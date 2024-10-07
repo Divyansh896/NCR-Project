@@ -39,8 +39,8 @@
     <main>
         <h1>Do you have any queries?</h1>
         <form action="https://webdevbasics.net/scripts/demo.php" method="post" aria-labelledby="contact-form-header">
-            <fieldset>
-                <legend id="contact-form-header">Contact</legend>
+            <fieldset class="fieldset-contact">
+                <legend id="contact-form-header">Contact Us!</legend>
                 
                 <label for="name" aria-label="Your name">Name:</label>
                 <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-tooltip" tabindex="7">
@@ -54,7 +54,7 @@
                 <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="message-tooltip" tabindex="9"></textarea>
                 <span id="message-tooltip" class="tooltip">Enter your message here.</span>
 
-                <button type="submit" tabindex="10">Send</button>
+                <button class="btn-contact" type="submit" tabindex="10">Send</button>
             </fieldset>
         </form>
     </main>
@@ -63,8 +63,8 @@
     <footer>
         <p>&copy; 2024 Crossfire. All rights reserved.</p>
         <p>
-            <a href="privacy_policy.html" aria-label="Go to Privacy Policy" tabindex="11">Privacy Policy</a> | 
-            <a href="contact_us.html" aria-label="Go to Contact Us" tabindex="12">Contact Us</a>
+            <a href="privacy_policy.html" class="linksFooter" aria-label="Go to Privacy Policy" tabindex="11">Privacy Policy</a> | 
+            <a href="contact_us.html" class="linksFooter" aria-label="Go to Contact Us" tabindex="12">Contact Us</a>
         </p>
     </footer>
 
