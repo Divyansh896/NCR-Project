@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(sessionStorage.getItem("currentUser"))
     const queryParams = new URLSearchParams(window.location.search)
+    // const fs = require('fs')
+    // let data  = fs.readFileSync("Data/ncr_reports.json","utf-8");
+    // let ncr_data = JSON.parse(data)
     let ncrData = []
 
 
@@ -394,7 +397,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
 
-            newEntry.status = "QA Complete";
+            // newEntry.status = "QA Complete";
+            // ncr_data.push(newEntry)
+            // data = JSON.stringify(ncr_data)
+            // fs.writeFileSync("Data/ncr_reports.json",ncr_data,"utf-8");
             alert('QA data submitted!');
             ncrData.push(newEntry);  // Append new entry to the array
             console.log(ncrData)
