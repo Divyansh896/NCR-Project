@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const currentPage = window.location.pathname; // Get current page path
     const isCreateNCRPage = currentPage.includes('create_ncr'); // Check if it's the Create NCR page
+    console.log(retrievedNCRData['resolved'])
 
     // Get all input fields and textareas
     const inputFields = document.querySelectorAll('input, textarea, select');
@@ -17,15 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to enable fields based on user role
     const enableFieldsForRole = (role) => {
-        if (role === 'QA') {
+        if (role === 'QA Inspector') {
             document.querySelectorAll('.qa-editable').forEach(field => {
                 field.disabled = false; // Enable QA editable fields
             });
-        } else if (role === 'engineer') {
+        } else if (role === 'Lead Engineer') {
             document.querySelectorAll('.eng-editable').forEach(field => {
                 field.disabled = false; // Enable Engineering editable fields
             });
-        } else if (role === 'purch') {
+        } else if (role === 'Operations Coordinator') {
             document.querySelectorAll('.purch-editable').forEach(field => {
                 field.disabled = false; // Enable Purchasing editable fields
             });
@@ -77,8 +78,19 @@ document.addEventListener("DOMContentLoaded", function () {
             'description-defect': 'description_of_defect',
             'item-marked-yes': 'item_marked_nonconforming',
             'disposition-details': 'disposition_details',
-            'customer-notification': 'customer_notification_required'
-        };
+            'customer-notification': 'customer_notification_required',
+            'disposition-details': 'disposition_details',
+            'original-rev-number': 'original_rev_number',
+            'updated-rev-number': 'updated_rev_number',
+            'engineer-name': 'engineer_name',
+            'revision-date': 'revision_date',
+            'preliminary-decision': 'preliminary_decision',
+            'car-number': 'car_number',
+            'operations-manager-name': 'operations_manager_name',
+            'operations-manager-date': 'operations_manager_date',
+            'new-ncr-number': 'new_ncr_number',
+            'inspector-name': 'inspector_name'
+            };
 
         // Populate input fields from the retrieved NCR data
         for (const [fieldId, paramName] of Object.entries(fieldsMap)) {
@@ -101,6 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Assuming 'process' is a select element
         const processSelect = document.getElementById('process');
+        const dispositionOptions = document.getElementById('disposition')
+        const options = document.getElementById('options')
 
         if (retrievedNCRData['supplier_or_rec_insp']) {
             processSelect.value = 'supplier'; // Set to 'supplier' if true
@@ -109,5 +123,63 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             processSelect.value = 'Not applicable'; // Default to empty if both are false (or set to a specific option if needed)
         }
+
+        if(retrievedNCRData.disposition_options.use_as_is){
+            dispositionOptions.value = 'use_as_is'
+        }else if(retrievedNCRData.disposition_options.repair){
+            dispositionOptions.value = 'repair'
+        
+        }else if(retrievedNCRData.disposition_options.rework){
+            dispositionOptions.value = 'rework'
+        
+        }else if(retrievedNCRData.disposition_options.scrap){
+            dispositionOptions.value = 'scrap'
+        }
+
+        if(retrievedNCRData.options.rework_in_house){
+            options.value = 'rework_in_house'
+        }else if(retrievedNCRData.options.scrap_in_house){
+            options.value = 'scrap_in_house'
+        }else if(retrievedNCRData.options.defer_to_engineering){
+            options.value = 'defer_to_engineering'
+        }
+
+        
+
+        // checking the checkboxes
+        const engResolvedChk = document.getElementById('resolved')
+        const CustNotif = document.getElementById('customer-notification')
+        const drawingUpdate = document.getElementById('drawing-update-required')
+        const carRaised = document.getElementById('car-raised')
+        const followUp = document.getElementById('follow-up-required')
+        const reInspect = document.getElementById('re-inspected-acceptable')
+        const ncrClosed = document.getElementById('ncr-closed')
+        const puResolved = document.getElementById('resolved')
+
+        if(retrievedNCRData['eng_resolved']){
+            engResolvedChk.checked = true
+        }
+        if(retrievedNCRData['customer_notification_required']){
+            CustNotif.checked = true
+        }
+        if(retrievedNCRData['drawing_update_required']){
+            drawingUpdate.checked = true
+        }
+        if(retrievedNCRData['pu_resolved']){
+            puResolved.checked = true
+        }
+        if(retrievedNCRData['car_raised']){
+            carRaised.checked = true
+        }
+        if(retrievedNCRData['follow_up_required']){
+            followUp.checked = true
+        }
+        if(retrievedNCRData['re_inspected_acceptable']){
+            reInspect.checked = true
+        }
+        if(retrievedNCRData['ncr_closed']){
+            ncrClosed.checked = true
+        }
+
     }
 });

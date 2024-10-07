@@ -53,7 +53,7 @@ function populateTable(data) {
                 item_marked_nonconforming: ncr.qa.item_marked_nonconforming,
                 quality_representative_name: ncr.qa.quality_representative_name,
                 date: ncr.qa.date,
-                resolved: ncr.qa.resolved,
+                qa_resolved: ncr.qa.resolved,
                 ncr_no: ncr.ncr_no,
                 supplier_or_rec_insp: ncr.qa.process.supplier_or_rec_insp,
                 wip_production_order: ncr.qa.process.wip_production_order,
@@ -67,7 +67,20 @@ function populateTable(data) {
                 engineer_name: ncr.engineering.engineer_name,
                 revision_date: ncr.engineering.revision_date,
                 engineering_review_date: ncr.engineering.engineering_review_date,
-                resolved: ncr.engineering.resolved
+                eng_resolved: ncr.engineering.resolved,
+                
+                preliminary_decision: ncr.purchasing_decision.preliminary_decision,
+                options: ncr.purchasing_decision.options,
+                car_raised: ncr.purchasing_decision.car_raised,
+                car_number: ncr.purchasing_decision.car_number,
+                follow_up_required: ncr.purchasing_decision.follow_up_required,
+                operations_manager_name: ncr.purchasing_decision.operations_manager_name,
+                operations_manager_date: ncr.purchasing_decision.operations_manager_date,
+                re_inspected_acceptable: ncr.purchasing_decision.re_inspected_acceptable,
+                new_ncr_number: ncr.purchasing_decision.new_ncr_number,
+                inspector_name: ncr.purchasing_decision.inspector_name,
+                ncr_closed: ncr.purchasing_decision.ncr_closed,
+                pu_resolved: ncr.purchasing_decision.resolved,
                 }
             sessionStorage.setItem('data', JSON.stringify(data))
             window.location.href = `ncReport.html`; // Adjust the URL to your routing
