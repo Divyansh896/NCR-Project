@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const queryParams = new URLSearchParams(window.location.search);
+    const retrievedNCRData = JSON.parse(sessionStorage.getItem('data'));
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
     const currentPage = window.location.pathname; // Get current page path
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 field.disabled = false; // Enable Purchasing editable fields
             });
         }
-        
+
         // Enable radio buttons
         document.querySelectorAll('input[type="radio"]').forEach(radio => {
             radio.disabled = false; // Enable all radio buttons
@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
         details.setAttribute('open', !isCreateNCRPage); // Expand if not on Create NCR page
     });
 
-    // Load data into input fields from URL parameters
+    // Load data into input fields from the retrieved NCR data
     loadData();
 
     function loadData() {
-        // Map input field IDs to their respective query parameters
+        // Map input field IDs to their respective property names in the data object
         const fieldsMap = {
             'qa-name': 'quality_representative_name',
             'ncr-no': 'ncr_no',
@@ -76,41 +76,38 @@ document.addEventListener("DOMContentLoaded", function () {
             'description-item': 'item_description',
             'description-defect': 'description_of_defect',
             'item-marked-yes': 'item_marked_nonconforming',
-            'disposition-details': 'disposition_details'
+            'disposition-details': 'disposition_details',
+            'customer-notification': 'customer_notification_required'
         };
 
-        // Populate input fields from the query parameters
+        // Populate input fields from the retrieved NCR data
         for (const [fieldId, paramName] of Object.entries(fieldsMap)) {
-           const field = document.getElementById(fieldId);
-            if (field) {
+            const field = document.getElementById(fieldId);
+            if (field && retrievedNCRData) {
                 if (field.type === 'radio') {
-                    // Set the radio button checked state based on the value from URL
-                    const itemMarkedValue = queryParams.get(paramName);
-                    if (itemMarkedValue === 'yes') {
+                    // Set the radio button checked state based on the value from the retrieved data
+                    const itemMarkedValue = retrievedNCRData[paramName]; // Accessing the value directly
+                    if (itemMarkedValue === true) {
                         document.getElementById('item-marked-yes').checked = true;
-                    } else if (itemMarkedValue === 'no') {
+                    } else if (itemMarkedValue === false) {
                         document.getElementById('item-marked-no').checked = true;
                     }
                 } else {
-                    field.value = queryParams.get(paramName) || ''; // Fallback to an empty string if no value
+                    // Set the value of the field from retrievedNCRData
+                    field.value = retrievedNCRData[paramName] || ''; // Fallback to an empty string if no value
                 }
             }
         }
+
+        // Assuming 'process' is a select element
+        const processSelect = document.getElementById('process');
+
+        if (retrievedNCRData['supplier_or_rec_insp']) {
+            processSelect.value = 'supplier'; // Set to 'supplier' if true
+        } else if (retrievedNCRData['wip_production_order']) {
+            processSelect.value = 'wip'; // Set to 'wip' if true
+        } else {
+            processSelect.value = 'Not applicable'; // Default to empty if both are false (or set to a specific option if needed)
+        }
     }
-
-    // Get the values from the query string
-    const supplierOrRecInsp = queryParams.get('supplier_or_rec_insp'); // true/false
-    const wipProductionOrder = queryParams.get('wip_production_order'); // true/false
-
-    // Determine the process based on the query string values
-    let selectedProcess = '';
-
-    if (supplierOrRecInsp === 'true') {
-        selectedProcess = 'supplier';
-    } else {
-        selectedProcess = 'wip';
-    }
-
-    // Set the selected value of the select option
-    document.getElementById('process').value = selectedProcess; // Set selected value
 });

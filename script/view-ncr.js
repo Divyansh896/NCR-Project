@@ -42,7 +42,7 @@ function populateTable(data) {
         `;
 
         row.addEventListener('click', () => {
-            const queryString = new URLSearchParams({
+            let data = {
                 supplier_name: ncr.qa.supplier_name,
                 product_no: ncr.qa.po_no,
                 sales_order_no: ncr.qa.sales_order_no,
@@ -56,10 +56,21 @@ function populateTable(data) {
                 resolved: ncr.qa.resolved,
                 ncr_no: ncr.ncr_no,
                 supplier_or_rec_insp: ncr.qa.process.supplier_or_rec_insp,
-                wip_production_order: ncr.qa.process.wip_production_order
-                }).toString();
-            
-            window.location.href = `ncReport.html?${queryString}`; // Adjust the URL to your routing
+                wip_production_order: ncr.qa.process.wip_production_order,
+                disposition: ncr.engineering.disposition,
+                disposition_options: ncr.engineering.disposition_options,
+                customer_notification_required: ncr.engineering.customer_notification_required,
+                disposition_details: ncr.engineering.disposition_details,
+                drawing_update_required: ncr.engineering.drawing_update_required,
+                original_rev_number: ncr.engineering.original_rev_number,
+                updated_rev_number: ncr.engineering.updated_rev_number,
+                engineer_name: ncr.engineering.engineer_name,
+                revision_date: ncr.engineering.revision_date,
+                engineering_review_date: ncr.engineering.engineering_review_date,
+                resolved: ncr.engineering.resolved
+                }
+            sessionStorage.setItem('data', JSON.stringify(data))
+            window.location.href = `ncReport.html`; // Adjust the URL to your routing
         });
 
         // Append the row to the table body
