@@ -14,7 +14,7 @@
             "date": "2024-09-01",
             "resolved": false,
             "process": {
-                "supplier_or_rec_insp": false,
+                "supplier_or_rec_insp": true,
                 "wip_production_order": false
             }
         },

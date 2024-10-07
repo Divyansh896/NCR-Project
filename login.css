@@ -135,10 +135,10 @@ footer p {
 }
 
 footer a {
-    color: #ffffff; /* Link color */
+    color: #dbc7c0;
     text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Underline on hover */
+    color: #9e7c70;
 }
