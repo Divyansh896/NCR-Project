@@ -40,7 +40,9 @@ button:hover {
     font-size: 14px;
     margin-top: 5px;
 }
-
+.indicator{
+    color: red;
+}
 /* Header */
 header {
     padding: 10px 25px;
