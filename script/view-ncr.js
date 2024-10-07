@@ -55,9 +55,10 @@ function populateTable(data) {
                 date: ncr.qa.date,
                 resolved: ncr.qa.resolved,
                 ncr_no: ncr.ncr_no,
-                supplier_or_rec_insp: ncr.qa.process.supplier_or_rec_insp,  
-                wip_production_order: ncr.qa.process.wip_production_order 
-            }).toString();
+                supplier_or_rec_insp: ncr.qa.process.supplier_or_rec_insp,
+                wip_production_order: ncr.qa.process.wip_production_order
+                }).toString();
+            
             window.location.href = `ncReport.html?${queryString}`; // Adjust the URL to your routing
         });
 

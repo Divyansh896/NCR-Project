@@ -1,36 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const queryParams = new URLSearchParams(window.location.search)
+    const queryParams = new URLSearchParams(window.location.search);
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
-    const currentPage = window.location.pathname // Get current page path
-    const isCreateNCRPage = currentPage.includes('create_ncr') // Check if it's the Create NCR page
+    const currentPage = window.location.pathname; // Get current page path
+    const isCreateNCRPage = currentPage.includes('create_ncr'); // Check if it's the Create NCR page
 
     // Get all input fields and textareas
-    const inputFields = document.querySelectorAll('input, textarea, select')
+    const inputFields = document.querySelectorAll('input, textarea, select');
 
-    if(user.role =='QA' || user.role === 'engineer' || user.role === 'purch'){
+    // Function to disable all fields
+    const disableFields = () => {
+        inputFields.forEach(field => {
+            field.disabled = true; // Disable each input field
+        });
+    };
 
-        // Disable all input fields on page load
-        window.onload = function () {
-            inputFields.forEach(field => {
-                field.disabled = true // Disable each input field
-            })
+    // Function to enable fields based on user role
+    const enableFieldsForRole = (role) => {
+        if (role === 'QA') {
+            document.querySelectorAll('.qa-editable').forEach(field => {
+                field.disabled = false; // Enable QA editable fields
+            });
+        } else if (role === 'engineer') {
+            document.querySelectorAll('.eng-editable').forEach(field => {
+                field.disabled = false; // Enable Engineering editable fields
+            });
+        } else if (role === 'purch') {
+            document.querySelectorAll('.purch-editable').forEach(field => {
+                field.disabled = false; // Enable Purchasing editable fields
+            });
         }
-    }
+        
+        // Enable radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.disabled = false; // Enable all radio buttons
+        });
+    };
+
+    // On page load, disable fields based on user role
+    disableFields();
+
     // Enable fields when "Edit" button is clicked
     document.querySelector('.edit').addEventListener('click', function () {
-        inputFields.forEach(field => {
-            field.disabled = false // Enable each input field
-        })
-    })
+        enableFieldsForRole(user.role);
+    });
+
+    // Save changes when "Save" button is clicked
+    document.querySelector('#purch-save').addEventListener('click', function () {
+        // Implement your save logic here, like sending the data to the server
+        alert('Changes saved!'); // Example feedback message
+
+        // Optionally, disable fields again after saving
+        disableFields();
+    });
 
     // Select all details elements and toggle their open attribute based on the page
     document.querySelectorAll('details').forEach(details => {
-        details.setAttribute('open', !isCreateNCRPage) // Expand if not on Create NCR page
-    })
+        details.setAttribute('open', !isCreateNCRPage); // Expand if not on Create NCR page
+    });
 
     // Load data into input fields from URL parameters
-    loadData()
+    loadData();
 
     function loadData() {
         // Map input field IDs to their respective query parameters
@@ -45,23 +75,29 @@ document.addEventListener("DOMContentLoaded", function () {
             'product-no': 'product_no',
             'description-item': 'item_description',
             'description-defect': 'description_of_defect',
-            'item-marked-yes': 'item_marked_nonconforming'
-        }
+            'item-marked-yes': 'item_marked_nonconforming',
+            'disposition-details': 'disposition_details'
+        };
 
         // Populate input fields from the query parameters
         for (const [fieldId, paramName] of Object.entries(fieldsMap)) {
-            const field = document.getElementById(fieldId)
+           const field = document.getElementById(fieldId);
             if (field) {
                 if (field.type === 'radio') {
-                    // Check the radio buttons based on the value from URL
-                    const itemMarkedValue = queryParams.get(paramName)
-                    document.getElementById(itemMarkedValue === 'yes' ? 'item-marked-yes' : 'item-marked-no').checked = true
+                    // Set the radio button checked state based on the value from URL
+                    const itemMarkedValue = queryParams.get(paramName);
+                    if (itemMarkedValue === 'yes') {
+                        document.getElementById('item-marked-yes').checked = true;
+                    } else if (itemMarkedValue === 'no') {
+                        document.getElementById('item-marked-no').checked = true;
+                    }
                 } else {
-                    field.value = queryParams.get(paramName) || '' // Fallback to an empty string if no value
+                    field.value = queryParams.get(paramName) || ''; // Fallback to an empty string if no value
                 }
             }
         }
     }
+
     // Get the values from the query string
     const supplierOrRecInsp = queryParams.get('supplier_or_rec_insp'); // true/false
     const wipProductionOrder = queryParams.get('wip_production_order'); // true/false
@@ -69,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Determine the process based on the query string values
     let selectedProcess = '';
 
-    if (supplierOrRecInsp == true) {
+    if (supplierOrRecInsp === 'true') {
         selectedProcess = 'supplier';
     } else {
         selectedProcess = 'wip';
@@ -77,5 +113,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Set the selected value of the select option
     document.getElementById('process').value = selectedProcess; // Set selected value
-
-})
+});
