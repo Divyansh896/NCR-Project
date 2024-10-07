@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-button, input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], .input-number{
     padding: 0px 10px;
     height: 40px;
     border-radius: 4px;
@@ -252,14 +252,14 @@ footer {
 
 .form-section.active label {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 1.5rem;
 }
 
 .form-section.active button {
     background-color: #1a3153;
     color: #f4f4f4;
-    margin: 70px 20px 20px 20px;
+    margin: 20px;
 }
 
 .qa-date, .qa-name {
@@ -443,4 +443,72 @@ textarea{
 }
 
 
-/* Acccount */
+/* Create NCR QA */
+
+
+
+.qa-info-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 300px;
+    align-items: center;
+    
+}
+
+.qa-info-section > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.qa-info-section label, 
+.qa-info-section input[type="text"],
+.qa-info-section input[type="number"]{
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.qa-process{
+    display: flex;
+    flex-direction: column; /* Stack the checkboxes vertically */
+    align-items: flex-start; /* Align checkboxes and labels to the left */
+    border: none;
+}
+
+.qa-process label{
+    display: flex;
+    align-items: center; /* Align checkbox and label vertically */
+}
+
+.qa-process legend{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-section.active legend{
+    color: #1a3153;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*Product decsription step*/
+
+.item-conforming{
+    display: flex;
+}
+
+#item-marked-no{
+    margin: 10px 5px 10px 10px;
+}
+
+#item-marked-yes{
+    margin: 10px 5px 10px 0px;
+}
+
+/* Confiramtion section*/
+
