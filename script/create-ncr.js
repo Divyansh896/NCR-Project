@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(sessionStorage.getItem("currentUser"))
     const queryParams = new URLSearchParams(window.location.search)
+    // const fs = require('fs')
+    // let data  = fs.readFileSync("Data/ncr_reports.json","utf-8");
+    // let ncr_data = JSON.parse(data)
     let ncrData = []
 
 
@@ -23,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(ncrNumber)
 
     // Only proceed if the user is QA
-    if (user.role === 'QA') {
+    if (user.role === 'QA Inspector') {
         let currentStep = 0
 
         updateStatusBar()
@@ -259,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const nonconformingStatusElement = document.querySelector('input[name=item_marked_nonconforming]:checked').value
 
             // Populate confirmation section
-            document.getElementById('confirm-qa-name').textContent = user.name
+            document.getElementById('confirm-qa-name').textContent = `${user.firstname} ${user.lastname}`
             document.getElementById('confirm-date').textContent = new Date().toLocaleDateString()
             document.getElementById('confirm-supplier-name').textContent = supplierName
             document.getElementById('confirm-sales-order-no').textContent = salesOrderNo
@@ -285,17 +288,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const purchdropdown = document.getElementById('purch-section')
         const qaForm = document.getElementById('ncr-form')
 
-        if (user.role === 'QA') {
+        if (user.role === 'QA Inspector') {
             qadropdown.remove()
             engdropdown.remove()
             purchdropdown.remove()
         }
-        else if (user.role === 'engineer') {
+        else if (user.role === 'Lead Engineer') {
             qaForm.remove()
             engdropdown.remove()
             purchdropdown.remove()
             document.getElementById('underdev').textContent = "Engineer Form is under development."
-        } else if (user.role === 'purch') {
+        } else if (user.role === 'Operations Coordinator') {
             qaForm.remove()
             purchdropdown.remove()
             document.getElementById('underdev').textContent = "Purchasing Form is under development."
@@ -360,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "purchasing_decision": {}
         }
 
-        if (role === "QA") {
+        if (role === "QA Inspector") {
             const supplierName = document.getElementById('supplier-name').value
             const salesOrderNo = document.getElementById('sales-order-no').value
             const quantityReceived = document.getElementById('quantity-received').value
@@ -376,6 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             newEntry.qa = {
+
                 "supplier_name": supplierName,
                 "po_no": productNo,
                 "sales_order_no": salesOrderNo,
@@ -384,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "quantity_defective": Number(quantityDefective),
                 "description_of_defect": descriptionDefect,
                 "item_marked_nonconforming": nonconformingStatusElement,
-                "quality_representative_name": "John Doe",
+                "quality_representative_name": `${user.firstname} ${user.lastname}`,
                 "date": today,
                 "resolved": false,
                 "process": {
@@ -393,7 +397,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
 
-            newEntry.status = "QA Complete";
+            // newEntry.status = "QA Complete";
+            // ncr_data.push(newEntry)
+            // data = JSON.stringify(ncr_data)
+            // fs.writeFileSync("Data/ncr_reports.json",ncr_data,"utf-8");
             alert('QA data submitted!');
             ncrData.push(newEntry);  // Append new entry to the array
             console.log(ncrData)

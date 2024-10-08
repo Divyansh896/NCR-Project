@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], .input-number{
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select{
     padding: 0px 10px;
     height: 40px;
     border-radius: 4px;
@@ -37,9 +37,10 @@ button:hover {
 }
 
 h1{
-    margin: 20px 0px;
+    padding: 20px 0px;
     text-align: center;
     color: #1a3153;
+    font-size: 3rem;
 }
 
 .error {
@@ -177,7 +178,6 @@ label {
 footer {
     background-color: #163650;
     padding: 7px;
-    margin-top: 20px;
     text-align: center;
     font-size: 0.9em;
     color: #dbc7c0;
@@ -502,13 +502,58 @@ textarea{
     display: flex;
 }
 
-#item-marked-no{
-    margin: 10px 5px 10px 10px;
-}
-
-#item-marked-yes{
-    margin: 10px 5px 10px 0px;
-}
-
 /* Confiramtion section*/
 
+.summ-qa-info{
+    display: flex
+}
+
+.summ-qa-info p{
+    padding: 10px 30px;
+}
+
+.summ-qa-prod-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Account */
+
+.account{
+    margin: 0px 100px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    border: none;
+}
+
+.account legend{
+    justify-content: center;
+    text-align: center;
+}
+
+.account label{
+    margin-top: 20px;
+}
+
+.account input{
+    width: 500px;
+}
+
+.account select{
+    width: 520px;
+}
+
+.gradient-acc{
+    background: linear-gradient(to bottom, #a7bcdc, #1a3153);
+}
+
+.account button{
+    margin: 30px 0px;
+    background-color: #1a3153;
+    color: #f4f4f4;
+    width: 200px;
+}

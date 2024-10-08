@@ -30,7 +30,7 @@ function initializeButtons() {
     const btnView = document.getElementById('viewNcr');
     const btnManage = document.getElementById('ManageAcc');
 
-    if(user.role == 'QA'){
+    if(user.role == 'QA Inspector'){
 
         btnCreate.addEventListener('click', () => {
             window.location.href = `create_ncr.html?ncr_no=${generateNextNcrNumber(ncr)}`;

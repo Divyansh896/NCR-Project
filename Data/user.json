@@ -1,18 +1,57 @@
 [
     {
-        "username": "user123",
-        "password": "pass123",
-        "role":"QA",
-        "name":"john"
+        "firstname":"John",
+        "lastname":"Smith",
+        "username": "jsmith",
+        "employeeID": 1011,
+        "department": "QA",
+        "role": "QA Inspector",
+        "emailID": "jsmith@crossfire.ca",
+        "password": "jsmithqa",
+        "phone": 6325147889,
+        "dob": "06-12-1990",
+        "gender": "Male"
     },
     {
-        "username": "admin",
-        "password": "admin123",
-        "role":"engineer"
+        "firstname":"Davis",
+        "lastname":"Henry",
+        "username": "dhenry",
+        "employeeID": 2075,
+        "department": "Engineer",
+        "role": "Lead Engineer",
+        "emailID": "dhenry@crossfire.ca",
+        "password": "dhenryer",
+        "phone": 8273641583,
+        "dob": "01-01-1985",
+        "gender": "Male"
+
     },
     {
-        "username": "admin1",
-        "password": "admin1234",
-        "role":"purch"
+        "firstname":"Brown",
+        "lastname":"Miller",
+        "username": "bmiller",
+        "employeeID": 3009,
+        "department": "Operations",
+        "role": "Operations Coordinator",
+        "emailID": "bmiller@crossfire.ca",
+        "password": "bmilleroc",
+        "phone": 3471575778,
+        "dob": "10-02-1991",
+        "gender": "Male"
+
+    },
+    {
+        "firstname":"Grace",
+        "lastname":"White",
+        "username": "gwhite",
+        "employeeID": 4002,
+        "department": "Admin",
+        "role": "Project Manager",
+        "emailID": "gwhite@crossfire.ca",
+        "password": "gwhitead",
+        "phone": 9472652153,
+        "dob": "06-09-1984",
+        "gender": "Female"
+
     }
 ]
