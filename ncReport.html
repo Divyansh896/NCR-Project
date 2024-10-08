@@ -102,27 +102,32 @@
                     </div>
                 </div>
                 <!-- Textarea Section -->
-                <div class="form-group">
-                    <label for="description-item">Description of Item (Including SAP No.)</label>
-                    <textarea class="qa-editable" id="description-item" name="description_item" placeholder="Enter description of item"
-                        required tabindex="16"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="description-defect">Description of Defect</label>
-                    <textarea class="qa-editable" id="description-defect" name="description_defect"
-                        placeholder="Enter description of defect" required tabindex="17"></textarea>
+                <div class="text-descr">
+                    <div>
+                        <label for="description-item">Description of Item (Including SAP No.)</label>
+                        <textarea class="qa-editable" id="description-item" name="description_item" placeholder="Enter description of item"
+                            required tabindex="16"></textarea>
+                    </div>
+                
+                    <div>
+                        <label for="description-defect">Description of Defect</label>
+                        <textarea class="qa-editable" id="description-defect" name="description_defect"
+                            placeholder="Enter description of defect" required tabindex="17"></textarea>
+                    </div>
                 </div>
                 <!-- Radio Buttons for Non-Conforming -->
-                <div class="form-group">
-                    <p>Item Marked Non-Conforming?</p>
+                <p>Item Marked Non-Conforming?</p>
+                <div class="rad-report">
                     <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="18">
                     <label for="item-marked-yes">Yes</label>
                     <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="19">
                     <label for="item-marked-no">No</label>
                 </div>
                 <!-- Buttons -->
-                <button class="edit" id="qa-edit" type="button" tabindex="20">Edit</button>
-                <button class="save" id="qa-save" type="submit" tabindex="21">Save</button>
+                <div class="btn-report">
+                    <button class="edit" id="qa-edit" type="button" tabindex="20">Edit</button>
+                    <button class="save" id="qa-save" type="submit" tabindex="21">Save</button>
+                </div>
             </div>
 
         </details>

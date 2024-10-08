@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], .input-number, input[type="tel"], select{
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select{
     padding: 0px 10px;
     height: 40px;
     border-radius: 4px;
@@ -500,14 +500,6 @@ textarea{
 
 .item-conforming{
     display: flex;
-}
-
-#item-marked-no{
-    margin: 10px 5px 10px 10px;
-}
-
-#item-marked-yes{
-    margin: 10px 5px 10px 0px;
 }
 
 /* Confiramtion section*/
