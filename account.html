@@ -10,7 +10,6 @@
     <meta name="author" content="Mark">
     <!-- Style-sheet link -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="breadcrumb.css">
 </head>
 
 <body>
@@ -63,7 +62,7 @@
                 
                     <div>
                         <label for="UserId">User ID <span class="required">*</span></label>
-                        <input type="text" id="UserId" name="UserID" placeholder="Enter your user ID" required tabindex="10">
+                        <input type="text" id="employeeId" name="employeeID" placeholder="Enter your employee ID" required tabindex="10">
                     </div>
                 
                     <div>
@@ -85,13 +84,18 @@
                         <label for="gender">Select Gender <span class="required">*</span></label>
                         <select id="gender" name="gender" required tabindex="14">
                             <option value="" disabled selected>Select your gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
+
+                    <div>
+                        <label for="password">Password <span class="required">*</span></label>
+                        <input type="text" id="password" name="password" placeholder="Choose a Password" required tabindex="15">
+                    </div>
                 
-                    <button type="submit" id="submit-btn" form="profileForm" value="Submit" tabindex="15">Submit</button>
+                    <button type="submit" id="submit-btn" form="profileForm" value="Submit" tabindex="16">Submit</button>
                 </form>
             </fieldset>
         </div>
@@ -101,8 +105,8 @@
     <footer>
         <p>&copy; 2024 Crossfire. All rights reserved.</p>
         <p>
-            <a href="privacy_policy.html" class="linksFooter" aria-label="Go to Privacy Policy" tabindex="16">Privacy Policy</a> |
-            <a href="contact_us.html" class="linksFooter" aria-label="Go to Contact Us" tabindex="17">Contact Us</a>
+            <a href="privacy_policy.html" class="linksFooter" aria-label="Go to Privacy Policy" tabindex="17">Privacy Policy</a> |
+            <a href="contact_us.html" class="linksFooter" aria-label="Go to Contact Us" tabindex="18">Contact Us</a>
         </p>
     </footer>
     <script src="script/account.js"></script>

@@ -1,10 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     const starElements = document.querySelectorAll('.required');
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
+
     
     starElements.forEach(star => {
         star.style.display = 'none'; // Hide each star element
     });
+
+    populateUserData(user)
+
 });
+
+// Function to populate input fields with user data
+function populateUserData(data) {
+    document.getElementById('fname').value = data.firstname || '';
+    document.getElementById('lname').value = data.lastname || '';
+    document.getElementById('Uname').value = data.username || '';
+    document.getElementById('employeeId').value = data.employeeID || '';
+    document.getElementById('emailId').value = data.emailID || '';
+    document.getElementById('phone').value = data.phone || '';
+    document.getElementById('bday').value = data.dob || '';
+    document.getElementById('password').value = data.password || '';
+    const genderSelect = document.getElementById('gender');
+    genderSelect.value = data.gender; // Set the selected value
+    console.log(data.gender)
+    
+}
 
 // Function to update required fields dynamically
 function showRequiredFields() {
@@ -14,6 +35,7 @@ function showRequiredFields() {
         'emailId', 'phone', 'bday', 'gender'
     ];
 
+    
     requiredFields.forEach(field => {
         const inputElement = document.getElementById(field);
         const labelElement = document.querySelector(`label[for="${field}"]`);

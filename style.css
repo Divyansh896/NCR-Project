@@ -11,7 +11,10 @@ body {
     color: #333;
     margin: 0;
 }
-
+.required{
+    color: red;
+    margin: 5px;
+}
 a {
     text-decoration: none;
 }
@@ -43,11 +46,7 @@ h1{
     font-size: 3rem;
 }
 
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-}
+
 .indicator{
     color: red;
 }

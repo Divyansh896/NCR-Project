@@ -9,7 +9,7 @@
         "emailID": "jsmith@crossfire.ca",
         "password": "jsmithqa",
         "phone": 6325147889,
-        "dob": "06-12-1990",
+        "dob": "1990-06-12",
         "gender": "Male"
     },
     {
@@ -22,7 +22,7 @@
         "emailID": "dhenry@crossfire.ca",
         "password": "dhenryer",
         "phone": 8273641583,
-        "dob": "01-01-1985",
+        "dob": "1985-01-01",
         "gender": "Male"
 
     },
@@ -36,7 +36,7 @@
         "emailID": "bmiller@crossfire.ca",
         "password": "bmilleroc",
         "phone": 3471575778,
-        "dob": "10-02-1991",
+        "dob": "1991-10-02",
         "gender": "Male"
 
     },
@@ -50,7 +50,7 @@
         "emailID": "gwhite@crossfire.ca",
         "password": "gwhitead",
         "phone": 9472652153,
-        "dob": "06-09-1984",
+        "dob": "1984-06-09",
         "gender": "Female"
 
     }
