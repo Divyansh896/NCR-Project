@@ -42,6 +42,13 @@ h1 {
     gap: 20px;
 }
 
+.form-row-engineer{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    margin: 20px 0px;
+}
+
 .form-group {
     color: #1a3151;
     display: flex;
@@ -57,6 +64,10 @@ textarea {
     display: flex;
     justify-content: center;
     gap: 7%;
+}
+
+.desc-engineer{
+    align-items: center;
 }
 
 .rad-report, .btn-report{
@@ -112,7 +123,7 @@ p{
 
 button {
     padding: 10px 15px;
-    margin-top: 20px;
+    margin: 20px 0px;
     font-size: 16px;
     cursor: pointer;
     border: none;
