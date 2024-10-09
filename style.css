@@ -11,7 +11,10 @@ body {
     color: #333;
     margin: 0;
 }
-
+.required{
+    color: red;
+    margin: 5px;
+}
 a {
     text-decoration: none;
 }
@@ -43,11 +46,7 @@ h1{
     font-size: 3rem;
 }
 
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-}
+
 .indicator{
     color: red;
 }
@@ -251,7 +250,6 @@ footer {
 }
 
 .form-section.active label {
-    text-align: center;
     margin-top: 10px;
     font-size: 1.5rem;
 }
@@ -278,10 +276,10 @@ footer {
     margin-bottom: 50px;
 }
 
+
 /* Status Bar */
 .status-bar {
     display: flex;
-    justify-content: space-between;
     margin: 40px 0 20px;
     position: relative;
 }
@@ -292,6 +290,7 @@ footer {
     text-align: center;
     color: black;
     transition: color 0.3s ease;
+    justify-self: space-between;
 }
 
 .status-bar div.active {
@@ -471,13 +470,11 @@ textarea{
 
 .qa-process{
     display: flex;
-    flex-direction: column; /* Stack the checkboxes vertically */
-    align-items: flex-start; /* Align checkboxes and labels to the left */
+    flex-direction: column; /* Stack the checkboxes vertically */ /* Align checkboxes and labels to the left */
     border: none;
 }
 
 .qa-process label{
-    display: flex;
     align-items: center; /* Align checkbox and label vertically */
 }
 
@@ -504,18 +501,6 @@ textarea{
 
 /* Confiramtion section*/
 
-.summ-qa-info{
-    display: flex
-}
-
-.summ-qa-info p{
-    padding: 10px 30px;
-}
-
-.summ-qa-prod-info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 
 /* Account */
 
@@ -556,4 +541,288 @@ textarea{
     background-color: #1a3153;
     color: #f4f4f4;
     width: 200px;
+}
+
+/* NcReport css */
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.form-container {
+    width: 90%;
+    margin: 20px auto;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: #1a3151;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-row-engineer{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    margin: 20px 0px;
+}
+
+.form-group {
+    color: #1a3151;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.text-descr{
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+}
+
+.desc-engineer{
+    align-items: center;
+}
+
+.rad-report, .btn-report{
+    display: flex;
+    justify-content: center;
+}
+
+.rad-report input[type="radio"] {
+    margin: 0px 5px 0px 15px;
+}
+
+.btn-report{
+    gap: 70px;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.dropdown .dropdown-header {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a3151;
+}
+
+.dropdown .arrow {
+    transition: transform 0.3s ease;
+    color: #1a3151;
+}
+
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+button.save {
+    background-color: #1a3151;
+    color: #f4f4f4;
+}
+
+button.edit {
+    background-color: #1a3151;
+    color: #f4f4f4;
+}
+
+/* DETAILS */
+
+details {
+    position: relative; /* Position relative to place the arrow */
+    width: 100%; /* Ensure it spans the entire width */
+}
+
+.custom-summary {
+    list-style: none; /* Remove default list style */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px 30px; /* Add vertical padding for better spacing */
+    display: block; /* Make the summary a block element to span full width */
+    position: relative; /* Position relative for the underline */
+    text-decoration: none; /* Remove default underline */
+    font-weight: 600;
+}
+
+/* Underline effect only for the summary */
+.custom-summary::after {
+    content: ""; /* Create an underline effect */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Position at the bottom of the summary */
+    height: 2px; /* Thickness of the underline */
+    width: 100%; /* Full width underline */
+    background-color: black; /* Color of the underline */
+}
+
+.custom-summary::before {
+    content: '<'; /* Custom arrow */
+    position: absolute; /* Position absolute to place the arrow */
+    right: 50px; /* Align the arrow to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to be centered */
+    font-size: 1.5em; /* Adjust size if needed */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+details[open] .custom-summary::before {
+    transform: translateY(-50%) rotate(-90deg); /* Rotate to point down */
+}
+
+.record-summ{
+    display: inline-block;
+    align-items: center;
+}
+
+/* MEDIA */
+
+@media screen and (min-width:320px) {
+    
+}
+
+@media screen and (min-width: 425px){
+    
+}
+
+@media screen and (max-width: 768px){
+
+    /* general*/
+    header img {max-width: 120px;}
+
+    h1{ font-size: 1.5rem;}
+
+    /*home*/
+    .main-container {
+        display:inline-block;
+        margin: 0px 0px;
+    }
+
+    p{
+        margin-top: 5px;
+    }
+
+    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
+        margin: 30px 0px;
+        height: 150px;
+    }
+
+    .featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
+        font-size: 1.5rem;
+    }
+    .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
+        font-size: 1rem;
+    }
+
+    /* create ncr*/
+
+    .form-section.active{
+        margin: 30px 20px;
+    }
+    .qa-info-section{
+        display:inline-block;
+    }
+
+    .qa-process{
+        align-items: center;
+    }
+
+    .qa-info-section label, .qa-info-section input[type="text"], .qa-info-section input[type="number"] {
+        width: 200px;
+    }
+
+    .form-section.active legend, .fieldset-contact legend{
+        font-size: 1.5rem;
+    }
+
+    .form-section.active label, .filter-section label{
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+
+    .form-section.active button{
+        margin: 10px 5px;
+    }
+
+    textarea{
+        height: 200px;
+        width: 200px;
+    }
+
+    /* View NCR */
+    .filter-section{
+        margin: 0px 0px;
+        display: inline-block;
+        align-items: center;
+    }
+
+    .filter-section input, .fieldset-contact input, .account input{
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    /* Account */
+
+    .account{
+        margin: 0px 0px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .account select{
+        width: 220px;
+    }
+
+    .account legend img{ 
+        height: 170px;
+        width: 170px;
+    }
+        
+    .form-row, .text-descr, .form-row-engineer{
+        display: inline-block;
+    }
+
+    
+}
+
+@media screen and (min-width: 1024px){
+
+}
+
+@media screen and (min-width: 1440px){
+
 }

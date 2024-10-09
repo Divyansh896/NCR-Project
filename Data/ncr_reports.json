@@ -126,7 +126,7 @@
             "item_marked_nonconforming": true,
             "quality_representative_name": "Tom Hardy",
             "date": "2024-09-03",
-            "resolved": false,
+            "resolved": true,
             "process": {
                 "supplier_or_rec_insp": false,
                 "wip_production_order": false

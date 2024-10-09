@@ -122,6 +122,7 @@
         <div id="underdev">
 
         </div>
+
         <!-- Multi-Step Form -->
         <form id="ncr-form" method="post" action="https://webdevbasics.net/scripts/demo.php" aria-label="Quality assurance department form">
             <!-- Product Info Section -->
@@ -133,40 +134,33 @@
                         <label>NCR No:</label>
                         <input type="text" id="ncr-no-generated" name="ncr_no" placeholder="Auto-generated NCR No" readonly tabindex="7">
 
-                        <label for="sales-order-no">Sales Order No:</label>
+                        <label for="sales-order-no">Sales Order No:<span class="required">*</span></label>
                         <input type="text" id="sales-order-no" name="sales_order_no" placeholder="Enter Sales Order No" tabindex="8">
-                        <span class="error" id="sales-order-no-error"></span>
 
-                        <label for="quantity-received">Quantity Received:</label>
+                        <label for="quantity-received">Quantity Received:<span class="required">*</span></label>
                         <input class="input-number" type="number" id="quantity-received" min="0" value="0" name="quantity_received" placeholder="Enter Quantity Received" tabindex="9">
-                        <span class="error" id="quantity-received-error"></span>
 
-                        <label for="quantity-defective">Quantity Defective:</label>
+                        <label for="quantity-defective">Quantity Defective:<span class="required">*</span></label>
                         <input class="input-number" type="number" id="quantity-defective" min="0" value="0" name="quantity_defective" placeholder="Enter Quantity Defective" tabindex="10">
-                        <span class="error" id="quantity-defective-error"></span>
                     </div>
 
                     <div>
-                        <label for="supplier-name">Supplier Name:</label>
+                        <label for="supplier-name">Supplier Name:<span class="required">*</span></label>
                         <input type="text" id="supplier-name" name="supplier_name" placeholder="Enter Supplier Name" required aria-required="true" tabindex="11">
-                        <span class="error" id="supplier-name-error"></span>
 
-                        <label for="product-no">Product No:</label>
+                        <label for="product-no">Product No:<span class="required">*</span></label>
                         <input type="text" id="product-no" name="product_no" placeholder="Enter Product No" tabindex="12">
-                        <span class="error" id="product-no-error"></span>
 
                         <fieldset class="qa-process">
-                            <legend>Identify Process Applicable:</legend>
+                            <legend>Identify Process Applicable:<span class="required">*</span></legend>
                             <label>
                                 <input type="checkbox" name="process" value="supplier" tabindex="13">
                                 Supplier or Rec-Insp
                             </label>
-                            <span class="error" id="process-error"></span>
                             <label>
                                 <input type="checkbox" name="process" value="wip" tabindex="14">
                                 WIP
                             </label>
-                            <span class="error" id="process-error"></span>
                         </fieldset>
                     </div>
                 </div>
@@ -181,13 +175,11 @@
             <fieldset class="form-section" aria-labelledby="product-desc" aria-label="Product description">
                 <legend id="product-desc">Product Description</legend>
                 <p class="indicator">* indicate required fields.</p>
-                <label for="description-item">Description of Item (including SAP Number):</label>
+                <label for="description-item">Description of Item (including SAP Number):<span class="required">*</span></label>
                 <textarea id="description-item" name="description_item" placeholder="Enter item description, including SAP Number" aria-label="Enter item description, including SAP Number" tabindex="17"></textarea>
-                <span class="error" id="description-item-error"></span>
 
-                <label for="description-defect">Description of Defect:</label>
+                <label for="description-defect">Description of Defect:<span class="required">*</span></label>
                 <textarea id="description-defect" name="description_defect" placeholder="Describe the defect" aria-label="Describe the defect of the product" tabindex="18"></textarea>
-                <span class="error" id="description-defect-error"></span>
                 <div>
                     <button type="button" id="add-photo-btn" tabindex="23">Add Photos</button>
                     <button type="button" id="add-video-btn" tabindex="24">Add Videos</button>
@@ -195,7 +187,7 @@
                     <input type="file" id="video-input" accept="video/*" multiple style="display:none;">
                 </div>
                 
-                <label for="item-marked-nonconforming">Item Marked Non-Conforming?</label>
+                <label for="item-marked-nonconforming">Item Marked Non-Conforming?<span class="required">*</span></label>
                 <div class="item-conforming">
 
                         <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="19">
@@ -206,7 +198,6 @@
                         <label for="item-marked-no">No</label>
 
                 </div>
-                    <span class="error" id="item-marked-nonconforming-error"></span>
 
                 <div>
                     <button type="button" id="back-btn1" tabindex="21">Back</button>
@@ -219,39 +210,37 @@
         </form>
 
         <!-- Confirmation section -->
-        <div class="form-section">
-            <h3>Confirmation</h3>
-            <div class="summ-qa-info">
-                <p>QA Name: <span id="confirm-qa-name"></span></p>
-                <p>Date: <span id="confirm-date"></span></p>
-            </div>
-            <div>
-            <div class="summ-qa-prod-info">
+            <fieldset class="form-section">
+                <legend>Confirmation</legend>
+                    <p>QA Name: <span id="confirm-qa-name"></span></p>
+                    <p>Date: <span id="confirm-date"></span></p>
+                
+                
+                    
+                        <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
+                        <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
+                        <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+                    
+                    
+                        <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
+                        <p>Product No: <span id="confirm-product-no"></span></p>
+                    
+                
                 <div>
-                    <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
-                    <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
-                    <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+                    <p>Description Item: <span id="confirm-description-item"></span></p>
+                    <p>Description Defect: <span id="confirm-description-defect"></span></p>
+                    <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
                 </div>
                 <div>
-                    <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
-                    <p>Product No: <span id="confirm-product-no"></span></p>
+                    <label for="confirm-checkbox">I affirm that all the details submitted are correct and fully validated. I take full responsibility for the accuracy of this report:</label>
+                    <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox" aria-label="check box to confirm" required>
                 </div>
-            </div>
-            <div>
-                <p>Description Item: <span id="confirm-description-item"></span></p>
-                <p>Description Defect: <span id="confirm-description-defect"></span></p>
-                <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
-            </div>
-            <div>
-                <label for="confirm-checkbox">I affirm that all the details submitted are correct and fully validated. I take full responsibility for the accuracy of this report:</label>
-                <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox" aria-label="check box to confirm" required>
-            </div>
-            <div>
-                <button type="button" id="back-btn2" aria-label="Move to previous step" tabindex="21">Back</button>
-                <button type="submit" id="submit-btn" aria-label="Submit the form" tabindex="25">Submit</button>
-            </div>
+                <div>
+                    <button type="button" id="back-btn2" aria-label="Move to previous step" tabindex="21">Back</button>
+                    <button type="submit" id="submit-btn" aria-label="Submit the form" tabindex="25">Submit</button>
+                </div>
+            </fieldset>
 
-        </div>
     </main>
 
     <footer>

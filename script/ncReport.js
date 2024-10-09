@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('.eng-editable').forEach(field => {
                 field.disabled = false; // Enable Engineering editable fields
             });
-        } else if (role === 'Operations Coordinator') {
+        } else if (role === 'Purchasing') {
             document.querySelectorAll('.purch-editable').forEach(field => {
                 field.disabled = false; // Enable Purchasing editable fields
             });

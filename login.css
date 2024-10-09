@@ -67,7 +67,7 @@ label {
 input[type="text"],
 input[type="password"] {
     width: 100%; /* Ensure full width */
-    padding: 10px;
+    padding-top: 10px;
     margin: 5px 0; /* Space above and below the input */
     border: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underlined effect */
@@ -75,8 +75,14 @@ input[type="password"] {
     background: transparent; /* No background */
     color: white; /* Input text color */
     outline: none; /* Remove default outline */
+    font-size: 1.1rem;
 }
 
+input[type="text"]::placeholder,
+input[type="password"]::placeholder{
+    color: #ffffff8a;
+    font-size: 0.95rem;
+}
 /* Button styles */
 #btn-login {
     width: 100%;
@@ -89,6 +95,7 @@ input[type="password"] {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 25px;
 }
 
 #btn-login:hover {

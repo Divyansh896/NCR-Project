@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             ncrData = data; // Assign fetched data to ncrData
             populateTable(ncrData); // Populate table initially
+            document.getElementById('record-count').textContent = `Records found: ${ncrData.length}`;
+            document.getElementById('status-all').checked = true
         })
         .catch(error => console.error("An error occurred while retrieving data: ", error));
 });
@@ -21,6 +23,18 @@ document.addEventListener('keydown', function(event) {
     }
   });
   
+
+function getReportStage(ncr) {
+    if (!ncr.qa.resolved) {
+        return 'QA'; // QA stage is open
+    } else if (!ncr.engineering.resolved) {
+        return 'engineering'; // Engineering stage is open
+    } else if (!ncr.purchasing_decision.resolved) {
+        return 'Purchasing'; // Purchasing stage is open
+    } else {
+        return 'Closed'; // All stages are closed
+    }
+}
 // 2. Function to populate the table
 function populateTable(data) {
     const tBody = document.getElementById('ncr-tbody'); // Get the table body
@@ -30,6 +44,8 @@ function populateTable(data) {
     data.forEach(ncr => {
         // Create a new row
         const row = document.createElement('tr');
+        const reportStage = getReportStage(ncr);
+
 
         // Add table cells (td) for each piece of data
         row.innerHTML = `
@@ -37,8 +53,8 @@ function populateTable(data) {
             <td>${ncr.ncr_no || 'N/A'}</td>
             <td>${ncr.qa.item_description || 'N/A'}</td>
             <td>${ncr.qa.date || 'N/A'}</td>
-            <td>${ncr.qa.ncr_closed ? 'Yes' : 'No'}</td>
             <td>${ncr.status}</td>
+            <td>${reportStage}</td>
         `;
 
         row.addEventListener('click', () => {
