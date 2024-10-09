@@ -45,7 +45,7 @@
         <h1>Non-Conformance Report</h1>
         <details>
             <summary class="custom-summary" aria-label="Quality assurance department details">QA Rep</summary>
-            <div class="two-cols">
+            <fieldset class="record-summ">
                 <p class="indicator">* indicate required fields.</p>
                 <!-- First Column -->
                 <div class="form-row">
@@ -108,13 +108,13 @@
                 </div>
                 <!-- Textarea Section -->
                 <div class="text-descr">
-                    <div class="form-group">
+                    <div>
                         <label for="description-item">Description of Item (Including SAP No.)</label>
                         <textarea class="qa-editable" id="description-item" name="description_item" placeholder="Enter description of item"
                             required tabindex="17"></textarea>
                     </div>
                 
-                    <div class="form-group">
+                    <div>
                         <label for="description-defect">Description of Defect</label>
                         <textarea class="qa-editable" id="description-defect" name="description_defect"
                             placeholder="Enter description of defect" required tabindex="18"></textarea>
@@ -133,7 +133,7 @@
                     <button class="edit" id="qa-edit" type="button" tabindex="21">Edit</button>
                     <button class="save" id="qa-save" type="submit" tabindex="22">Save</button>
                 </div>
-            </div>
+            </fieldset>
 
         </details>
 

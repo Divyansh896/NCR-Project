@@ -210,39 +210,37 @@
         </form>
 
         <!-- Confirmation section -->
-        <div class="form-section">
-            <h3>Confirmation</h3>
-            <div class="summ-qa-info">
-                <p>QA Name: <span id="confirm-qa-name"></span></p>
-                <p>Date: <span id="confirm-date"></span></p>
-            </div>
-            <div>
-            <div class="summ-qa-prod-info">
+            <fieldset class="form-section">
+                <legend>Confirmation</legend>
+                    <p>QA Name: <span id="confirm-qa-name"></span></p>
+                    <p>Date: <span id="confirm-date"></span></p>
+                
+                
+                    
+                        <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
+                        <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
+                        <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+                    
+                    
+                        <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
+                        <p>Product No: <span id="confirm-product-no"></span></p>
+                    
+                
                 <div>
-                    <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
-                    <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
-                    <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+                    <p>Description Item: <span id="confirm-description-item"></span></p>
+                    <p>Description Defect: <span id="confirm-description-defect"></span></p>
+                    <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
                 </div>
                 <div>
-                    <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
-                    <p>Product No: <span id="confirm-product-no"></span></p>
+                    <label for="confirm-checkbox">I affirm that all the details submitted are correct and fully validated. I take full responsibility for the accuracy of this report:</label>
+                    <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox" aria-label="check box to confirm" required>
                 </div>
-            </div>
-            <div>
-                <p>Description Item: <span id="confirm-description-item"></span></p>
-                <p>Description Defect: <span id="confirm-description-defect"></span></p>
-                <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
-            </div>
-            <div>
-                <label for="confirm-checkbox">I affirm that all the details submitted are correct and fully validated. I take full responsibility for the accuracy of this report:</label>
-                <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox" aria-label="check box to confirm" required>
-            </div>
-            <div>
-                <button type="button" id="back-btn2" aria-label="Move to previous step" tabindex="21">Back</button>
-                <button type="submit" id="submit-btn" aria-label="Submit the form" tabindex="25">Submit</button>
-            </div>
+                <div>
+                    <button type="button" id="back-btn2" aria-label="Move to previous step" tabindex="21">Back</button>
+                    <button type="submit" id="submit-btn" aria-label="Submit the form" tabindex="25">Submit</button>
+                </div>
+            </fieldset>
 
-        </div>
     </main>
 
     <footer>
