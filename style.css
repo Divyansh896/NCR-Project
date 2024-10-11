@@ -475,10 +475,6 @@ textarea{
 
 /* Create NCR QA */
 
-.qa-info label{
-    
-}
-
 .qa-info-section{
     display: grid;
     grid-template-columns:1fr 1fr;
@@ -753,7 +749,7 @@ details[open] .custom-summary::before {
 }
 
 @media screen and (min-width: 425px){
-    
+
 }
 
 @media screen and (max-width: 768px){
