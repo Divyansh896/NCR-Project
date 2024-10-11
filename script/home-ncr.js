@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching NCR data:', error));
 });
-
+const footer = document.getElementById('footer-scroll') 
+footer.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Adds a smooth scroll effect
+    })
+})
 // Initialize button click event listeners
 function initializeButtons() {
     const btnCreate = document.getElementById('createNcr');

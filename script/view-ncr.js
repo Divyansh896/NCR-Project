@@ -1,5 +1,11 @@
 let ncrData = []; // Define a variable to hold the data
-
+const footer = document.getElementById('footer-scroll') 
+footer.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Adds a smooth scroll effect
+    })
+})
 // DOMContentLoaded ensures that first all of the HTML is loaded in the web page before adding anything to the HTML structure.
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Loading the data

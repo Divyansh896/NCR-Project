@@ -3,6 +3,22 @@ const user = JSON.parse(sessionStorage.getItem("currentUser"))
 const queryParams = new URLSearchParams(window.location.search)
 const starElements = document.querySelectorAll('.required');
 
+// Get the input elements
+const quantityReceivedInput = document.getElementById('quantity-received');
+const quantityDefectiveInput = document.getElementById('quantity-defective');
+
+// Attach the preventNegativeInput function to both inputs
+quantityReceivedInput.addEventListener('input', preventNegativeInput);
+quantityDefectiveInput.addEventListener('input', preventNegativeInput);
+
+const footer = document.getElementById('footer-scroll') 
+footer.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Adds a smooth scroll effect
+    })
+})
+
 let ncrData = []
 
 starElements.forEach(star => {
@@ -46,7 +62,12 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-
+function preventNegativeInput(event) {
+    if (event.target.value < 0) {
+        alert("The quantity cannot be in negative!!\nEnter only positive values.")
+        event.target.value = 0;
+    }
+}
 
 // Initialize NCR number based on user role
 let ncrNumber = queryParams.get('ncr_no') // Function to generate the latest NCR number
@@ -209,9 +230,11 @@ if (user.role === 'QA Inspector') {
                 starElement.style.display = 'none'; // Hide star if filled
             }
         });
-        // Additional validation: Check that quantity defective is not greater than quantity received
-        const quantityReceived = parseInt(document.getElementById('quantity-received').value, 10)
-        const quantityDefective = parseInt(document.getElementById('quantity-defective').value, 10)
+        
+
+        const quantityReceived = parseInt(quantityReceivedInput.value, 10);
+        const quantityDefective = parseInt(quantityDefectiveInput.value, 10);
+
 
         // Check if quantities are valid numbers
         if (!isNaN(quantityReceived) && !isNaN(quantityDefective) && quantityDefective > quantityReceived) {
@@ -220,7 +243,6 @@ if (user.role === 'QA Inspector') {
         } else {
             isvalid = true
         }
-
 
         // Validate checkboxes
         const checkboxes = document.querySelectorAll('input[type="checkbox"][name="process"]')
