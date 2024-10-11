@@ -23,7 +23,7 @@ button, input[type="text"], input[type="password"], input[type="date"], input[ty
     padding: 0px 10px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid #163650;
+    border: 2px solid #163650;
     font-size: 1rem;
 }
 
@@ -243,6 +243,7 @@ footer {
 .form-section.active {
     display: grid;
     place-items: center;
+    position: relative;
     padding: 20px;
     margin: 30px 40px;
     border-radius: 5px;
@@ -251,14 +252,43 @@ footer {
 
 .form-section.active label {
     margin-top: 10px;
-    font-size: 1.5rem;
+    margin-right: 10px;
+    font-size: 1.2rem;
 }
 
 .form-section.active button {
     background-color: #1a3153;
     color: #f4f4f4;
     margin: 20px;
+    width: 100px;
 }
+
+.confirm-create-qa{
+    place-items: left;
+}
+
+.form-section p{
+    font-weight: bold;
+    position:absolute;
+    left: 10px;
+    top: 0px;
+}
+
+.form-section span{
+    font-weight: normal;
+}
+
+.affirmation{
+    margin-top: 30px ;
+}
+
+
+.btn-qa-create {
+    position: absolute;
+    bottom: 0px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
 
 .qa-date, .qa-name {
     font-size: 1rem;
@@ -282,6 +312,7 @@ footer {
     display: flex;
     margin: 40px 0 20px;
     position: relative;
+    justify-content: space-between;
 }
 
 .status-bar div {
@@ -290,7 +321,7 @@ footer {
     text-align: center;
     color: black;
     transition: color 0.3s ease;
-    justify-self: space-between;
+    
 }
 
 .status-bar div.active {
@@ -444,12 +475,15 @@ textarea{
 
 /* Create NCR QA */
 
-
+.qa-info label{
+    
+}
 
 .qa-info-section{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 300px;
+    grid-template-columns:1fr 1fr;
+    gap: 200px;
+    justify-content: space-between;
     align-items: center;
     
 }
@@ -457,11 +491,9 @@ textarea{
 .qa-info-section > div {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center; 
 }
 
-.qa-info-section label, 
 .qa-info-section input[type="text"],
 .qa-info-section input[type="number"]{
     width: 300px;
@@ -469,13 +501,13 @@ textarea{
 }
 
 .qa-process{
-    display: flex;
-    flex-direction: column; /* Stack the checkboxes vertically */ /* Align checkboxes and labels to the left */
+    display: inline-flex;
+    justify-content: center;
     border: none;
 }
 
 .qa-process label{
-    align-items: center; /* Align checkbox and label vertically */
+    margin-right: 30px;
 }
 
 .qa-process legend{
@@ -483,14 +515,18 @@ textarea{
     margin-top: 10px;
     font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .form-section.active legend{
     color: #1a3153;
     text-align: center;
-    margin-top: 10px;
-    font-size: 2rem;
+    margin-top: 20px;
     font-weight: bold;
+}
+
+#product-info, #product-desc, #confiramntion{
+    font-size: 2rem;
 }
 
 /*Product decsription step*/
@@ -778,6 +814,8 @@ details[open] .custom-summary::before {
     .form-section.active button{
         margin: 10px 5px;
     }
+
+    
 
     textarea{
         height: 200px;
