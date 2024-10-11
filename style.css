@@ -762,13 +762,24 @@ details[open] .custom-summary::before {
 @media screen and (min-width:320px) {
 }
 
-@media screen and (min-width: 425px){
+@media screen and (max-width: 426px){
 
-    header img {min-width: 40px;}
-    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
-        margin: 20px 0px;
+    h1{ font-size: 1.5rem;}
+
+    .filter-section input, .fieldset-contact input, .account input {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    /*account*/
+    .account select {
+        width: 220px;
     }
 
+    .account legend img{ 
+        height: 170px;
+        width: 170px;
+    }
     
 }
 
@@ -776,7 +787,7 @@ details[open] .custom-summary::before {
 
     /* general*/
 
-    h1{ font-size: 1.5rem;}
+    h1{ font-size: 2rem;}
 
     header img {
         max-width: 200px;
@@ -786,8 +797,6 @@ details[open] .custom-summary::before {
         display: block; /* Show burger menu on smaller screens */
         position:absolute;
         right: 20px;
-        width: 40px;
-        height: 40px;
     }
 
     nav ul.nav-list {
@@ -889,10 +898,7 @@ details[open] .custom-summary::before {
         align-items: center;
     }
 
-    .filter-section input, .fieldset-contact input, .account input{
-        width: 200px;
-        margin-bottom: 20px;
-    }
+    
 
     /* Account */
 
@@ -900,15 +906,15 @@ details[open] .custom-summary::before {
         margin: 0px 0px;
         border-radius: 10px 10px 0 0;
     }
-
-    .account select{
-        width: 220px;
+    .account label {
+        margin-top: 10px;
     }
 
-    .account legend img{ 
-        height: 170px;
-        width: 170px;
+    .account legend img {
+        height: 200px;
+        width: 200px;
     }
+    
         
     .form-row, .text-descr, .form-row-engineer{
         display: inline-block;
@@ -949,6 +955,14 @@ details[open] .custom-summary::before {
         padding: 10px 0px;
     }
 
+    .indicator{
+        font-size: 1.7rem;
+    }
+
+    h1{
+        font-size: 3.5rem;
+    }
+
     /*home page */
     .main-container{
     gap: 200px;
@@ -966,7 +980,7 @@ details[open] .custom-summary::before {
 
     button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select {
         height: 50px;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
@@ -976,19 +990,25 @@ details[open] .custom-summary::before {
     /* account*/
 
     .account{
-        margin: 0px 200px;
+        margin: 0px 300px;
     }
 
     .account label {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .account input {
         width: 600px;
+        font-size: 1.7rem;
     }
     
     .account select {
         width: 620px;
+    }
+
+    .account legend img{
+        width: 350px;
+        height: 350px;
     }
 
 }
