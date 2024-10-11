@@ -759,10 +759,43 @@ details[open] .custom-summary::before {
 
 /* MEDIA */
 
-@media screen and (min-width:320px) {
+@media(max-width:320px) {
+
+    .fieldset-viewncr {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        align-items: center;
+        gap: 10px; /* Add vertical space between items */
+    }
+
+    .radio-btn {
+        margin-left: 0; /* Remove margin when stacked vertically */
+    }
+
+    .fieldset-viewncr {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        align-items: center;
+        gap: 10px; /* Add vertical space between items */
+    }
+
+    .radio-btn {
+        margin-left: 0; /* Remove margin when stacked vertically */
+    }
 }
 
-@media screen and (max-width: 426px){
+
+@media (max-width: 375px){
+    .fieldset-viewncr {
+        flex-direction: row; /* Keep in a row but tighter */
+        justify-content: center;
+        gap: 6px; /* Reduce the gap more */
+    }
+
+    .radio-btn {
+        margin-left: 2px; /* Tighter space between button and label */
+    }
+}
+
+@media(max-width: 425px){
 
     h1{ font-size: 1.5rem;}
 
@@ -781,6 +814,46 @@ details[open] .custom-summary::before {
         width: 170px;
     }
     
+    /*view ncr*/
+    .filter-section {
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-section div {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .serach-bar, .date-filter {
+        width: 90%; /* Take up most of the screen width */
+    }
+
+    .fieldset-viewncr {
+        justify-content: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .radio-btn {
+        margin-left: 2px;
+    }
+
+    #record-count {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .ncr-table thead th {
+        padding: 18px; /* Reduce padding for smaller screens */
+    }
+
+    .ncr-table tbody td {
+        padding: 18px;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -876,29 +949,50 @@ details[open] .custom-summary::before {
     }
 
     .form-section.active label, .filter-section label{
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-bottom: 0px;
     }
 
     .form-section.active button{
         margin: 10px 5px;
     }
-
-    
+   
 
     textarea{
         height: 200px;
         width: 200px;
     }
 
-    /* View NCR */
-    .filter-section{
-        margin: 0px 0px;
-        display: inline-block;
+     /* view ncr */
+     .filter-section {
+        margin: 0px;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
-    
+    .filter-section div {
+        margin-bottom: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .serach-bar, .date-filter {
+        width: 65%;
+    }
+
+    .fieldset-viewncr {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+    }
+    .fieldset-viewncr legend{
+        font-size: 1.2rem;
+    }
+
+    .ncr-table {
+        font-size: 14px;
+    }
 
     /* Account */
 
