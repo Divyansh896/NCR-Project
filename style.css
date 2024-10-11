@@ -23,7 +23,7 @@ button, input[type="text"], input[type="password"], input[type="date"], input[ty
     padding: 0px 10px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid #163650;
+    border: 2px solid #163650;
     font-size: 1rem;
 }
 
@@ -103,7 +103,8 @@ ul li:hover ul.dropdown {
 }
 
 .linksNav, .linksFooter {
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .linksNav {
@@ -120,6 +121,17 @@ ul li:hover ul.dropdown {
 
 .linksFooter:hover {
     color: #9e7c70
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-menu img {
+    width: 30px;
+    height: auto;
 }
 
 /* Login Page */
@@ -243,6 +255,7 @@ footer {
 .form-section.active {
     display: grid;
     place-items: center;
+    position: relative;
     padding: 20px;
     margin: 30px 40px;
     border-radius: 5px;
@@ -251,14 +264,43 @@ footer {
 
 .form-section.active label {
     margin-top: 10px;
-    font-size: 1.5rem;
+    margin-right: 10px;
+    font-size: 1.2rem;
 }
 
 .form-section.active button {
     background-color: #1a3153;
     color: #f4f4f4;
     margin: 20px;
+    width: 100px;
 }
+
+.confirm-create-qa{
+    place-items: left;
+}
+
+.form-section p{
+    font-weight: bold;
+    position:absolute;
+    left: 10px;
+    top: 0px;
+}
+
+.form-section span{
+    font-weight: normal;
+}
+
+.affirmation{
+    margin-top: 30px ;
+}
+
+
+.btn-qa-create {
+    position: absolute;
+    bottom: 0px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
 
 .qa-date, .qa-name {
     font-size: 1rem;
@@ -282,6 +324,7 @@ footer {
     display: flex;
     margin: 40px 0 20px;
     position: relative;
+    justify-content: space-between;
 }
 
 .status-bar div {
@@ -290,7 +333,7 @@ footer {
     text-align: center;
     color: black;
     transition: color 0.3s ease;
-    justify-self: space-between;
+    
 }
 
 .status-bar div.active {
@@ -444,12 +487,11 @@ textarea{
 
 /* Create NCR QA */
 
-
-
 .qa-info-section{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 300px;
+    grid-template-columns:1fr 1fr;
+    gap: 200px;
+    justify-content: space-between;
     align-items: center;
     
 }
@@ -457,11 +499,9 @@ textarea{
 .qa-info-section > div {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center; 
 }
 
-.qa-info-section label, 
 .qa-info-section input[type="text"],
 .qa-info-section input[type="number"]{
     width: 300px;
@@ -469,13 +509,13 @@ textarea{
 }
 
 .qa-process{
-    display: flex;
-    flex-direction: column; /* Stack the checkboxes vertically */ /* Align checkboxes and labels to the left */
+    display: inline-flex;
+    justify-content: center;
     border: none;
 }
 
 .qa-process label{
-    align-items: center; /* Align checkbox and label vertically */
+    margin-right: 30px;
 }
 
 .qa-process legend{
@@ -483,14 +523,18 @@ textarea{
     margin-top: 10px;
     font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .form-section.active legend{
     color: #1a3153;
     text-align: center;
-    margin-top: 10px;
-    font-size: 2rem;
+    margin-top: 20px;
     font-weight: bold;
+}
+
+#product-info, #product-desc, #confiramntion{
+    font-size: 2rem;
 }
 
 /*Product decsription step*/
@@ -595,6 +639,8 @@ nav ul li {
 
 textarea {
     resize: vertical;
+    border-width: 2px;
+    border-radius: 5px;
 }
 
 .text-descr{
@@ -710,27 +756,86 @@ details[open] .custom-summary::before {
     align-items: center;
 }
 
+
 /* MEDIA */
 
 @media screen and (min-width:320px) {
-    
 }
 
-@media screen and (min-width: 425px){
+@media screen and (max-width: 426px){
+
+    h1{ font-size: 1.5rem;}
+
+    .filter-section input, .fieldset-contact input, .account input {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    /*account*/
+    .account select {
+        width: 220px;
+    }
+
+    .account legend img{ 
+        height: 170px;
+        width: 170px;
+    }
     
 }
 
 @media screen and (max-width: 768px){
 
     /* general*/
-    header img {max-width: 120px;}
 
-    h1{ font-size: 1.5rem;}
+    h1{ font-size: 2rem;}
+
+    header img {
+        max-width: 200px;
+    }
+
+    .burger-menu {
+        display: block; /* Show burger menu on smaller screens */
+        position:absolute;
+        right: 20px;
+    }
+
+    nav ul.nav-list {
+        display: none; /* Initially hide the navigation */
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    nav ul.nav-list.active {
+        display: flex; /* Show navigation when burger menu is active */
+    }
+
+    nav li {
+        display: block; /* Stack navigation items vertically */
+        margin-left: 0;
+    }
+
+    nav ul li ul.dropdown {
+        position: relative;
+    }
+
+    .linksNav{
+        display: none;
+    }
+
+    nav ul{
+        display: none;
+    }
 
     /*home*/
     .main-container {
-        display:inline-block;
-        margin: 0px 0px;
+        display: block;
+        text-align: center; /* Centers the containers for smaller screens */
+        margin: 10px auto;
+    }
+
+    .main-container section {
+        display: inline-block;
+        width: 80%;
     }
 
     p{
@@ -738,7 +843,7 @@ details[open] .custom-summary::before {
     }
 
     .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
-        margin: 30px 0px;
+        margin: 20px 0px;
         height: 150px;
     }
 
@@ -779,6 +884,8 @@ details[open] .custom-summary::before {
         margin: 10px 5px;
     }
 
+    
+
     textarea{
         height: 200px;
         width: 200px;
@@ -791,10 +898,7 @@ details[open] .custom-summary::before {
         align-items: center;
     }
 
-    .filter-section input, .fieldset-contact input, .account input{
-        width: 200px;
-        margin-bottom: 20px;
-    }
+    
 
     /* Account */
 
@@ -802,27 +906,109 @@ details[open] .custom-summary::before {
         margin: 0px 0px;
         border-radius: 10px 10px 0 0;
     }
-
-    .account select{
-        width: 220px;
+    .account label {
+        margin-top: 10px;
     }
 
-    .account legend img{ 
-        height: 170px;
-        width: 170px;
+    .account legend img {
+        height: 200px;
+        width: 200px;
     }
+    
         
     .form-row, .text-descr, .form-row-engineer{
         display: inline-block;
     }
-
-    
 }
 
 @media screen and (min-width: 1024px){
 
+    /*home page*/
+    .main-container{
+        padding: 40px;
+    }
 }
 
 @media screen and (min-width: 1440px){
+    
+}
+
+@media screen and (min-width: 2560px){
+
+    /* General */
+    header img {
+        max-width: 400px;
+    }
+
+    footer{
+        font-size: 1.3em;
+        padding: 20px;
+    }
+
+    .linksNav, .linksFooter {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    footer p{
+        font-size: 1.5rem;
+        padding: 10px 0px;
+    }
+
+    .indicator{
+        font-size: 1.7rem;
+    }
+
+    h1{
+        font-size: 3.5rem;
+    }
+
+    /*home page */
+    .main-container{
+    gap: 200px;
+    padding: 20px;
+    max-width: 1800px;
+    }
+
+    .featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
+        font-size: 2.5rem;
+    }
+
+    .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
+        font-size: 2rem;
+    }
+
+    button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select {
+        height: 50px;
+        font-size: 1.7rem;
+    }
+
+    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
+        height: 600px;
+    }
+
+    /* account*/
+
+    .account{
+        margin: 0px 300px;
+    }
+
+    .account label {
+        font-size: 2rem;
+    }
+
+    .account input {
+        width: 600px;
+        font-size: 1.7rem;
+    }
+    
+    .account select {
+        width: 620px;
+    }
+
+    .account legend img{
+        width: 350px;
+        height: 350px;
+    }
 
 }

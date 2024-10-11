@@ -20,6 +20,9 @@
         <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
+        <div class="burger-menu">
+            <img src="images/hamburger-menu.webp" alt="Open navigation menu" aria-label="Open Navigation Menu"> <!-- Burger menu icon for mobile -->
+        </div>
         <nav aria-label="Primary Navigation">
             <ul>
                 <li><a href="home.html" class="linksNav" tabindex="1" aria-label="Go to home page">Home</a></li> <!-- Set tabindex to sequential order -->
@@ -130,7 +133,7 @@
                 <legend id="product-info">Product Information</legend>
                 <p class="indicator">* indicate required fields.</p>
                 <div class="qa-info-section">
-                    <div>
+                    <div class="qa-info">
                         <label>NCR No:</label>
                         <input type="text" id="ncr-no-generated" name="ncr_no" placeholder="Auto-generated NCR No" readonly tabindex="7">
 
@@ -165,7 +168,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="btn-qa-create">
                     <button type="button" id="clear-btn1" aria-label="Clear all the input fields" tabindex="15">Clear</button>
                     <button type="button" id="next-btn1" aria-label="Move to next step" tabindex="16">Next</button>
                 </div>
@@ -199,7 +202,7 @@
 
                 </div>
 
-                <div>
+                <div class="btn-qa-create">
                     <button type="button" id="back-btn1" tabindex="21">Back</button>
                     <button type="button" id="clear-btn2" tabindex="22">Clear</button>
                     <button type="button" id="next-btn2" tabindex="22">Next</button>
@@ -211,31 +214,27 @@
 
         <!-- Confirmation section -->
             <fieldset class="form-section">
-                <legend>Confirmation</legend>
+                <legend id="confirmation">Confirmation</legend>
+                <div class="confirm-create-qa">
                     <p>QA Name: <span id="confirm-qa-name"></span></p>
                     <p>Date: <span id="confirm-date"></span></p>
+                    <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
+                    <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
+                    <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+                    <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
+                    <p>Product No: <span id="confirm-product-no"></span></p>
+                </div>
                 
-                
-                    
-                        <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
-                        <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
-                        <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
-                    
-                    
-                        <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
-                        <p>Product No: <span id="confirm-product-no"></span></p>
-                    
-                
-                <div>
+                <div class="confirm-create-qa">
                     <p>Description Item: <span id="confirm-description-item"></span></p>
                     <p>Description Defect: <span id="confirm-description-defect"></span></p>
                     <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
                 </div>
-                <div>
+                <div class="affirmation">
                     <label for="confirm-checkbox">I affirm that all the details submitted are correct and fully validated. I take full responsibility for the accuracy of this report:</label>
                     <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox" aria-label="check box to confirm" required>
                 </div>
-                <div>
+                <div class="btn-qa-create">
                     <button type="button" id="back-btn2" aria-label="Move to previous step" tabindex="21">Back</button>
                     <button type="submit" id="submit-btn" aria-label="Submit the form" tabindex="25">Submit</button>
                 </div>
