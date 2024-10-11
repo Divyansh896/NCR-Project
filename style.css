@@ -123,6 +123,17 @@ ul li:hover ul.dropdown {
     color: #9e7c70
 }
 
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-menu img {
+    width: 30px;
+    height: auto;
+}
+
 /* Login Page */
 #login {
     background-image: url('images/login.jpg');
@@ -628,6 +639,8 @@ nav ul li {
 
 textarea {
     resize: vertical;
+    border-width: 2px;
+    border-radius: 5px;
 }
 
 .text-descr{
@@ -743,24 +756,66 @@ details[open] .custom-summary::before {
     align-items: center;
 }
 
+
 /* MEDIA */
 
 @media screen and (min-width:320px) {
-    
 }
 
-@media screen and (max-width: 425px){
+@media screen and (min-width: 425px){
+
+    header img {min-width: 40px;}
     .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
         margin: 20px 0px;
     }
+
+    
 }
 
 @media screen and (max-width: 768px){
 
     /* general*/
-    header img {min-width: 120px;}
 
     h1{ font-size: 1.5rem;}
+
+    header img {
+        max-width: 200px;
+    }
+
+    .burger-menu {
+        display: block; /* Show burger menu on smaller screens */
+        position:absolute;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    nav ul.nav-list {
+        display: none; /* Initially hide the navigation */
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    nav ul.nav-list.active {
+        display: flex; /* Show navigation when burger menu is active */
+    }
+
+    nav li {
+        display: block; /* Stack navigation items vertically */
+        margin-left: 0;
+    }
+
+    nav ul li ul.dropdown {
+        position: relative;
+    }
+
+    .linksNav{
+        display: none;
+    }
+
+    nav ul{
+        display: none;
+    }
 
     /*home*/
     .main-container {
@@ -918,5 +973,22 @@ details[open] .custom-summary::before {
         height: 600px;
     }
 
+    /* account*/
+
+    .account{
+        margin: 0px 200px;
+    }
+
+    .account label {
+        font-size: 1.5rem;
+    }
+
+    .account input {
+        width: 600px;
+    }
     
+    .account select {
+        width: 620px;
+    }
+
 }
