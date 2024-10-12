@@ -286,19 +286,18 @@ if (user.role === 'QA Inspector') {
         const radioButtons = document.querySelectorAll('input[name="item_marked_nonconforming"]');
         const radioErrorSpan = document.querySelector('legend[for="item-marked-nonconforming"] .required'); // Select the required span in the legend
 
-       
-            // Check if at least one radio button is checked
-            if (![...radioButtons].some(radio => radio.checked)) {
-                radioErrorSpan.style.display = 'inline'; // Show error in the span if no radio button is checked
-                isValid = false;
-            } else {
-                radioErrorSpan.style.display = 'none'; // Hide error if valid
-                isValid = true; // Set valid to true if at least one radio button is checked
-            }
+        // Check if at least one radio button is checked
+        // Check if at least one radio button is checked
+        if (![...radioButtons].some(radio => radio.checked)) {
+            radioErrorSpan.style.display = 'inline'; // Show error in the span if no radio button is checked
+            isValid = false;
+        } else {
+            radioErrorSpan.style.display = 'none'; // Hide error if valid
+            isValid = true; // Set valid to true if at least one radio button is checked
         }
 
         return isValid
-    
+    }
 
     function populateConfirmationData() {
         // Get values from Section 1

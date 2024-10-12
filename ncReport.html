@@ -20,7 +20,7 @@
         <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
-        
+
         <nav aria-label="Primary Navigation">
             <a href="#" id="menu-icon"></a>
             <ul>
@@ -47,115 +47,116 @@
         <h1>Non-Conformance Report</h1>
         <details>
             <summary class="custom-summary" aria-label="Quality assurance department details">QA Rep</summary>
-                <p class="indicator">* indicate required fields.</p>
-                <!-- First Column -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="qa-name">QA Name</label>
-                        <input type="text" class="qa-editable" id="qa-name" name="qa_name"
-                            placeholder="Enter QA representative name" required tabindex="7">
-                    </div>
-                    <div class="form-group">
-                        <label for="ncr-no">NCR No.</label>
-                        <input type="text" class="qa-editable" id="ncr-no" name="ncr_no" placeholder="Enter NCR number"
-                            required tabindex="8">
-                    </div>
-                    <div class="form-group">
-                        <label for="sales-order-no">Sales Order No.</label>
-                        <input type="text" class="qa-editable" id="sales-order-no" name="sales_order_no"
-                            placeholder="Enter sales order number" required tabindex="9">
-                    </div>
-                    <div class="form-group">
-                        <label for="quantity-received">Quantity Received</label>
-                        <input type="number" class="qa-editable" id="quantity-received" name="quantity_received"
-                            placeholder="Enter quantity received" required tabindex="10">
-                    </div>
-                    <div class="form-group">
-                        <label for="quantity-defective">Quantity Defective</label>
-                        <input type="number" class="qa-editable" id="quantity-defective" name="quantity_defective"
-                            placeholder="Enter quantity defective" required tabindex="11">
-                    </div>
+            <p class="indicator">* indicate required fields.</p>
+            <!-- First Column -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="qa-name">QA Name</label>
+                    <input type="text" class="qa-editable" id="qa-name" name="qa_name"
+                        placeholder="Enter QA representative name" required tabindex="7">
                 </div>
-                <!-- Second Column -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="qa-date">QA Date</label>
-                        <input type="date" class="qa-editable" id="qa-date" name="qa_date" required tabindex="12">
-                    </div>
-                    <div class="form-group">
-                        <label for="supplier-name">Supplier Name</label>
-                        <input type="text" class="qa-editable" id="supplier-name" name="supplier_name"
-                            placeholder="Enter supplier name" required tabindex="13">
-                    </div>
-                    <div class="form-group">
-                        <label for="product-no">Product No.</label>
-                        <input type="text" class="qa-editable" id="product-no" name="product_no"
-                            placeholder="Enter product number" required tabindex="14">
-                    </div>
-                    <div>
-                        <label for="resolved">Resolved:</label>
-                        <input class="qa-editable" type="checkbox" id="resolved" name="resolved" aria-label="Resolved"
-                            tabindex="15">
-                    </div>
-                    <div class="form-group">
-                        <label for="process">Identify Process Applicable</label>
-                        <select class="qa-editable" id="process" name="process" required tabindex="16">
-                            <option value="">Select a Process</option>
-                            <option value="supplier">Supplier</option>
-                            <option value="wip">WIP</option>
-                            <option value="Not applicable">Not Applicable</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label for="ncr-no">NCR No.</label>
+                    <input type="text" class="qa-editable" id="ncr-no" name="ncr_no" placeholder="Enter NCR number"
+                        required tabindex="8">
                 </div>
-                <!-- Textarea Section -->
-                <div class="text-descr">
-                    <div>
-                        <label for="description-item">Description of Item (Including SAP No.)</label>
-                        <textarea class="qa-editable" id="description-item" name="description_item" placeholder="Enter description of item"
-                            required tabindex="17"></textarea>
-                    </div>
-                
-                    <div>
-                        <label for="description-defect">Description of Defect</label>
-                        <textarea class="qa-editable" id="description-defect" name="description_defect"
-                            placeholder="Enter description of defect" required tabindex="18"></textarea>
-                    </div>
+                <div class="form-group">
+                    <label for="sales-order-no">Sales Order No.</label>
+                    <input type="text" class="qa-editable" id="sales-order-no" name="sales_order_no"
+                        placeholder="Enter sales order number" required tabindex="9">
                 </div>
-                <!-- Radio Buttons for Non-Conforming -->
-                <p>Item Marked Non-Conforming?</p>
-                <div class="rad-report">
-                    <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="19">
-                    <label for="item-marked-yes">Yes</label>
-                    <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="20">
-                    <label for="item-marked-no">No</label>
+                <div class="form-group">
+                    <label for="quantity-received">Quantity Received</label>
+                    <input type="number" class="qa-editable" id="quantity-received" name="quantity_received"
+                        placeholder="Enter quantity received" required tabindex="10">
                 </div>
-                <!-- Buttons -->
-                <div class="btn-report">
-                    <button class="edit" id="qa-edit" type="button" tabindex="21">Edit</button>
-                    <button class="save" id="qa-save" type="submit" tabindex="22">Save</button>
+                <div class="form-group">
+                    <label for="quantity-defective">Quantity Defective</label>
+                    <input type="number" class="qa-editable" id="quantity-defective" name="quantity_defective"
+                        placeholder="Enter quantity defective" required tabindex="11">
                 </div>
+            </div>
+            <!-- Second Column -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="qa-date">QA Date</label>
+                    <input type="date" class="qa-editable" id="qa-date" name="qa_date" required tabindex="12">
+                </div>
+                <div class="form-group">
+                    <label for="supplier-name">Supplier Name</label>
+                    <input type="text" class="qa-editable" id="supplier-name" name="supplier_name"
+                        placeholder="Enter supplier name" required tabindex="13">
+                </div>
+                <div class="form-group">
+                    <label for="product-no">Product No.</label>
+                    <input type="text" class="qa-editable" id="product-no" name="product_no"
+                        placeholder="Enter product number" required tabindex="14">
+                </div>
+                <div>
+                    <label for="resolved">Resolved:</label>
+                    <input class="qa-editable" type="checkbox" id="resolved" name="resolved" aria-label="Resolved"
+                        tabindex="15">
+                </div>
+                <div class="form-group">
+                    <label for="process">Identify Process Applicable</label>
+                    <select class="qa-editable" id="process" name="process" required tabindex="16">
+                        <option value="">Select a Process</option>
+                        <option value="supplier">Supplier</option>
+                        <option value="wip">WIP</option>
+                        <option value="Not applicable">Not Applicable</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Textarea Section -->
+            <div class="text-descr">
+                <div>
+                    <label for="description-item">Description of Item (Including SAP No.)</label>
+                    <textarea class="qa-editable" id="description-item" name="description_item"
+                        placeholder="Enter description of item" required tabindex="17"></textarea>
+                </div>
+
+                <div>
+                    <label for="description-defect">Description of Defect</label>
+                    <textarea class="qa-editable" id="description-defect" name="description_defect"
+                        placeholder="Enter description of defect" required tabindex="18"></textarea>
+                </div>
+            </div>
+            <!-- Radio Buttons for Non-Conforming -->
+            <p>Item Marked Non-Conforming?</p>
+            <div class="rad-report">
+                <input type="radio" id="item-marked-yes" name="item_marked_nonconforming" value="yes" tabindex="19">
+                <label for="item-marked-yes">Yes</label>
+                <input type="radio" id="item-marked-no" name="item_marked_nonconforming" value="no" tabindex="20">
+                <label for="item-marked-no">No</label>
+            </div>
+            <!-- Buttons -->
+            <div class="btn-report">
+                <button class="edit" id="qa-edit" tabindex="21">Edit</button>
+                <button class="save" id="qa-save" tabindex="22">Save</button>
+            </div>
         </details>
 
         <details>
             <summary class="custom-summary" aria-label="Engineering department details">Engineering</summary>
             <p class="indicator">* indicate required fields.</p>
-            <div class="confirm-create-qa>
+            <div class="confirm-create-qa">
                 <div>
-                    <label for="engineer-name">Engineer Name:</label>
+                    <label for=" engineer-name">Engineer Name:</label>
                     <input type="text" class="eng-editable" id="engineer-name" name="engineer_name"
                         aria-label="Engineer Name" tabindex="23" placeholder="Enter engineer's name...">
                 </div>
+            </div>
 
-                <div>
-                    <label for="disposition">Disposition:</label>
-                    <select class="eng-editable" id="disposition" name="disposition" aria-label="Disposition" tabindex="24">
-                        <option value="" disabled selected>Select a disposition</option>
-                        <option value="rework">Rework</option>
-                        <option value="use_as_is">Use As Is</option>
-                        <option value="repair">Repair</option>
-                        <option value="scrap">Scrap</option>
-                    </select>
-                </div>
+            <div>
+                <label for="disposition">Disposition:</label>
+                <select class="eng-editable" id="disposition" name="disposition" aria-label="Disposition" tabindex="24">
+                    <option value="" disabled selected>Select a disposition</option>
+                    <option value="rework">Rework</option>
+                    <option value="use_as_is">Use As Is</option>
+                    <option value="repair">Repair</option>
+                    <option value="scrap">Scrap</option>
+                </select>
+            </div>
             </div>
 
 
@@ -181,7 +182,7 @@
                 </div>
 
 
-                
+
                 <div>
                     <label for="revision-date">Revision Date:</label>
                     <input type="date" class="eng-editable" id="revision-date" name="revision_date"
@@ -207,20 +208,20 @@
                 </div>
                 <div>
                     <label for="drawing-update-required">Drawing Update Required:</label>
-                    <input type="checkbox" class="eng-editable" id="drawing-update-required" name="drawing_update_required"
-                        aria-label="Drawing Update Required" tabindex="32">
+                    <input type="checkbox" class="eng-editable" id="drawing-update-required"
+                        name="drawing_update_required" aria-label="Drawing Update Required" tabindex="32">
                 </div>
             </div>
 
             <!-- Buttons -->
             <div class="btn-report">
-                <button class="edit" id="eng-edit" type="button" tabindex="33">Edit</button>
-                <button class="save" id="eng-save" type="submit" tabindex="34">Save</button>
+                <button class="edit" id="eng-edit"  tabindex="33">Edit</button>
+                <button class="save" id="eng-save"  tabindex="34">Save</button>
             </div>
         </details>
 
 
-
+<!-- purchasing department -->
         <details>
             <summary class="custom-summary" aria-label="Purchasing department details">Purchasing Decision</summary>
             <div class="form-row-engineer">
@@ -239,12 +240,12 @@
                         <option value="defer_to_engineering">Defer to Engineering</option>
                     </select>
                 </div>
-                
+
 
                 <div>
                     <label for="car-raised">CAR Raised:</label>
-                    <input class="purch-editable" type="checkbox" id="car-raised" name="car_raised" aria-label="CAR Raised"
-                        tabindex="37">
+                    <input class="purch-editable" type="checkbox" id="car-raised" name="car_raised"
+                        aria-label="CAR Raised" tabindex="37">
                 </div>
 
                 <div>
@@ -263,14 +264,15 @@
             <div class="form-row-engineer">
                 <div>
                     <label for="operations-manager-name">Operations Manager Name:</label>
-                    <input class="purch-editable" type="text" id="operations-manager-name" name="operations_manager_name"
-                        aria-label="Operations Manager Name" tabindex="40" placeholder="Enter operations manager's name...">
+                    <input class="purch-editable" type="text" id="operations-manager-name"
+                        name="operations_manager_name" aria-label="Operations Manager Name" tabindex="40"
+                        placeholder="Enter operations manager's name...">
                 </div>
 
                 <div>
                     <label for="operations-manager-date">Operations Manager Date:</label>
-                    <input class="purch-editable" type="date" id="operations-manager-date" name="operations_manager_date"
-                        aria-label="Operations Manager Date" tabindex="41">
+                    <input class="purch-editable" type="date" id="operations-manager-date"
+                        name="operations_manager_date" aria-label="Operations Manager Date" tabindex="41">
                 </div>
 
                 <div>
@@ -294,8 +296,8 @@
             <div class="form-row-engineer">
                 <div>
                     <label for="ncr-closed">NCR Closed:</label>
-                    <input class="purch-editable" type="checkbox" id="ncr-closed" name="ncr_closed" aria-label="NCR Closed"
-                        tabindex="45">
+                    <input class="purch-editable" type="checkbox" id="ncr-closed" name="ncr_closed"
+                        aria-label="NCR Closed" tabindex="45">
                 </div>
 
                 <div>
@@ -308,8 +310,8 @@
 
             <!-- Buttons -->
             <div class="btn-report">
-                <button class="edit" id="purch-edit" type="button" tabindex="47">Edit</button>
-                <button class="save" id="purch-save" type="submit" tabindex="48">Save</button>
+                <button class="edit" id="purch-edit"  tabindex="47">Edit</button>
+                <button class="save" id="purch-save" tabindex="48">Save</button>
             </div>
 
         </details>
