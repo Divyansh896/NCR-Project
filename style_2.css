@@ -352,8 +352,6 @@ fieldset {
     /* Example border style */
     border-radius: 5px;
     /* Rounded corners */
-    padding: 15px;
-    /* Padding inside the fieldset */
     margin: 10px 0;
     /* Space between fieldsets */
 }
@@ -446,13 +444,13 @@ fieldset legend {
 
 .qa-info-section input,
 .qa-info-section select {
-    height: 30px;
     width: 100%;
 }
 
 .qa-process {
     text-align: left;
     border: none;
+    margin-top: 20px;
 }
 
 .item-marked-nonconforming{
