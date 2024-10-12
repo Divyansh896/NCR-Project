@@ -11,8 +11,8 @@ const quantityDefectiveInput = document.getElementById('quantity-defective');
 quantityReceivedInput.addEventListener('input', preventNegativeInput);
 quantityDefectiveInput.addEventListener('input', preventNegativeInput);
 
-const footer = document.getElementById('footer-scroll') 
-footer.addEventListener('click', ()=>{
+const footer = document.getElementById('footer-scroll')
+footer.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth' // Adds a smooth scroll effect
@@ -158,14 +158,15 @@ if (user.role === 'QA Inspector') {
     // Submit the form and show the confirmation message
     document.getElementById("submit-btn").addEventListener("click", (e) => {
         const check = document.getElementById('confirm-checkbox')
+
         if (check.checked) {
             submitForm(user.role)
             sendMail()
             alert("Form submitted")
             window.location.href = "home.html"
         } else {
-            check.focus()
             check.scrollIntoView({ behavior: "smooth", block: "center" }) // Optional: scroll the checkbox into view
+            check.focus()
             alert("Please confirm by checking the box before submitting.")
             e.preventDefault()
         }
@@ -230,7 +231,7 @@ if (user.role === 'QA Inspector') {
                 starElement.style.display = 'none'; // Hide star if filled
             }
         });
-        
+
 
         const quantityReceived = parseInt(quantityReceivedInput.value, 10);
         const quantityDefective = parseInt(quantityDefectiveInput.value, 10);
@@ -283,14 +284,16 @@ if (user.role === 'QA Inspector') {
         });
 
         const radioButtons = document.querySelectorAll('input[name="item_marked_nonconforming"]');
-        const radioErrorSpan = document.querySelector('label[for="item-marked-nonconforming"] .required'); // Select the required span in the label
+        const radioErrorSpan = document.querySelector('legend[for="item-marked-nonconforming"] .required'); // Select the required span in the legend
 
+        // Check if at least one radio button is checked
         // Check if at least one radio button is checked
         if (![...radioButtons].some(radio => radio.checked)) {
             radioErrorSpan.style.display = 'inline'; // Show error in the span if no radio button is checked
             isValid = false;
         } else {
             radioErrorSpan.style.display = 'none'; // Hide error if valid
+            isValid = true; // Set valid to true if at least one radio button is checked
         }
 
         return isValid
