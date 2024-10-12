@@ -49,6 +49,7 @@ h1{
 
 .indicator{
     color: red;
+    position: absolute;
 }
 /* Header */
 header {
@@ -281,12 +282,19 @@ footer p{
 }
 
 .confirm-create-qa{
+    display: grid;
+    grid-template-columns:1fr 1fr;
     place-items: left;
+    gap: 200px;
+}
+
+.confirm-create-qa p{
+    margin-top: 15px;
+    font-size: 1.5rem;
 }
 
 .form-section p{
     font-weight: bold;
-    position:absolute;
     left: 10px;
     top: 0px;
 }
@@ -297,15 +305,18 @@ footer p{
 
 .affirmation{
     margin-top: 30px ;
+    display: flex;
 }
 
+input[type="checkbox"]{
+    margin-top: 10px;
+}
 
 .btn-qa-create {
-    position: absolute;
-    bottom: 0px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: flex-end; /* Align the buttons to the right */
+    gap: 10px; /* Adds space between the buttons */
 }
-
 
 .qa-date, .qa-name {
     font-size: 1rem;
@@ -498,7 +509,7 @@ textarea{
     gap: 200px;
     justify-content: space-between;
     align-items: center;
-    
+    align-items: start;
 }
 
 .qa-info-section > div {
@@ -538,7 +549,7 @@ textarea{
     font-weight: bold;
 }
 
-#product-info, #product-desc, #confiramntion{
+#product-info, #product-desc, #confirmation{
     font-size: 2rem;
 }
 
@@ -1109,6 +1120,7 @@ details[open] .custom-summary::before {
 
     .indicator{
         font-size: 1.7rem;
+        position: absolute;
     }
 
     h1{
