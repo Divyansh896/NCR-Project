@@ -130,7 +130,7 @@ if (user.role === 'QA Inspector') {
     })
 
     document.getElementById("next-btn2").addEventListener("click", () => {
-        if (validateSection2()) {
+        if (!validateSection2()) {
             sections[currentStep].classList.remove("active")
             currentStep++
             sections[currentStep].classList.add("active")

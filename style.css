@@ -864,6 +864,9 @@ details[open] .custom-summary::before {
         margin-top: 5px;
     }
 
+    .featuresCreateNCR div{
+        align-self: baseline;
+    }
     .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
         margin: 20px 0px;
         height: 150px;
