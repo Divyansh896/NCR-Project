@@ -658,6 +658,7 @@ input[type="radio"] {
 .fieldset-contact #message {
     width: 95%;
     height: 90px;
+    
 }
 
 /* Button Styling */
@@ -713,6 +714,18 @@ input[type="radio"] {
     .featuresManageAcc {
         margin: 20px 0px;
         height: 150px;
+    }
+
+    .featuresCreateNCR h2,
+    .featuresViewNCR h2,
+    .featuresManageAcc h2 {
+        font-size: 1.5rem;
+    }
+
+    .featuresCreateNCR p,
+    .featuresViewNCR p,
+    .featuresManageAcc p {
+        font-size: 1rem;
     }
 
     .featuresCreateNCR h2,
@@ -806,164 +819,40 @@ input[type="radio"] {
 
 }
 
-@media screen and (min-width: 1024px) {
 
-    /*header*/
-    header {
+
+
+@media screen and (min-width: 1024px){
+  
+    /* general*/
+   header img {
+    max-width: 300px;
+    }
+
+    header{
         padding: 10px 25px;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #163650;
-        height: 70px;
     }
 
-    header img {
-        max-width: 250px;
-        margin-top: 0;
+    /* home */
+
+
+    .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
+        font-size: 1.5rem;
+        margin: 25px 0 20px;
     }
 
-    .logo-container {
-        display: flex;
-        align-items: center;
-    }
-
-    /* Nav bar */
-    #menu-icon {
-        display: none;
-        /* Hide hamburger menu icon */
-    }
-
-    nav {
-        margin-left: auto;
-        /* Push nav to the right */
-    }
-
-    nav ul {
-        right: 0;
-        /* Aligns to the right */
-        transition: none;
-        /* Remove transition for desktop */
-        display: block;
-        /* Always show the menu */
-        background: transparent;
-        /* Set background to transparent */
-        padding: 0;
-        /* Remove padding for the list */
-        margin: 0;
-        /* Remove margin for the list */
-        position: relative;
-        /* Ensure proper positioning */
-    }
-
-    nav li {
-        display: inline-block;
-        /* Display items inline */
-        position: relative;
-        /* Needed for dropdowns */
-        margin: 0;
-        /* Adjust margins as needed */
-    }
-
-    nav li a {
-        display: block;
-        /* Ensure links are block elements */
-        padding: 10px 25px;
-        /* Adjust padding for larger click area */
-        text-align: center;
-        /* Center align text */
-        text-decoration: none;
-        /* Remove underline */
-        color: #000;
-        /* Set text color */
-    }
-
-    /* Add side border on hover */
-    nav li a:hover {
-        text-decoration: underline;
-    }
-
-    nav li ul.dropdown {
-        width: 100%;
-        /* Ensure dropdown takes full width */
-        position: absolute;
-        /* Position it relative to parent */
-        z-index: 999;
-        /* Ensure it appears above other content */
-        display: none;
-        /* Hide dropdowns initially */
-        background: rgb(254, 254, 218);
-        /* Set dropdown background */
-        padding: 0;
-        /* Remove padding from dropdown */
-        margin: 45px 0;
-        /* Remove margin from dropdown */
-    }
-
-    nav li:hover ul.dropdown {
-        display: block;
-        /* Show dropdown on hover */
-    }
-
-    nav li ul.dropdown li {
-        display: block;
-        /* Ensure dropdown items are block elements */
-        margin: 8px 0;
-        /* Spacing between dropdown items */
-    }
-
-    /*general*/
-    h1 {
+    .featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
         font-size: 2rem;
     }
 
-    label,
-    label {
-        font-size: 1rem;
-    }
-
-    /*home page*/
     .main-container {
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 60px auto;
+        justify-content: space-between;
         padding: 40px;
     }
 
-    /*view ncr*/
-    .filter-section {
-        flex-direction: row;
-        margin: 20px 15px;
-    }
-
-    .serach-bar,
-    .date-filter {
-        width: 200px;
-    }
-
-    #record-count {
-        margin-bottom: 10px;
-    }
-
-
-    .ncr-table th,
-    .ncr-table td {
-        display: table-cell;
-        /* Show all table cells */
-    }
-
-    /* Home Page - Three-column Layout */
-    /*home*/
-    .main-container {
-        display: grid;
-        text-align: center; /* Centers the containers for smaller screens */
-        margin: 10px auto;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .main-container section {
-        display: inline-block;
-        width: 95%;
-    }
-    
     .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
         display: flex;
         flex-direction: column;
@@ -980,76 +869,48 @@ input[type="radio"] {
         border-radius: 8px;
         transition: transform 0.3s ease;
         position: relative;
+        width:100%;
     }
-    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
-        padding-top: 315px;
-    }
-    p{
-        margin-top: 5px;
-    }
-
     
-
-    .featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
-        font-size: 1.5rem;
-    }
-    .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
-        font-size: 1rem;
-    }
-
-    .featuresCreateNCR:hover,
-    .featuresViewNCR:hover,
-    .featuresManageAcc:hover {
-        transform: scale(1.05);
-    }
+     /* view ncr */
 }
 
+@media screen and (min-width: 2222px){
 
-@media screen and (min-width: 2560px){
-
-    /* General */
     header img {
         max-width: 400px;
     }
 
-    footer{
+    header{
+        height:auto;
+    }
+
+    footer {
         font-size: 1.3em;
         padding: 20px;
     }
 
-    .linksNav, .linksFooter {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-
-    footer p{
+    footer p {
         font-size: 1.5rem;
         padding: 10px 0px;
     }
 
-    .indicator{
-        font-size: 1.7rem;
-        position: absolute;
+    .linksNav, .linksFooter {
+        font-size: 1.5rem;
     }
 
-    h1{
-        font-size: 3.5rem;
+    .main-container {
+        gap: 200px;
+        padding: 20px;
+        max-width: 1800px;
     }
 
-    label, .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p  {
+    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
+        height: 600px;
+    }
+
+    label, .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
         font-size: 2rem;
-    }
-
-    .date-filter {
-        width: 500px;
-    }
-
-    .serach-bar{width: 500px;}
-    /*home page */
-    .main-container{
-    gap: 200px;
-    padding: 20px;
-    max-width: 1800px;
     }
 
     .featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
@@ -1059,49 +920,12 @@ input[type="radio"] {
     button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select {
         height: 60px;
         font-size: 1.7rem;
+        
     }
 
-    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
-        height: 600px;
+    .featuresCreateNCR button, .featuresViewNCR button, .featuresManageAcc button {
+        border-radius: 20px;
+        width: 50%;
+        height: 75px;
     }
-
-    /*view ncr*/
-    #status-filter, #record-count {
-        font-weight: bold;
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .filter-section{
-        margin: 40px 200px;
-    }
-
-    .ncr-table thead th, .ncr-table tbody td {
-        font-size: 1.7rem;
-    }
-
-    /* account*/
-
-    .account{
-        margin: 0px 300px;
-    }
-
-    .account label {
-        font-size: 2rem;
-    }
-
-    .account input {
-        width: 600px;
-        font-size: 1.7rem;
-    }
-    
-    .account select {
-        width: 620px;
-    }
-
-    .account legend img{
-        width: 350px;
-        height: 350px;
-    }
-
 }
