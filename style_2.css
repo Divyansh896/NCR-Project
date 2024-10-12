@@ -76,7 +76,6 @@ header {
 
 header img {
     max-width: 250px;
-    margin-top: 40px;
 }
 
 .logo-container {
@@ -253,7 +252,7 @@ label {
 
 /* Home page */
 .main-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 40px;
     padding: 15px;
@@ -294,7 +293,7 @@ label {
 .featuresCreateNCR h2,
 .featuresViewNCR h2,
 .featuresManageAcc h2 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .featuresCreateNCR p,
@@ -690,6 +689,28 @@ input[type="radio"] {
 }
 
 
+@media screen and (min-width: 320px){
+
+    /* general*/
+       header {
+           padding: 10px 10px;
+       }
+   
+       header img {
+           max-width: 200px;
+       }
+       /* view ncr */
+       .status-bar div {
+           font-size: 14px;
+       }
+   }
+   
+   @media screen and (min-width: 425px){
+       .status-bar div {
+           font-size: 17px;
+       }
+   }
+
 @media screen and (min-width: 768px) {
 
     /*home*/
@@ -697,12 +718,11 @@ input[type="radio"] {
         display: block;
         text-align: center;
         /* Centers the containers for smaller screens */
-        margin: 10px auto;
+        margin: 10px 100px;
     }
 
     .main-container section {
-        display: inline-block;
-        width: 65%;
+        width: 100%;
     }
 
     p {
@@ -712,8 +732,8 @@ input[type="radio"] {
     .featuresCreateNCR,
     .featuresViewNCR,
     .featuresManageAcc {
-        margin: 20px 0px;
-        height: 150px;
+        margin: 40px 0px;
+        height: 250px;
     }
 
     .featuresCreateNCR h2,
@@ -731,7 +751,7 @@ input[type="radio"] {
     .featuresCreateNCR h2,
     .featuresViewNCR h2,
     .featuresManageAcc h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .featuresCreateNCR p,
@@ -846,6 +866,7 @@ input[type="radio"] {
     }
 
     .main-container {
+        display: flex;
         flex-direction: row;
         max-width: 1200px;
         margin: 60px auto;
@@ -869,14 +890,13 @@ input[type="radio"] {
         border-radius: 8px;
         transition: transform 0.3s ease;
         position: relative;
-        width:100%;
     }
     
      /* view ncr */
 }
 
-@media screen and (min-width: 2222px){
-
+@media screen and (min-width: 1760px){
+   
     header img {
         max-width: 400px;
     }
