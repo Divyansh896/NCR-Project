@@ -441,7 +441,6 @@ fieldset legend {
     font-size: 1rem;
 }
 
-<<<<<<< HEAD
 .form-section textarea::placeholder {
     padding: 10px;
 }
@@ -453,20 +452,6 @@ fieldset legend {
 }
 
 .qa-process {
-=======
-.btns-add-photo-video{
-    margin: 10px 0px;
-}
-
-.form-section textarea::placeholder{
-    padding: 10px;
-}
-.qa-info-section input, .qa-info-section select{
-    width: 100%;
-}
-.qa-process{
-    margin-top: 30px;
->>>>>>> 540a4c22c5bf6bde20d693a095fc96f0415a1315
     text-align: left;
     border: none;
 }
