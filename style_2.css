@@ -4,10 +4,243 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+/*general*/
+a {
+    text-decoration: none;
+}
+
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select{
+    padding: 0px 10px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid #163650;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #f4f4f4;
+    color: #163650;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(244, 244, 244, 0.7);
+}
+
+h1{
+    padding: 20px 0px;
+    text-align: center;
+    color: #1a3153;
+    font-size: 2rem;;
+}
+
+.required{
+    color: red;
+    margin: 5px;
+}
+
+.indicator{
+    color: red;
+    position: absolute;
+}
+
+/*header*/
+header {
+    padding: 10px 25px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #163650;
+}
+
+header img {
+    max-width: 225px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/*footer*/
+footer {
+    background-color: #163650;
+    padding: 7px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #dbc7c0;
+    
+}
+
+footer p{
+    padding: 5px 0px;
+}
+
+.linksFooter {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #dbc7c0;
+}
+
+.linksFooter:hover {
+    color: #9e7c70
+}
 /* Navigation */
 /* Login page */
 /* Home page */
 /* Create page */
 /* view ncr */
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-section div {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.fieldset-viewncr {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.fieldset-viewncr legend {
+    font-size: 1.2rem;
+}
+
+.form-section.active label, .filter-section label {
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    font-weight: bold;
+    display: block;
+}
+#status-filter, #record-count {
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.serach-bar, .date-filter {
+    width: 45%; /* Take up most of the screen width */
+}
+
+.radio-btn {
+    margin-left: 2px;
+}
+
+/*table*/
+.ncr-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.ncr-table thead th {
+    background-color: #4c6488;
+    color: #f4f4f4;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+    padding: 10px 5px;
+    font-size: 15px;
+}
+
+.ncr-table tbody td {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 5px;
+    font-size: 15px;
+}
+  
+
+.ncr-table tbody tr:nth-child(even) {
+    background-color: #d7e4f9;
+}
+  
+.ncr-table tbody tr:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+  
+.ncr-table tbody tr:hover {
+    background-color: #b8c4d5;
+}
+
+#ncr-stage-column{
+    display: none;   /* hide the header of the column */
+}
+
+/* HERE SHOULD BE DISPLAY NONE FOR COLUMNS THAT ARE SHOULD NOT BE DISPLAYED */
 /* Manage account */
 /* Contact us */
+/*media*/
+
+@media screen and (min-width: 768px){
+
+    header img {
+        max-width: 270px;
+    }
+
+    #ncr-stage-column{
+        display:table-cell;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /*general*/
+    h1 {
+        font-size: 2rem;
+    }
+
+    header img {
+        max-width: 300px;
+    }
+    /*view ncr*/
+    .filter-section {
+        margin: 20px 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .fieldset-viewncr {
+        border: none;
+        display: flex;
+        align-items: center;
+    }
+ 
+    label {
+        font-size: 1.2rem;
+        margin-bottom: 0px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .serach-bar, .date-filter {
+        width: 200px;
+    }
+
+    .radio-btn {
+        margin-left: 30px;
+    }
+}
