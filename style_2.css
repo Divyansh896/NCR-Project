@@ -34,6 +34,14 @@ a {
     text-decoration: none;
 }
 
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select {
+    padding: 0px 10px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid #163650;
+    font-size: 1rem;
+}
+
 button {
     background-color: #f4f4f4;
     color: #163650;
@@ -430,8 +438,10 @@ fieldset legend {
 
 .form-section textarea {
     height: 200px;
+    font-size: 1rem;
 }
 
+<<<<<<< HEAD
 .form-section textarea::placeholder {
     padding: 10px;
 }
@@ -443,20 +453,37 @@ fieldset legend {
 }
 
 .qa-process {
-    text-align: left;
+=======
+.btns-add-photo-video{
+    margin: 10px 0px;
 }
 
+.form-section textarea::placeholder{
+    padding: 10px;
+}
+.qa-info-section input, .qa-info-section select{
+    width: 100%;
+}
+.qa-process{
+    margin-top: 30px;
+>>>>>>> 540a4c22c5bf6bde20d693a095fc96f0415a1315
+    text-align: left;
+    border: none;
+}
+
+.item-marked-nonconforming{
+    border: none;
+}
 
 .qa-process input {
     display: inline;
-    height: 20px;
+    height: 15px;
     width: 45px;
 }
 
 .item-conforming input,
 .item-conforming label {
     display: inline;
-    margin: 0 10px;
 }
 
 .confirmation p {
