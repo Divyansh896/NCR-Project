@@ -210,14 +210,14 @@
                     <label for="description-defect">Description of Defect:<span class="required">*</span></label>
                     <textarea id="description-defect" name="description_defect" placeholder="Describe the defect"
                         aria-label="Describe the defect of the product" tabindex="18"></textarea>
-                    <div>
+                    <div class="btns-add-photo-video">
                         <button type="button" id="add-photo-btn" tabindex="23">Add Photos</button>
                         <button type="button" id="add-video-btn" tabindex="24">Add Videos</button>
                         <input type="file" id="photo-input" accept="image/*" multiple style="display:none;">
                         <input type="file" id="video-input" accept="video/*" multiple style="display:none;">
                     </div>
 
-                    <fieldset for="item-marked-nonconforming">
+                    <fieldset class="item-marked-nonconforming" for="item-marked-nonconforming">
                         <legend for="item-marked-nonconforming">Item Marked Non-Conforming?<span
                                 class="required">*</span></legend>
                         <div class="item-conforming">
@@ -249,20 +249,22 @@
             <!-- Confirmation section -->
             <fieldset class="form-section confirmation">
                 <legend id="confirmation">Confirmation</legend>
-                <div class="confirm-create-qa">
-                    <p>QA Name: <span id="confirm-qa-name"></span></p>
-                    <p>Date: <span id="confirm-date"></span></p>
-                    <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
-                    <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
-                    <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
-                    <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
-                    <p>Product No: <span id="confirm-product-no"></span></p>
-                </div>
+                <div class="col-confirm">
+                    <div class="confirm-create-qa">
+                        <p>QA Name: <span id="confirm-qa-name"></span></p>
+                        <p>Date: <span id="confirm-date"></span></p>
+                        <p>Sales Order No: <span id="confirm-sales-order-no"></span></p>
+                        <p>Quantity Received: <span id="confirm-quantity-received"></span></p>
+                        <p>Quantity Defective: <span id="confirm-quantity-defective"></span></p>
+                        <p>Supplier Name: <span id="confirm-supplier-name"></span></p>
+                        <p>Product No: <span id="confirm-product-no"></span></p>
+                    </div>
 
-                <div class="confirm-create-qa">
-                    <p>Description Item: <span id="confirm-description-item"></span></p>
-                    <p>Description Defect: <span id="confirm-description-defect"></span></p>
-                    <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
+                    <div class="confirm-create-qa">
+                        <p>Description Item: <span id="confirm-description-item"></span></p>
+                        <p>Description Defect: <span id="confirm-description-defect"></span></p>
+                        <p>Non-Conforming Status: <span id="confirm-nonconforming-status"></span></p>
+                    </div>
                 </div>
                 <div class="affirmation">
                     <input type="checkbox" id="confirm-checkbox" name="confirm-checkbox"
