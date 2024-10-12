@@ -696,86 +696,54 @@ input[type="radio"] {
 
     /* Nav bar */
     #menu-icon {
-        display: none;
-        /* Hide hamburger menu icon */
+        display: none; /* Hide hamburger menu icon */
     }
 
     nav {
-        margin-left: auto;
-        /* Push nav to the right */
+        margin-left: auto; /* Push nav to the right */
     }
 
     nav ul {
-        right: 0;
-        /* Aligns to the right */
-        transition: none;
-        /* Remove transition for desktop */
-        display: block;
-        /* Always show the menu */
-        background: transparent;
-        /* Set background to transparent */
-        padding: 0;
-        /* Remove padding for the list */
-        margin: 0;
-        /* Remove margin for the list */
-        position: relative;
-        /* Ensure proper positioning */
+        right: 0; /* Aligns to the right */
+        transition: none; /* Remove transition for desktop */
+        display: block; /* Always show the menu */
+        background: transparent; /* Set background to transparent */
+        padding: 0; /* Remove padding for the list */
+        margin: 0; /* Remove margin for the list */
+        position: relative; /* Ensure proper positioning */
     }
 
     nav li {
-        display: inline-block;
-        /* Display items inline */
-        position: relative;
-        /* Needed for dropdowns */
-        margin: 0;
-        /* Adjust margins as needed */
+        display: inline-block; /* Display items inline */
+        position: relative; /* Needed for dropdowns */
+        margin: 0; /* Adjust margins as needed */
     }
 
     nav li a {
-        display: block;
-        /* Ensure links are block elements */
-        padding: 10px 25px;
-        /* Adjust padding for larger click area */
-        text-align: center;
-        /* Center align text */
-        text-decoration: none;
-        /* Remove underline */
-        color: #000;
-        /* Set text color */
-    }
-
-    /* Add side border on hover */
-    nav li a:hover {
-        text-decoration: underline;
+        display: block; /* Ensure links are block elements */
+        padding: 5px 25px; /* Adjust padding for larger click area */
+        text-align: center; /* Center align text */
+        text-decoration: none; /* Remove underline */
+        color: #000; /* Set text color */
     }
 
     nav li ul.dropdown {
-        width: 100%;
-        /* Ensure dropdown takes full width */
-        position: absolute;
-        /* Position it relative to parent */
-        z-index: 999;
-        /* Ensure it appears above other content */
-        display: none;
-        /* Hide dropdowns initially */
-        background: rgb(254, 254, 218);
-        /* Set dropdown background */
-        padding: 0;
-        /* Remove padding from dropdown */
-        margin: 45px 0;
-        /* Remove margin from dropdown */
+        width: 100%; /* Ensure dropdown takes full width */
+        position: absolute; /* Position it relative to parent */
+        z-index: 999; /* Ensure it appears above other content */
+        display: none; /* Hide dropdowns initially */
+        background: rgb(254, 254, 218); /* Set dropdown background */
+        padding: 0; /* Remove padding from dropdown */
+        margin: 45px 0; /* Remove margin from dropdown */
     }
 
     nav li:hover ul.dropdown {
-        display: block;
-        /* Show dropdown on hover */
+        display: block; /* Show dropdown on hover */
     }
 
     nav li ul.dropdown li {
-        display: block;
-        /* Ensure dropdown items are block elements */
-        margin: 8px 0;
-        /* Spacing between dropdown items */
+        display: block; /* Ensure dropdown items are block elements */
+        margin: 0; /* Spacing between dropdown items */
     }
 
     /*general*/
