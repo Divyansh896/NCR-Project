@@ -192,6 +192,11 @@ footer {
     text-align: center;
     font-size: 0.9em;
     color: #dbc7c0;
+    
+}
+
+footer p{
+    padding: 10px 0px;
 }
 
 /* Home Page - Three-column Layout */
@@ -759,28 +764,30 @@ details[open] .custom-summary::before {
 
 /* MEDIA */
 
-@media screen and (min-width:320px) {
-}
+@media screen and (max-width: 1024px){
 
-@media screen and (max-width: 426px){
+    /*general*/
+    h1{font-size: 2rem;}
 
-    h1{ font-size: 1.5rem;}
+    label, label{
+        font-size: 1rem;
+    }
+    /*home page*/
+    .main-container{
+        padding: 40px;
+    }
 
-    .filter-section input, .fieldset-contact input, .account input {
+    /*view ncr*/
+    .filter-section{
+        margin: 20px 70px;
+    }
+    .serach-bar, .date-filter {
         width: 200px;
+    }
+
+    #record-count {
         margin-bottom: 10px;
     }
-    
-    /*account*/
-    .account select {
-        width: 220px;
-    }
-
-    .account legend img{ 
-        height: 170px;
-        width: 170px;
-    }
-    
 }
 
 @media screen and (max-width: 768px){
@@ -824,6 +831,10 @@ details[open] .custom-summary::before {
 
     nav ul{
         display: none;
+    }
+
+    footer p{
+        padding: 5px 0px;
     }
 
     /*home*/
@@ -876,29 +887,50 @@ details[open] .custom-summary::before {
     }
 
     .form-section.active label, .filter-section label{
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-bottom: 0px;
     }
 
     .form-section.active button{
         margin: 10px 5px;
     }
-
-    
+   
 
     textarea{
         height: 200px;
         width: 200px;
     }
 
-    /* View NCR */
-    .filter-section{
-        margin: 0px 0px;
-        display: inline-block;
+     /* view ncr */
+     .filter-section {
+        margin: 0px;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
-    
+    .filter-section div {
+        margin-bottom: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .serach-bar, .date-filter {
+        width: 65%;
+    }
+
+    .fieldset-viewncr {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+    }
+    .fieldset-viewncr legend{
+        font-size: 1.2rem;
+    }
+
+    .ncr-table {
+        font-size: 14px;
+    }
 
     /* Account */
 
@@ -921,13 +953,133 @@ details[open] .custom-summary::before {
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (max-width: 426px){
 
-    /*home page*/
-    .main-container{
-        padding: 40px;
+    h1{ font-size: 1.5rem;}
+
+    .filter-section input, .fieldset-contact input, .account input {
+        margin-bottom: 10px;
+    }
+
+    
+    /*account*/
+    .account select {
+        width: 220px;
+    }
+
+    .account legend img{ 
+        height: 170px;
+        width: 170px;
+    }
+    
+    /*view ncr*/
+    .filter-section {
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-section div {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .serach-bar, .date-filter {
+        width: 45%; /* Take up most of the screen width */
+    }
+
+    .fieldset-viewncr {
+        justify-content: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .radio-btn {
+        margin-left: 2px;
+    }
+
+    #record-count {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .ncr-table thead th {
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+
+    .ncr-table tbody td {
+        padding: 10px 5px;
+        font-size: 15px;
     }
 }
+
+@media screen and (max-width: 376px){
+    .fieldset-viewncr {
+        flex-direction: row;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .ncr-table thead th {
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+
+    .radio-btn {
+        margin-left: 2px;
+    }
+
+    .ncr-table tbody td {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    .form-section.active label, .filter-section label {
+        font-size: 0.8rem;
+    }
+
+    .filter-section input, .fieldset-contact input, .account input {
+        font-size: 0.8rem;
+    }
+
+    .linksNav, .linksFooter {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:321px) {
+
+    .fieldset-viewncr {
+        flex-direction: row; /* Stack buttons vertically on very small screens */
+        align-items: center;
+        gap: 5px; /* Add vertical space between items */
+    }
+
+    .ncr-table thead th {
+        padding: 10px 5px;
+        font-size: 10px;
+    }
+
+    .radio-btn {
+        margin-left: 0; /* Remove margin when stacked vertically */
+    }
+    .ncr-table tbody td {
+        font-size: 10px;
+    }
+    .radio-btn {
+        margin-left: 0; /* Remove margin when stacked vertically */
+    }
+
+    #status-filter, #record-count {
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+}
+
+
 
 @media screen and (min-width: 1440px){
     
@@ -963,6 +1115,15 @@ details[open] .custom-summary::before {
         font-size: 3.5rem;
     }
 
+    label, .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p  {
+        font-size: 2rem;
+    }
+
+    .date-filter {
+        width: 500px;
+    }
+
+    .serach-bar{width: 500px;}
     /*home page */
     .main-container{
     gap: 200px;
@@ -974,17 +1135,28 @@ details[open] .custom-summary::before {
         font-size: 2.5rem;
     }
 
-    .featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
-        font-size: 2rem;
-    }
-
     button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select {
-        height: 50px;
+        height: 60px;
         font-size: 1.7rem;
     }
 
     .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
         height: 600px;
+    }
+
+    /*view ncr*/
+    #status-filter, #record-count {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .filter-section{
+        margin: 40px 200px;
+    }
+
+    .ncr-table thead th, .ncr-table tbody td {
+        font-size: 1.7rem;
     }
 
     /* account*/

@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     populateUserData(user)
 
 });
-
+const footer = document.getElementById('footer-scroll') 
+footer.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Adds a smooth scroll effect
+    })
+})
 // Function to populate input fields with user data
 function populateUserData(data) {
     document.getElementById('fname').value = data.firstname || '';
