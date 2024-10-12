@@ -886,7 +886,7 @@ details[open] .custom-summary::before {
     }
 
     .qa-process{
-        align-items: center;
+        flex-direction: column;
     }
 
     .qa-info-section label, .qa-info-section input[type="text"], .qa-info-section input[type="number"] {
@@ -912,6 +912,7 @@ details[open] .custom-summary::before {
         width: 200px;
     }
 
+   
      /* view ncr */
      .filter-section {
         margin: 0px;
