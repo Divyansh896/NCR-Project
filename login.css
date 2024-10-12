@@ -1,54 +1,134 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Set full height for the body and html */
-html, body {
+html,
+body {
     height: 100%;
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
 }
 
-/* Set body background with wallpaper */
-body#login {
-    background-image: url('images/login.webp'); 
-    background-size: cover;
-    background-position: center;
-    color: white; /* Default text color */
-    flex: 1; /* Take up remaining space */
-    justify-content: center;
-    align-items: center;
-}
-
-/* Main content container */
 main {
-    flex: 1; /* Allow main content to grow and push footer to bottom */
+    flex: 1;
+    /* Allow main content to grow and push footer to bottom */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* header */
+header {
+    padding: 10px 25px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #163650;
+    height: 70px;
+}
+
+header img {
+    max-width: 250px;
+    margin-top: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+/* Navigation */
+nav {
+    float: right;
+    padding-right: 25px;
+}
+
+#menu-icon {
+    background: url("images/hamburger.png");
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+nav ul {
+    background: beige;
+    list-style-type: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    transition: 1s all ease;
+    text-align: center;
+    height: auto;
+}
+
+nav li {
+    margin-top: 25px;
+    padding: 9px;
+}
+
+nav:hover ul {
+    right: 0;
+    display: block;
+}
+/* Adjust submenu styling */
+nav li ul.link-dropdown {
+    display: none; /* Hidden by default */
+    position: relative; /* Ensure it's positioned relative to parent li */
+    top: 100%; /* Position it directly below the parent li */
+    left: 0; /* Align to the left of the parent */
+    background: rgb(254, 254, 218); /* Match the main menu background */
+    z-index: 1; /* Ensure it appears above other elements */
+    height: auto;
+
+}
+nav li ul.link-dropdown li{
+    margin: 8px 0;
+}
+nav li:hover ul.link-dropdown {
+    display: block; /* Show submenu on hover of parent li */
+}
+
+/* Login page */
+
+#login {
+    background-image: url('images/login.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    /* Default text color */
+    flex: 1;
+    /* Take up remaining space */
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
 }
 
 /* Glassmorphism effect for the login container */
 .login-container {
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    /* Frosted glass effect */
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Adjust the width as needed */
-    height: 450px;
-    text-align: left; /* Align text to the left */
+    width: 300px;
+    /* Adjust the width as needed */
+    height: 400px;
+    text-align: left;
+    /* Align text to the left */
 }
 
 /* Logo and header alignment */
 .logo-container {
     display: flex;
-    align-items: center; /* Align logo and text vertically */
+    align-items: center;
+    /* Align logo and text vertically */
     justify-content: center;
-    margin-bottom: 3rem; /* Space below logo-container */
+    margin-bottom: 3rem;
+    /* Space below logo-container */
 }
 
 /* Header styles */
@@ -58,31 +138,40 @@ main {
 
 /* Label styles */
 label {
-    display: block; /* Makes labels take up the full width */
-    margin-top: 1rem; /* Space above each label */
+    display: block;
+    /* Makes labels take up the full width */
+    margin-top: 1rem;
+    /* Space above each label */
     font-size: 1.1rem;
 }
 
 /* Input styles */
 input[type="text"],
 input[type="password"] {
-    width: 100%; /* Ensure full width */
+    width: 100%;
+    /* Ensure full width */
     padding-top: 10px;
-    margin: 5px 0; /* Space above and below the input */
+    margin: 5px 0;
+    /* Space above and below the input */
     border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underlined effect */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    /* Underlined effect */
     border-width: 100%;
-    background: transparent; /* No background */
-    color: white; /* Input text color */
-    outline: none; /* Remove default outline */
+    background: transparent;
+    /* No background */
+    color: white;
+    /* Input text color */
+    outline: none;
+    /* Remove default outline */
     font-size: 1.1rem;
 }
 
 input[type="text"]::placeholder,
-input[type="password"]::placeholder{
+input[type="password"]::placeholder {
     color: #ffffff8a;
     font-size: 0.95rem;
 }
+
 /* Button styles */
 #btn-login {
     width: 100%;
@@ -90,7 +179,8 @@ input[type="password"]::placeholder{
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(0, 123, 255, 0.7); /* Button background color */
+    background-color: rgba(0, 123, 255, 0.7);
+    /* Button background color */
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -99,53 +189,44 @@ input[type="password"]::placeholder{
 }
 
 #btn-login:hover {
-    background-color: rgba(1, 108, 221, 0.9); /* Darker shade on hover */
+    background-color: rgba(1, 108, 221, 0.9);
+    /* Darker shade on hover */
 }
 
-/* Tooltip styles */
-.tooltip {
-    position: relative;
-}
-
-.tooltip-text {
-    visibility: hidden;
-    width: 120px;
-    background-color: rgba(0, 0, 0, 0.8); /* Tooltip background */
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%; /* Position above the input */
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Footer styles */
-footer {
+#login-footer {
     text-align: center;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.6); /* Dark background for footer */
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark background for footer */
     width: 100%;
 }
 
-footer p {
-    margin: 0.5rem 0;
+#login-footer a {
+    color: white;
 }
 
-footer a {
+#login-footer a:hover {
+    color: #a7a3a1;
+}
+
+/* Footer for all pages */
+.linksNav, .linksFooter {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.linksNav {
+    color: #1a3153;
+}
+
+.linksNav:hover{
+    color: #1d3456;
+}
+
+.linksFooter {
     color: #dbc7c0;
-    text-decoration: none;
 }
 
-footer a:hover {
-    color: #9e7c70;
+.linksFooter:hover {
+    color: #9e7c70
 }

@@ -1,13 +1,548 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.required{
+    color: red;
+    margin: 5px;
+}
+.indicator{
+    color: red;
+}
+/* Set full height for the body and html */
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
 
+main {
+    flex: 1;
+    /* Allow main content to grow and push footer to bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* header */
+header {
+    padding: 10px 25px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #163650;
+    height: 70px;
+}
+
+header img {
+    max-width: 250px;
+    margin-top: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
 /* Navigation */
+nav {
+    float: right;
+    padding-right: 25px;
+}
+
+#menu-icon {
+    background: url("images/hamburger.png");
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+nav ul {
+    background: beige;
+    list-style-type: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    transition: 1s all ease;
+    text-align: center;
+    height: auto;
+}
+
+nav li {
+    margin-top: 25px;
+    padding: 9px;
+}
+
+nav:hover ul {
+    right: 0;
+    display: block;
+}
+/* Adjust submenu styling */
+nav li ul.link-dropdown {
+    display: none; /* Hidden by default */
+    position: relative; /* Ensure it's positioned relative to parent li */
+    top: 100%; /* Position it directly below the parent li */
+    left: 0; /* Align to the left of the parent */
+    background: rgb(254, 254, 218); /* Match the main menu background */
+    z-index: 1; /* Ensure it appears above other elements */
+    height: auto;
+
+}
+nav li ul.link-dropdown li{
+    margin: 8px 0;
+}
+nav li:hover ul.link-dropdown {
+    display: block; /* Show submenu on hover of parent li */
+}
+
 /* Login page */
+
+#login {
+    background-image: url('images/login.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    /* Default text color */
+    flex: 1;
+    /* Take up remaining space */
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+
+/* Glassmorphism effect for the login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    /* Frosted glass effect */
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    /* Adjust the width as needed */
+    height: 400px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+/* Logo and header alignment */
+.logo-container {
+    display: flex;
+    align-items: center;
+    /* Align logo and text vertically */
+    justify-content: center;
+    margin-bottom: 3rem;
+    /* Space below logo-container */
+}
+
+/* Header styles */
+#login-header {
+    font-size: 1.5rem;
+}
+
+/* Label styles */
+label {
+    display: block;
+    /* Makes labels take up the full width */
+    margin-top: 1rem;
+    /* Space above each label */
+    font-size: 1.1rem;
+}
+
+#login-footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark background for footer */
+    width: 100%;
+}
+
+#login-footer a {
+    color: white;
+}
+
+#login-footer a:hover {
+    color: #a7a3a1;
+}
+
+/* Footer for all pages */
+.linksNav, .linksFooter {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.linksNav {
+    color: #1a3153;
+}
+
+.linksNav:hover{
+    color: #1d3456;
+}
+
+.linksFooter {
+    color: #dbc7c0;
+}
+
+.linksFooter:hover {
+    color: #9e7c70
+}
+#footer-scroll{
+    background-color: #163650;
+    text-align: center;
+    padding: 20px 0;
+
+}
+#footer-scroll p{
+    color: #dbc7c0;
+}
+
 /* Home page */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 15px;
+    margin: 25px auto;
+}
+.featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    flex: 0 1 30%;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    
+}
+.featuresCreateNCR {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/CreateNCR.webp");
+}
+
+.featuresViewNCR {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ViewNCR.webp");
+}
+
+.featuresManageAcc {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ManagaeAccount.webp");
+}
+
+.featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
+    font-size: 2em;
+}
+
+.featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
+    font-size: 0.99em;
+    margin: 20px 0;
+}
+
+.featuresCreateNCR button, .featuresViewNCR button, .featuresManageAcc button{
+    border-radius: 20px;
+    width: 50%;
+    height: 35px;
+}
 /* Create page */
-/* view ncr */
+/* Status Bar */
+.status-bar {
+    display: flex;
+    margin: 40px 0 20px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.status-bar div {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    transition: color 0.3s ease;
+    
+}
+
+.status-bar div.active {
+    color: #1a3153;
+    font-weight: 600;
+}
+
+.status-bar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #1a3153;
+    transition: left 0.4s ease, width 0.4s ease;
+    width: var(--underline-width, 30%);
+    left: var(--underline-left, 0%);
+}
+
+/* create page  */
+/* Fieldset Styles */
+fieldset {
+    border: 1px solid #163650; /* Example border style */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the fieldset */
+    margin: 10px 0; /* Space between fieldsets */
+}
+
+fieldset legend {
+    margin-top: 10px; /* Space above the legend */
+    font-weight: bold; /* Optional: make the legend text bold */
+    font-size: 1.2rem; /* Optional: adjust the font size */
+}
+.createNcr-verticalLayout, .verticalLayout{
+    display: flex;
+    flex-direction: column;
+}
+#ncr-form {
+    text-align: center;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: flex;
+    padding: 20px;
+    margin: 25px 5px;
+    border-radius: 5px;
+    border: 2px solid #163650; /* Added border style */
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-section.active label {
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.form-section.active button {
+    background-color: #1a3153;
+    color: #f4f4f4;
+    margin: 10px 10px;
+    height: 55px;
+    width: 95%;
+}
+
+.form-section p {
+    font-weight: bold;
+    text-align: center;
+    margin: 0; /* Added margin reset */
+}
+
+.form-section span {
+    font-weight: normal;
+}
+
+.affirmation {
+    margin-top: 30px;
+}
+
+.btn-qa-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-section label, .form-section input, .form-section select{
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.form-section textarea{
+    height: 200px;
+}
+.form-section textarea::placeholder{
+    padding: 10px;
+}
+.qa-info-section input, .qa-info-section select{
+    height: 30px;
+    width: 100%;
+}
+.qa-process{
+    text-align: left;
+}
+
+
+.qa-process input{
+    display: inline;
+    height: 20px;
+    width: 45px;
+}
+.item-conforming input, .item-conforming label{
+    display: inline;
+    margin: 0 10px;
+}
+.confirmation p{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1.05em;
+}
+.affirmation input, .affirmation label{
+    display: inline;
+    font-size: 0.85em;
+}
+/* View NCR */
+.verticalLayout {
+    width: 100%; /* Ensure full width but no overflow */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.filter-section {
+    margin: 0 auto; /* Center align and prevent overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%; /* Prevent overflow on smaller screens */
+}
+
+/* Search Bar */
+#search, 
+#date-filter {
+    width: 150px;
+    height: 30px;
+    color: #1a3153;
+}
+
+/* Status Filter */
+input[type="radio"].status-filter {
+    color: #1a3153;
+}
+
+/* Fieldset View NCR */
+.fieldset-viewncr {
+    border: 2px solid rgba(0, 0, 0, 0.621);
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* General Radio Button Style */
+input[type="radio"] {
+    color: #1a3153;
+}
+
+/* Radio Button Margin */
+.radio-btn {
+    margin-left: 30px;
+}
+
+/* Bold Text for Status and Record Count */
+#status-filter, 
+#record-count {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#record-count {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Table */
+.ncr-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.ncr-table thead th {
+    background-color: #4c6488;
+    color: #f4f4f4;
+    padding: 18px;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+}
+
+.ncr-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ncr-table tbody tr:nth-child(even) {
+    background-color: #d7e4f9;
+}
+
+.ncr-table tbody tr:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.ncr-table tbody tr:hover {
+    background-color: #b8c4d5;
+}
+
+/* Responsive Layout - Show only selected columns on small screens */
+.ncr-table th, .ncr-table td {
+    display: none;
+}
+
+/* Mobile view - Show only 1st, 2nd, and 5th columns */
+.ncr-table thead th:nth-child(1),
+.ncr-table thead th:nth-child(2),
+.ncr-table thead th:nth-child(5),
+.ncr-table tbody td:nth-child(1),
+.ncr-table tbody td:nth-child(2),
+.ncr-table tbody td:nth-child(5) {
+    display: table-cell;
+}
 /* Manage account */
 /* Contact us */
+.fieldset-contact {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    text-align: left;
+}
+
+.fieldset-contact label {
+    font-weight: 600;
+}
+
+.fieldset-contact #name,
+.fieldset-contact #email {
+    height: 35px;
+    width: 95%;
+}
+
+.fieldset-contact #message {
+    width: 95%;
+    height: 90px;
+}
+
+/* Button Styling */
+.fieldset-contact button {
+    align-self: flex-end; /* Aligns the button to the right */
+    height: 45px;
+    width: 90px;
+    background-color: #4c6488; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-top: 10px;
+    margin-right: 18px;
+}
+
+/* Button Hover Effect */
+.fieldset-contact button:hover {
+    background-color: #394b6a; /* Darkens button on hover */
+}
