@@ -115,7 +115,7 @@ function populateTable(data) {
 // 3. Filtering the NCR reports logic
 function filterNcr(ncrData) {
     // Getting the data from the filtering options
-    const search = document.getElementById('search').value.toLowerCase(); // Convert to lower case
+    const search = document.getElementById('search').value; // Get the selected option value
     const date = document.getElementById('date-filter').value;
 
     // Getting the selected status filter value
@@ -124,8 +124,8 @@ function filterNcr(ncrData) {
     let records = document.getElementById('record-count');
 
     const filteredData = ncrData.filter(ncr => {
-        // Filtering the data based on search by supplier name or item description
-        const matchedSearch = ncr.qa.supplier_name.toLowerCase().includes(search)
+        // Filtering the data based on search by supplier name
+        const matchedSearch = (search === "All") || (ncr.qa.supplier_name === search);
 
         // Filtering the data based on date
         const matchedDate = !date || (date === ncr.qa.date);
@@ -142,6 +142,14 @@ function filterNcr(ncrData) {
     records.textContent = `Records found: ${filteredData.length}`;
     populateTable(filteredData); // Re-populate table with filtered data
 }
+
+// Attaching the events to the filter inputs
+document.getElementById('search').addEventListener('change', () => filterNcr(ncrData));
+document.getElementById('date-filter').addEventListener('change', () => filterNcr(ncrData));
+document.querySelectorAll('input[name="status"]').forEach(input => {
+    input.addEventListener('change', () => filterNcr(ncrData));
+});
+
 
 // 4. Attaching the events to the filter inputs
 document.getElementById('search').addEventListener('input', () => filterNcr(ncrData));

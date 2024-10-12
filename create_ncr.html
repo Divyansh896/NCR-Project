@@ -20,10 +20,9 @@
         <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
-        <div class="burger-menu">
-            <img src="images/hamburger-menu.webp" alt="Open navigation menu" aria-label="Open Navigation Menu"> <!-- Burger menu icon for mobile -->
-        </div>
+        
         <nav aria-label="Primary Navigation">
+            <a href="#" id="menu-icon"></a>
             <ul>
                 <li><a href="home.html" class="linksNav" tabindex="1" aria-label="Go to home page">Home</a></li> <!-- Set tabindex to sequential order -->
                 <li><a href="contact_us.html" class="linksNav" tabindex="2" aria-label="Contact us">Contact Us</a></li> <!-- Set tabindex to sequential order -->
@@ -149,7 +148,14 @@
 
                     <div>
                         <label for="supplier-name">Supplier Name:<span class="required">*</span></label>
-                        <input type="text" id="supplier-name" name="supplier_name" placeholder="Enter Supplier Name" required aria-required="true" tabindex="11">
+                        <select name="supplier_name" id="supplier-name" required tabindex="11">
+                            <option value="Alpha Tech Solutions">Alpha Tech Solutions</option>
+                            <option value="Beta Manufacturing Inc.">Beta Manufacturing Inc.</option>
+                            <option value="Gamma Electronics">Gamma Electronics</option>
+                            <option value="Delta Logistics">Delta Logistics</option>
+                            <option value="Epsilon Energy Solutions">Epsilon Energy Solutions</option>
+                        </select>
+                        <!-- <input type="text" id="supplier-name" name="supplier_name" placeholder="Enter Supplier Name" required aria-required="true" tabindex="11"> -->
 
                         <label for="product-no">Product No:<span class="required">*</span></label>
                         <input type="text" id="product-no" name="product_no" placeholder="Enter Product No" tabindex="12">

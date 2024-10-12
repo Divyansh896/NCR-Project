@@ -18,10 +18,9 @@
         <div class="logo-container" aria-label="Crossfire Company Logo">
             <img src="images/logo.webp" alt="Crossfire Company Logo">
         </div>
-        <div class="burger-menu">
-            <img src="images/hamburger-menu.webp" alt="Open navigation menu" aria-label="Open Navigation Menu"> <!-- Burger menu icon for mobile -->
-        </div>
+        
         <nav aria-label="Primary Navigation">
+            <a href="#" id="menu-icon"></a>
             <ul>
                 <li><a href="home.html" class="linksNav" tabindex="1" aria-label="Go to home page">Home</a></li> <!-- Set tabindex to sequential order -->
                 <li><a href="contact_us.html" class="linksNav" tabindex="2" aria-label="Contact us">Contact Us</a></li> <!-- Set tabindex to sequential order -->
@@ -45,7 +44,15 @@
         <div class="filter-section">
             <div>
                 <label for="search">Search by supplier:</label>
-                <input type="text" class="serach-bar" id="search" name="search" placeholder="Search by supplier." tabindex="7" aria-label="Search by supplier">
+                <select name="search" id="search" class="serach-bar" required tabindex="7" aria-label="Search by supplier">
+                    <option value="All">All Supplier</option>
+                    <option value="Alpha Tech Solutions">Alpha Tech Solutions</option>
+                    <option value="Beta Manufacturing Inc.">Beta Manufacturing Inc.</option>
+                    <option value="Gamma Electronics">Gamma Electronics</option>
+                    <option value="Delta Logistics">Delta Logistics</option>
+                    <option value="Epsilon Energy Solutions">Epsilon Energy Solutions</option>
+                </select>
+                <!-- <input type="text" class="serach-bar" id="search" name="search" placeholder="Search by supplier." tabindex="7" aria-label="Search by supplier"> -->
             </div>
 
             <!-- Date Picker -->
