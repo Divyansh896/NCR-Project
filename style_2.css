@@ -58,8 +58,7 @@ h1 {
     padding: 20px 0px;
     text-align: center;
     color: #1a3153;
-    font-size: 2rem;
-    ;
+    font-size: 1.2rem;
 }
 
 
@@ -634,6 +633,47 @@ input[type="radio"] {
 }
 
 /* Manage account */
+.account{
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.account legend{
+    justify-content: center;
+    text-align: center;
+}
+
+.account label{
+    margin-top: 20px;
+}
+
+.gradient-acc{
+    background: linear-gradient(to bottom, #a7bcdc, #1a3153);
+}
+
+.account button{
+    margin: 30px 0px;
+    background-color: #1a3153;
+    color: #f4f4f4;
+    width: 200px;
+}
+
+.account input, .account select{
+    width: 200px;
+}
+
+.account legend img {
+    height: 170px;
+    width: 170px;
+}
+
+
 /* Contact us */
 .fieldset-contact {
     display: flex;
@@ -710,6 +750,11 @@ input[type="radio"] {
    }
 
 @media screen and (min-width: 768px) {
+
+    /*general */
+    h1{
+        font-size: 2rem;
+    }
 
     /*home*/
     .main-container {
@@ -835,6 +880,10 @@ input[type="radio"] {
         font-size: 14px;
     }
 
+    /* account */
+    .account input, .account select {
+        width: 500px;
+    }
 }
 
 
@@ -891,6 +940,27 @@ input[type="radio"] {
     }
     
      /* view ncr */
+
+    /*account*/
+    .account{
+        margin: 10px 100px 0px 100px;
+        border-radius: 10px;
+    }
+    .account legend img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    /* general */
+    h1{font-size: 3rem;}
+    
+    /*account */
+    .account legend img {
+        height: 250px;
+        width: 250px;
+    }
 }
 
 @media screen and (min-width: 1760px){
@@ -945,5 +1015,15 @@ input[type="radio"] {
         border-radius: 20px;
         width: 50%;
         height: 75px;
+    }
+
+    /* account */
+    .account {
+        margin: 10px 300px 0px 300px;
+    }
+
+    .account legend img {
+        height: 350px;
+        width: 350px;
     }
 }
