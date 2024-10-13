@@ -1029,7 +1029,7 @@ input[type="radio"] {
     }
 
     
-    }
+    
     p{
         margin-top: 5px;
     }
@@ -1142,13 +1142,6 @@ input[type="radio"] {
     }
 
     .account label {
-        font-size: 2rem;
-    }
-.fieldset-viewncr label {
-        font-size: 2rem;
-    }
-
-    .fieldset-viewncr label {
         font-size: 2rem;
     }
     .fieldset-viewncr {
