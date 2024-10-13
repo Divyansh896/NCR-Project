@@ -11,7 +11,7 @@ const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
 const currentPage = window.location.pathname; // Get current page path
 const isCreateNCRPage = currentPage.includes('create_ncr'); // Check if it's the Create NCR page
-console.log(retrievedNCRData['resolved'])
+console.log(user.role)
 
 // Get all input fields and textareas
 const inputFields = document.querySelectorAll('input, textarea, select');
@@ -41,8 +41,8 @@ const enableFieldsForRole = (role) => {
         document.querySelectorAll('input[name="item_marked_nonconforming"]').forEach(radio => {
             radio.disabled = false; // Enable all radio buttons
         });
-
     } else if (role === 'Lead Engineer') {
+        console.log(user.role)
         document.querySelectorAll('.eng-editable').forEach(field => {
             field.disabled = false; // Enable Engineering editable fields
         });
@@ -72,6 +72,43 @@ const enableFieldsForRole = (role) => {
 
 };
 
+// Enable fields based on selected role
+if (user.role === "QA Inspector") {
+    document.getElementById('qa-edit').addEventListener('click', () => {
+        enableFieldsForRole(user.role)
+    })
+
+    document.querySelector('#qa-save').addEventListener('click', function () {
+        // Implement your save logic here, like sending the data to the server
+        alert('Changes saved!'); // Example feedback message
+    
+        // Optionally, disable fields again after saving
+        disableFields();
+    });
+} else if (user.role === "Lead Engineer") {
+    document.getElementById('eng-edit').addEventListener('click', () => {
+        enableFieldsForRole(user.role)
+    })
+    document.querySelector('#eng-save').addEventListener('click', function () {
+        // Implement your save logic here, like sending the data to the server
+        alert('Changes saved!'); // Example feedback message
+    
+        // Optionally, disable fields again after saving
+        disableFields();
+    });
+} else if (user.role === "Purchasing") {
+    document.getElementById('purch-edit').addEventListener('click', () => {
+        enableFieldsForRole(user.role)
+    })
+
+    document.querySelector('#purch-save').addEventListener('click', function () {
+        // Implement your save logic here, like sending the data to the server
+        alert('Changes saved!'); // Example feedback message
+    
+        // Optionally, disable fields again after saving
+        disableFields();
+    });
+}
 // On page load, disable fields based on user role
 disableFields();
 

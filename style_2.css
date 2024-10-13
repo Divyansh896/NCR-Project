@@ -3,13 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-.required{
+
+.required {
     color: red;
     margin: 5px;
 }
-.indicator{
+
+.indicator {
     color: red;
 }
+
 /* Set full height for the body and html */
 html,
 body {
@@ -19,17 +22,47 @@ body {
     font-family: Arial, sans-serif;
 }
 
-main {
-    flex: 1;
-    /* Allow main content to grow and push footer to bottom */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 95%;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
 }
 
-/* header */
+/*general*/
+a {
+    text-decoration: none;
+}
+
+button, input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="tel"], select {
+    padding: 0px 10px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid #163650;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #f4f4f4;
+    color: #163650;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(244, 244, 244, 0.7);
+}
+
+h1 {
+    padding: 20px 0px;
+    text-align: center;
+    color: #1a3153;
+    font-size: 1.2rem;
+}
+
+
+/*header*/
 header {
     padding: 10px 25px;
     background-color: #f4f4f4;
@@ -42,13 +75,13 @@ header {
 
 header img {
     max-width: 250px;
-    margin-top: 40px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
 }
+
 /* Navigation */
 nav {
     float: right;
@@ -84,69 +117,93 @@ nav:hover ul {
     right: 0;
     display: block;
 }
+
 /* Adjust submenu styling */
 nav li ul.link-dropdown {
-    display: none; /* Hidden by default */
-    position: relative; /* Ensure it's positioned relative to parent li */
-    top: 100%; /* Position it directly below the parent li */
-    left: 0; /* Align to the left of the parent */
-    background: rgb(254, 254, 218); /* Match the main menu background */
-    z-index: 1; /* Ensure it appears above other elements */
+    display: none;
+    position: relative;
+    top: 100%;
+    left: 0;
+    background: rgb(254, 254, 218);
+    z-index: 1;
     height: auto;
 
 }
-nav li ul.link-dropdown li{
+
+nav li ul.link-dropdown li {
     margin: 8px 0;
 }
+
 nav li:hover ul.link-dropdown {
-    display: block; /* Show submenu on hover of parent li */
+    display: block;
 }
 
-/* Login page */
 
-#login {
-    background-image: url('images/login.webp');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    /* Default text color */
-    flex: 1;
-    /* Take up remaining space */
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
+/* DETAILS */
+
+details {
+    position: relative;
+    /* Position relative to place the arrow */
+    width: 100%;
+    /* Ensure it spans the entire width */
 }
 
-/* Glassmorphism effect for the login container */
-.login-container {
-    background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent white background */
-    backdrop-filter: blur(10px);
-    /* Frosted glass effect */
-    border-radius: 15px;
-    padding: 1rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    /* Adjust the width as needed */
-    height: 400px;
-    text-align: left;
-    /* Align text to the left */
+.custom-summary {
+    list-style: none;
+    /* Remove default list style */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    padding: 10px 30px;
+    /* Add vertical padding for better spacing */
+    display: block;
+    /* Make the summary a block element to span full width */
+    position: relative;
+    /* Position relative for the underline */
+    text-decoration: none;
+    /* Remove default underline */
+    font-weight: 600;
 }
 
-/* Logo and header alignment */
-.logo-container {
-    display: flex;
-    align-items: center;
-    /* Align logo and text vertically */
-    justify-content: center;
-    margin-bottom: 3rem;
-    /* Space below logo-container */
+/* Underline effect only for the summary */
+.custom-summary::after {
+    content: "";
+    /* Create an underline effect */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* Position at the bottom of the summary */
+    height: 2px;
+    /* Thickness of the underline */
+    width: 100%;
+    /* Full width underline */
+    background-color: black;
+    /* Color of the underline */
+}
+
+.custom-summary::before {
+    content: '<';
+    /* Custom arrow */
+    position: absolute;
+    /* Position absolute to place the arrow */
+    right: 50px;
+    /* Align the arrow to the right */
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjust to be centered */
+    font-size: 1.5em;
+    /* Adjust size if needed */
+    transition: transform 0.3s ease;
+    /* Smooth transition for rotation */
+}
+
+details[open] .custom-summary::before {
+    transform: translateY(-50%) rotate(-90deg);
+    /* Rotate to point down */
 }
 
 /* Header styles */
-#login-header {
-    font-size: 1.5rem;
-}
+
 
 /* Label styles */
 label {
@@ -157,24 +214,10 @@ label {
     font-size: 1.1rem;
 }
 
-#login-footer {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    /* Dark background for footer */
-    width: 100%;
-}
-
-#login-footer a {
-    color: white;
-}
-
-#login-footer a:hover {
-    color: #a7a3a1;
-}
 
 /* Footer for all pages */
-.linksNav, .linksFooter {
+.linksNav,
+.linksFooter {
     font-weight: bold;
     font-size: 1rem;
 }
@@ -183,7 +226,7 @@ label {
     color: #1a3153;
 }
 
-.linksNav:hover{
+.linksNav:hover {
     color: #1d3456;
 }
 
@@ -194,25 +237,30 @@ label {
 .linksFooter:hover {
     color: #9e7c70
 }
-#footer-scroll{
+
+#footer-scroll {
     background-color: #163650;
     text-align: center;
     padding: 20px 0;
 
 }
-#footer-scroll p{
+
+#footer-scroll p {
     color: #dbc7c0;
 }
 
 /* Home page */
 .main-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 40px;
     padding: 15px;
     margin: 25px auto;
 }
-.featuresCreateNCR, .featuresViewNCR, .featuresManageAcc {
+
+.featuresCreateNCR,
+.featuresViewNCR,
+.featuresManageAcc {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -226,8 +274,9 @@ label {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-    
+
 }
+
 .featuresCreateNCR {
     background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/CreateNCR.webp");
 }
@@ -240,20 +289,27 @@ label {
     background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ManagaeAccount.webp");
 }
 
-.featuresCreateNCR h2, .featuresViewNCR h2, .featuresManageAcc h2 {
-    font-size: 2em;
+.featuresCreateNCR h2,
+.featuresViewNCR h2,
+.featuresManageAcc h2 {
+    font-size: 1.5em;
 }
 
-.featuresCreateNCR p, .featuresViewNCR p, .featuresManageAcc p {
+.featuresCreateNCR p,
+.featuresViewNCR p,
+.featuresManageAcc p {
     font-size: 0.99em;
     margin: 20px 0;
 }
 
-.featuresCreateNCR button, .featuresViewNCR button, .featuresManageAcc button{
+.featuresCreateNCR button,
+.featuresViewNCR button,
+.featuresManageAcc button {
     border-radius: 20px;
     width: 50%;
     height: 35px;
 }
+
 /* Create page */
 /* Status Bar */
 .status-bar {
@@ -269,7 +325,7 @@ label {
     text-align: center;
     color: black;
     transition: color 0.3s ease;
-    
+
 }
 
 .status-bar div.active {
@@ -291,21 +347,29 @@ label {
 /* create page  */
 /* Fieldset Styles */
 fieldset {
-    border: 1px solid #163650; /* Example border style */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Padding inside the fieldset */
-    margin: 10px 0; /* Space between fieldsets */
+    border: 1px solid #163650;
+    /* Example border style */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin: 10px 0;
+    /* Space between fieldsets */
 }
 
 fieldset legend {
-    margin-top: 10px; /* Space above the legend */
-    font-weight: bold; /* Optional: make the legend text bold */
-    font-size: 1.2rem; /* Optional: adjust the font size */
+    margin-top: 10px;
+    /* Space above the legend */
+    font-weight: bold;
+    /* Optional: make the legend text bold */
+    font-size: 1.2rem;
+    /* Optional: adjust the font size */
 }
-.createNcr-verticalLayout, .verticalLayout{
+
+.createNcr-verticalLayout,
+.verticalLayout {
     display: flex;
     flex-direction: column;
 }
+
 #ncr-form {
     text-align: center;
 }
@@ -319,7 +383,8 @@ fieldset legend {
     padding: 20px;
     margin: 25px 5px;
     border-radius: 5px;
-    border: 2px solid #163650; /* Added border style */
+    border: 2px solid #163650;
+    /* Added border style */
     flex-direction: column;
     text-align: center;
 }
@@ -341,7 +406,8 @@ fieldset legend {
 .form-section p {
     font-weight: bold;
     text-align: center;
-    margin: 0; /* Added margin reset */
+    margin: 0;
+    /* Added margin reset */
 }
 
 .form-section span {
@@ -357,63 +423,123 @@ fieldset legend {
     flex-direction: row;
     justify-content: center;
 }
-.form-section label, .form-section input, .form-section select{
+
+.form-section label,
+.form-section input,
+.form-section select {
     display: block;
     text-align: left;
     margin-top: 10px;
 }
 
-.form-section textarea{
+.form-section textarea {
     height: 200px;
+    font-size: 1rem;
 }
-.form-section textarea::placeholder{
+
+.form-section textarea::placeholder {
     padding: 10px;
 }
-.qa-info-section input, .qa-info-section select{
-    height: 30px;
+
+.qa-info-section input,
+.qa-info-section select {
     width: 100%;
 }
-.qa-process{
+
+.qa-process {
     text-align: left;
+    border: none;
+    margin-top: 20px;
 }
 
+.item-marked-nonconforming{
+    border: none;
+}
 
-.qa-process input{
+.qa-process input {
     display: inline;
-    height: 20px;
+    height: 15px;
     width: 45px;
 }
-.item-conforming input, .item-conforming label{
+
+.item-conforming input,
+.item-conforming label {
     display: inline;
-    margin: 0 10px;
 }
-.confirmation p{
+
+.confirmation p {
     text-align: left;
     margin-top: 10px;
     font-size: 1.05em;
 }
-.affirmation input, .affirmation label{
+
+.affirmation input,
+.affirmation label {
     display: inline;
     font-size: 0.85em;
 }
+
+/* Dropdown for qa-section  */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Ensures label and span stack vertically */
+    padding: 5px;
+    /* Adds space inside the div */
+    overflow: hidden;
+    /* Clips any overflow */
+}
+
+#qa-section {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    /* or overflow: auto; */
+    box-sizing: border-box;
+}
+
+#qa-section label {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#qa-section span {
+    white-space: normal;
+    text-align: left;
+    word-break: break-word;
+    /* Breaks long words */
+    overflow-wrap: break-word;
+
+}
+
+#qa-section label,
+#qa-section span {
+    margin-left: 25px;
+}
+
 /* View NCR */
 .verticalLayout {
-    width: 100%; /* Ensure full width but no overflow */
+    width: 100%;
+    /* Ensure full width but no overflow */
     text-align: center;
     margin: 0 auto;
 }
 
 /* Filter Section */
 .filter-section {
-    margin: 0 auto; /* Center align and prevent overflow */
+    margin: 0 auto;
+    /* Center align and prevent overflow */
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%; /* Prevent overflow on smaller screens */
+    max-width: 100%;
+    /* Prevent overflow on smaller screens */
 }
 
 /* Search Bar */
-#search, 
+#search,
 #date-filter {
     width: 150px;
     height: 30px;
@@ -446,7 +572,7 @@ input[type="radio"] {
 }
 
 /* Bold Text for Status and Record Count */
-#status-filter, 
+#status-filter,
 #record-count {
     font-weight: bold;
     margin-bottom: 15px;
@@ -491,7 +617,8 @@ input[type="radio"] {
 }
 
 /* Responsive Layout - Show only selected columns on small screens */
-.ncr-table th, .ncr-table td {
+.ncr-table th,
+.ncr-table td {
     display: none;
 }
 
@@ -504,11 +631,54 @@ input[type="radio"] {
 .ncr-table tbody td:nth-child(5) {
     display: table-cell;
 }
+
 /* Manage account */
+.account{
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.account legend{
+    justify-content: center;
+    text-align: center;
+}
+
+.account label{
+    margin-top: 20px;
+}
+
+.gradient-acc{
+    background: linear-gradient(to bottom, #a7bcdc, #1a3153);
+}
+
+.account button{
+    margin: 30px 0px;
+    background-color: #1a3153;
+    color: #f4f4f4;
+    width: 200px;
+}
+
+.account input, .account select{
+    width: 200px;
+}
+
+.account legend img {
+    height: 170px;
+    width: 170px;
+}
+
+
 /* Contact us */
 .fieldset-contact {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
+    /* Stack elements vertically */
     text-align: left;
 }
 
@@ -525,26 +695,35 @@ input[type="radio"] {
 .fieldset-contact #message {
     width: 95%;
     height: 90px;
+    
 }
 
 /* Button Styling */
 .fieldset-contact button {
-    align-self: flex-end; /* Aligns the button to the right */
+    align-self: flex-end;
+    /* Aligns the button to the right */
     height: 45px;
     width: 90px;
-    background-color: #4c6488; /* Button color */
-    color: #ffffff; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #4c6488;
+    /* Button color */
+    color: #ffffff;
+    /* Text color */
+    border: none;
+    /* Remove border */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Change cursor on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
     margin-top: 10px;
     margin-right: 18px;
 }
 
 /* Button Hover Effect */
 .fieldset-contact button:hover {
-    background-color: #394b6a; /* Darkens button on hover */
+    background-color: #394b6a;
+    /* Darkens button on hover */
 }
 
 
