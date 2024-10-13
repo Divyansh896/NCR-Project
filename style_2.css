@@ -843,6 +843,12 @@ input[type="radio"] {
         width: 350px;
     }
 
+    .ncr-table th,
+    .ncr-table td {
+        display: table-cell;
+        /* Show all table cells */
+    }
+
     .fieldset-viewncr legend {
         font-size: 1.2rem;
         text-align: left;
@@ -990,6 +996,10 @@ input[type="radio"] {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
+        padding-top: 315px;
+    }
+
     .main-container section {
         display: inline-block;
         width: 95%;
@@ -1086,6 +1096,16 @@ input[type="radio"] {
         font-size: 2rem;
     }
 
+
+    .account input {
+        width: 600px;
+        font-size: 1.7rem;
+    }
+    
+    .account select {
+        width: 620px;
+    }
+
     .date-filter {
         width: 500px;
     }
@@ -1156,5 +1176,4 @@ input[type="radio"] {
         width: 350px;
         height: 350px;
     }
-
 }
