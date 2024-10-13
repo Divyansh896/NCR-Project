@@ -72,43 +72,6 @@ const enableFieldsForRole = (role) => {
 
 };
 
-// Enable fields based on selected role
-if (user.role === "QA Inspector") {
-    document.getElementById('qa-edit').addEventListener('click', () => {
-        enableFieldsForRole(user.role)
-    })
-
-    document.querySelector('#qa-save').addEventListener('click', function () {
-        // Implement your save logic here, like sending the data to the server
-        alert('Changes saved!'); // Example feedback message
-    
-        // Optionally, disable fields again after saving
-        disableFields();
-    });
-} else if (user.role === "Lead Engineer") {
-    document.getElementById('eng-edit').addEventListener('click', () => {
-        enableFieldsForRole(user.role)
-    })
-    document.querySelector('#eng-save').addEventListener('click', function () {
-        // Implement your save logic here, like sending the data to the server
-        alert('Changes saved!'); // Example feedback message
-    
-        // Optionally, disable fields again after saving
-        disableFields();
-    });
-} else if (user.role === "Purchasing") {
-    document.getElementById('purch-edit').addEventListener('click', () => {
-        enableFieldsForRole(user.role)
-    })
-
-    document.querySelector('#purch-save').addEventListener('click', function () {
-        // Implement your save logic here, like sending the data to the server
-        alert('Changes saved!'); // Example feedback message
-    
-        // Optionally, disable fields again after saving
-        disableFields();
-    });
-}
 // On page load, disable fields based on user role
 disableFields();
 
