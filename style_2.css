@@ -212,6 +212,7 @@ label {
     margin-top: 1rem;
     /* Space above each label */
     font-size: 1.1rem;
+    font-weight: bold;
 }
 
 
@@ -559,6 +560,13 @@ input[type="radio"].status-filter {
     margin-top: 10px;
     padding: 10px;
     max-width: 100%;
+    border: none;
+    text-align: center;
+}
+
+.fieldset-viewncr label{
+    margin-top: 0px;
+    font-size: 1rem;
 }
 
 /* General Radio Button Style */
@@ -808,7 +816,6 @@ input[type="radio"] {
         margin-top: 10px;
     }
 
-
     .filter-section {
         margin: 0px;
         flex-direction: column;
@@ -833,22 +840,38 @@ input[type="radio"] {
         flex-direction: row;
         justify-content: center;
         gap: 8px;
+        width: 350px;
     }
 
     .fieldset-viewncr legend {
         font-size: 1.2rem;
+        text-align: left;
+        margin-left: 25px;
     }
 
     .ncr-table {
         font-size: 14px;
     }
-    .ncr-table th,
-    .ncr-table td {
-        display: table-cell;
-        /* Show all table cells */
+
+    /*view ncr*/
+
+    .filter-section {
+        margin: 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
     }
 
+    /* account */
+    .account input,
+    .account select {
+        width: 500px;
+    }
 }
+
+
+
 
 @media screen and (min-width: 1024px) {
 
@@ -989,8 +1012,23 @@ input[type="radio"] {
         transition: transform 0.3s ease;
         position: relative;
     }
-    .featuresCreateNCR, .featuresViewNCR, .featuresManageAcc{
-        padding-top: 315px;
+    
+     /* view ncr */
+
+     #search, #date-filter {
+        width: 300px;
+    }
+
+    .filter-section {
+        margin: 0px 40px;
+    }
+
+    .ncr-table th, .ncr-table td {
+        display: none;
+        font-size: 1.3rem;
+    }
+
+    
     }
     p{
         margin-top: 5px;
@@ -1073,7 +1111,15 @@ input[type="radio"] {
         height: 600px;
     }
 
-    /*view ncr*/
+    /* view ncr */
+    .filter-section {
+        margin: 40px 200px;
+    }
+
+    #search, #date-filter {
+        width: 500px;
+    }
+
     #status-filter, #record-count {
         font-weight: bold;
         font-size: 2rem;
@@ -1088,6 +1134,7 @@ input[type="radio"] {
         font-size: 1.7rem;
     }
 
+
     /* account*/
 
     .account{
@@ -1097,14 +1144,19 @@ input[type="radio"] {
     .account label {
         font-size: 2rem;
     }
-
-    .account input {
-        width: 600px;
-        font-size: 1.7rem;
+.fieldset-viewncr label {
+        font-size: 2rem;
     }
-    
-    .account select {
-        width: 620px;
+
+    .fieldset-viewncr label {
+        font-size: 2rem;
+    }
+    .fieldset-viewncr {
+        width: 550px;
+    }
+    /* account */
+    .account {
+        margin: 10px 300px 0px 300px;
     }
 
     .account legend img{
