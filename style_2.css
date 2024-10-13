@@ -868,33 +868,6 @@ input[type="radio"] {
     .account select {
         width: 500px;
     }
-}
-
-
-
-
-@media screen and (min-width: 1024px) {
-
-    /*header*/
-    header {
-        padding: 10px 25px;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #163650;
-        height: 70px;
-    }
-
-    header img {
-        max-width: 250px;
-        margin-top: 0;
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-    }
 
     /* Nav bar */
     #menu-icon {
@@ -923,7 +896,7 @@ input[type="radio"] {
 
     nav li a {
         display: block; /* Ensure links are block elements */
-        padding: 5px 25px; /* Adjust padding for larger click area */
+        padding: 5px 5px; /* Adjust padding for larger click area */
         text-align: center; /* Center align text */
         text-decoration: none; /* Remove underline */
         color: #000; /* Set text color */
@@ -948,6 +921,35 @@ input[type="radio"] {
         margin: 0; /* Spacing between dropdown items */
     }
 
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+    /*header*/
+    header {
+        padding: 10px 25px;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #163650;
+        height: 70px;
+    }
+
+    header img {
+        max-width: 250px;
+        margin-top: 0;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    
     /*general*/
     h1 {
         font-size: 2rem;
